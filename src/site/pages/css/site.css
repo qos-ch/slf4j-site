@@ -116,7 +116,6 @@ a {
   display: block; 
   margin: 0px; 
   padding: 2px; 
-  border: solid 1px #fff8e8; 
   color: #0066cc; 
   text-decoration: none;
 }
@@ -131,15 +130,8 @@ p.menu_header {
 }
 
 #left a:hover, #right a:hover {
-  border: solid 1px #FFFFFF; 
   background-color: #3333CC; 
   color: #ffffff;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-.pub {
-  text-align: center;
 }
 
 
@@ -154,45 +146,17 @@ p.menu_header {
     border-bottom: solid 1px #CCCCCC;   
 }
 
-#left .pub {
+
+#left div.pub, #left div.pub a:hover {
+    justify-content: center;
+    text-align: center;
     background-color: #fff8e8;
-    border: solid 0px #FFFFFF;
+    border-width: 0px;	
 }
 
-
-
-#left .pub a:hover {
-    background-color: #6666CC;     
-    border: solid 0px #FFFFFF;
-}
 
 #left img {
 	border: none;
-}
-
-#left div.jobadd {
-  font-size: 140%;
-  color: #fff;
-  margin: 0px;
-  padding: 0px;
-
-  text-align: center;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-
-  background-image: -ms-linear-gradient(bottom right, #FFBB55 0%, #FF8822 100%);
-  background-image: -moz-linear-gradient(bottom right, #FFBB55 0%, #FF8822 100%);
-  background-image: -o-linear-gradient(bottom right, #FFBB55 0%, #FF8822 100%);
-  background-image: -webkit-gradient(linear, right bottom, left top, color-stop(0, #FFBB55), color-stop(1, #FF8822));
-  background-image: -webkit-linear-gradient(bottom right, #FFBB55 0%, #FF8822 100%);
-  background-image: linear-gradient(to top left, #FFBB55 0%, #FF8822 100%);
-}
-
-#left div.jobadd a, div.jobadd a:hover {
-  background-color: transparent;
-  color: #fff;
-  border-width: 0px;	
 }
 
 /* ------------------------------------------- */

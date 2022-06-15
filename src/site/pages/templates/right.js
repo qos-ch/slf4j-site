@@ -21,7 +21,7 @@
 //
 
 function addBlockDetected() {
-    jQuery("#right").append('<p class="big">If using SLF4J saves you hours of work, please whitelist this site in your \
+    jQuery("#right").append('<p class="big">If you find SLF4J useful, consider whitelisting this site in your \
 ad blocker.</p>');
 }
 

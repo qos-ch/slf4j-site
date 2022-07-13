@@ -539,6 +539,15 @@ class B extends A {
     differently, <code>org.slf4j.MDC</code> <b>cannot</b> be used with
     the <em>slf4j-log4j12.jar</em> and <em>reload4j.jar</em>
     combination.</p>
+
+    <p><span class="label notice">Update:</span> The issue described
+    above was fixed in reload4j 1.2.21.  Although it is still
+    recommended that you use slf4j-reload4j as the preferred adapter
+    for the slf4j/reload4j combination, with reload4j version 1.2.21
+    and later you can freely mix any version of slf4j-log4j12, if you
+    need to. </p>
+      
+
     
     
     <!-- ====================================================== -->

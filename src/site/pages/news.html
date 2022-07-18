@@ -75,7 +75,7 @@
    <code>DefaultLoggingEventBuilder</code> now invokes
    <code>setCallerBoundary()</code> method in order to correctly set
    the caller boundary. The caller boundary information can be used by
-   logging implementations to compute caller informaiton. This fixes
+   logging implementations to compute caller information. This fixes
    <a href="https://jira.qos.ch/browse/SLF4J-511">SLF4J-511</a>.</p>
 
 
@@ -85,9 +85,9 @@
    fixes <a href="https://jira.qos.ch/browse/SLF4J-541">SLF4J-541</a>
    reported by Flavio Donz&eacute;.</p>
 
-   <p>&bull; The binary of this version can reproduced by checking out the
+   <p>&bull; The binary of this version can be reproduced by checking out the
    tag v_2.0.0-alpha7 from the source code repository
-   (github). Release built using Java "18" 2022-03-22 build 18+36-2087
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
    under Linux Debian 11.2.</p>
 
    
@@ -145,7 +145,7 @@
    <br/>   <br/>
    Moreover, SLF4J has been modularized per <a
    href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specificaton. The resulting internal changes are <a class="big
+   specification. The resulting internal changes are <a class="big
    bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
    page.
    </p>
@@ -266,9 +266,9 @@
    <p>&bull; Added support for the native OSGi service loader mechanism as
    described in <a
    href="https://jira.qos.ch/browse/SLF4J-457">SLF4J-457</a>. Our
-   gratidude goes to Bj&ouml;rn Kautler for ptoviding the relevant PR.</p>
+   gratitude goes to Bj&ouml;rn Kautler for providing the relevant PR.</p>
 
-   <p>&bull;Fixed inccorect location information computation when fluent API
+   <p>&bull;Fixed incorrect location information computation when fluent API
    is used. This issue was reported in <a
    href="https://jira.qos.ch/browse/SLF4J-511">SLF4J-511</a> by Ralph
    Goers.
@@ -314,7 +314,7 @@
    <h3>16th of December, 2019 - Release of SLF4J 1.7.30</h3>
 
    <p>Fixed a memory leak in case of no provided binding and
-   multi-threaded initialization as described in <a
+   multithreaded initialization as described in <a
    href="https://jira.qos.ch/browse/SLF4J-469">SLF4J-469</a>. Many
    thanks to David Harsha to providing the relevant PR.</p>
    
@@ -337,7 +337,7 @@
    <br/>   <br/>
    Moreover, SLF4J has been modularized per <a
    href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specificaton. The resulting internal changes are <a class="big
+   specification. The resulting internal changes are <a class="big
    bold" href="faq.html#changesInVersion18">detailed</a> in the FAQ
    page.
    </p>
@@ -361,9 +361,9 @@
    marker and key-value data passed to it. Non default implementation
    are encouraged to implement a more customizable behavior.</p>
 
-   <p>&bull; Fix the double back-end initializatoin problem reported
+   <p>&bull; Fix the double back-end initialization problem reported
    in <a href="https://jira.qos.ch/browse/SLF4J-463">SLF4J-463</a> by
-   Dan Groves who also provided a test-case to reptoduce the problem
+   Dan Groves who also provided a test-case to reproduce the problem
    and a relevant fix.
    </p>
 
@@ -419,7 +419,7 @@
    the <code>debug()</code> printing methods in
    <code>EventRecodingLogger</code> class. This corrects <a
    href="https://jira.qos.ch/browse/SLF4J-460">SLF4J-460</a> as
-   reporeted by Kevin Goveia.
+   reported by Kevin Goveia.
    </p>
 
 
@@ -546,7 +546,7 @@
    <code>slf4j-ext</code> module.
    </p>
    
-   <p>The aforementioned vulnerabilty has a low severty but was
+   <p>The aforementioned vulnerability has a low severity but was
    incorrectly marked critical in the National Vulnerability Database.
    </p>
 
@@ -587,7 +587,7 @@
    
    <p>Fix Travis build issues as reported in <a
    href="https://jira.qos.ch/browse/SLF4J-427">SLF4J-427</a> by 
-   Brett Randall who also provided the releavant PR.</p>
+   Brett Randall who also provided the relevant PR.</p>
    
    <p>Added a <code>createdPostInitialization</code> final public
    variable in SubstituteLogger.</p>
@@ -653,7 +653,7 @@
 
    <p>SLF4J has been modularized per <a
    href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specificaton. The resulting internal changes are <a class="big bold"
+   specification. The resulting internal changes are <a class="big bold"
    href="faq.html#changesInVersion18">detailed</a> in the FAQ
    page.</p>
  
@@ -716,7 +716,7 @@
 
    <p>When running under Java 9, log4j version 1.2.x is unable to
    correctly parse the "java.version" system property. Assuming an
-   inccorect Java version, it proceeded to disable its MDC
+   incorrect Java version, it proceeded to disable its MDC
    functionality. The slf4j-log4j12 module shipping in this release
    fixes the issue by tweaking MDC internals by reflection, allowing
    log4j to run under Java 9. See also <a
@@ -815,7 +815,7 @@
    </p>
 
    <p>Fixed Import-Package statement in MANIFEST.MF for the
-   slf4j-log4j12 module. This isssue was reported by Mathieu Sebire in
+   slf4j-log4j12 module. This issue was reported by Mathieu Sebire in
    <a href="jira.qos.ch/browse/SLF4J-357">SLF4J-357</a> who also
    provided the relevant pull request.
    </p>
@@ -844,7 +844,7 @@
    <h3>9th of February, 2016 - Release of SLF4J 1.7.15</h3>
 
    <p>In previous versions of SLF4J, if the application was already
-   multi-threaded at the time the first SLF4J logger was created, logs
+   multithreaded at the time the first SLF4J logger was created, logs
    made during the SLF4J initialization phase were lost. New code
    added in relation with <a
    href="http://jira.qos.ch/browse/SLF4J-353">SLF4J-353</a> fixes this
@@ -886,7 +886,7 @@
 
    <p>The <code>StaticMarkerBinder</code> and
    <code>StaticMDCBinder</code> classes shipping in various SLF4J
-   bindings now offer a <code>getSingletion()</code> method. The
+   bindings now offer a <code>getSingleton()</code> method. The
    <code>org.slf4j.MDC</code> and <code>MarkerFactory</code> classes
    now perform binding by invoking the <code>getSingleton()</code>
    method first and if in the presence of an older version of SLF4J
@@ -965,7 +965,7 @@
    <p>Added missing Bundle-ManifestVersion attribute in the MANIFEST
    files in log4j-over-slf4j. The issue was raised in <a
    href="http://jira.qos.ch/browse/SLF4J-321">SLF4J-231</a> by Nikolas
-   Falco who also provided the the appropriate pull request. </p>
+   Falco who also provided the appropriate pull request. </p>
 
    <p>Added <code>getAppender(String)</code> method in
    <code>Category</code> class in the log4j-over-slf4j module. This
@@ -1059,25 +1059,25 @@
    <p>Loggers created during the initialization phase are no longer
    <code>NOPLoggers</code> which drop all logging calls. Instead,
    SLF4J now creates substitute loggers which delegate to the
-   appropriate logger implementation after the initilization phase
+   appropriate logger implementation after the initialization phase
    completes. Only calls made to these loggers during the
-   initialization phase are dropped. This enhacement was proposed in
+   initialization phase are dropped. This enhancement was proposed in
    <a href="http://jira.qos.ch/browse/SLF4J-302">SLF4J-302</a>
    by Chetan Mehrotra.
    </p>
 
    <p>Improvements to the <code>exit()</code> and
    <code>throwing()</code> methods in <code>XLogger</code>. This
-   enhacement was requested in <a
+   enhancement was requested in <a
    href="http://jira.qos.ch/browse/SLF4J-188">SLF4J-188</a>.
    </p>
    
-   <p>Concunrrency improvement in <code>MessageFormatter</code>. This
+   <p>Concurrency improvement in <code>MessageFormatter</code>. This
    improvement was contributed by Vivek Pathak in a <a
    href="https://github.com/qos-ch/slf4j/pull/52">pull
    request</a>.</p>
 
-   <p>Concunrrency improvement in
+   <p>Concurrency improvement in
    <code>BasicMarkerFactory</code>. This improvement was contributed
    by Mikhail Mazursky in a <a
    href="https://github.com/qos-ch/slf4j/pull/40">pull
@@ -1093,11 +1093,11 @@
    <p>In the log4j-over-slf4j module, the <code>setLevel</code> method
    in the <code>Category</code> class. This fixes <a
    href="http://jira.qos.ch/browse/SLF4J-270">SLF4J-270</a>. Alfredo
-   Ramos provied the relevant patch.
+   Ramos provided the relevant patch.
    </p>
 
    <p>In the log4j-over-slf4j module, added empty implementations for
-   <code>OptionHander</code>, <code>WriterAppender</code>,
+   <code>OptionHandler</code>, <code>WriterAppender</code>,
    <code>ConsoleAppender</code> and <code>AppenderSkeleton</code>
    classes.
    </p>
@@ -1159,7 +1159,7 @@
    September 27th 2012 for details.
    </p>
 
-   <p>Added org.slf4j.simpleLoggerwarnLevelString in slf4j-simple
+   <p>Added org.slf4j.simpleLogger.warnLevelString in slf4j-simple
    module.</p>
 
    <p>Fixed <a
@@ -1212,7 +1212,7 @@
 
    <p>Source repository has been moved to <a
    href="https://github.com/qos-ch/slf4j">https://github.com/qos-ch/slf4j</a>
-   on github.</p>
+   on GitHub.</p>
  
    <p>In case multiple bindings are found on the class path, SLF4J
    will now output the name of the framework/implementation class it
@@ -1381,7 +1381,7 @@
    observed when SLF4J artifacts were placed under
    java.endorsed.dirs.</p>
 
-   <p>Fixed sub-optimal list type usage in
+   <p>Fixed suboptimal list type usage in
    <code>SLF4JLogFactory</code> as reported in <a
    href="http://bugzilla.slf4j.org/show_bug.cgi?id=179">bug 179</a> by
    Sebastian Davids.
@@ -1495,7 +1495,7 @@
   compatible with SLF4J version 1.5.7.</p>
 
   <p>The Maven pom file for the <code>log4j-over-slf4j</code> module
-  contained a compile time dependency on the <code>slf4j-jdk14</code>
+  contained a compile-time dependency on the <code>slf4j-jdk14</code>
   module. The dependency should have been declared in the test
   scope. This problem was reported by Jean-Luc Geering on the slf4j
   user list.
@@ -1524,7 +1524,7 @@
   <p>SLF4J will now emit a warning if more than one binding is present
   on the class path. This enhancement was proposed in <a
   href="http://bugzilla.slf4j.org/show_bug.cgi?id=132">bug 132</a>
-  contributed by by Robert Elliot.
+  contributed by Robert Elliot.
   </p>
 
   <p>The Log interface implementations in the jcl-over-slf4j module
@@ -1571,7 +1571,7 @@
   113</a>. With each call to getLogger() method,
   <code>LoggerContext</code> will now retrieve the ILoggerFactory
   afresh from <code>StaticLoggerBinder</code>. This change enables
-  context selectors of native implementations, e.g logback, to work
+  context selectors of native implementations, e.g. logback, to work
   correctly.
   </p>
 
@@ -1689,7 +1689,7 @@
   Matthew Mastracci.
   </p>
 
-  <p>Added support for array values, including multi-dimensional
+  <p>Added support for array values, including multidimensional
   arrays, as parameters. For example,</p>
   <p class="source">log.debug("{} {}", "A", new int[] {1, 2}});</p>
   <p>will print as "A [1, 2]" instead of "A [I@6ca1c" as
@@ -1890,7 +1890,7 @@
   the correct SLF4J version.
   </p>
   
-  <p>Clarified the behavior of the various methods methods in the MDC
+  <p>Clarified the behavior of the various methods in the MDC
   class with respect to "null" parameters. This was requested in <a
   href="http://bugzilla.slf4j.org/show_bug.cgi?id=58">bug 58</a> by
   Sebastian Davids.
@@ -2389,7 +2389,7 @@
   href="api/org/slf4j/Logger.html#getName()">name</a>.
   </p>
 
-  <p>With the addition of markers, sub-domains are no longer
+  <p>With the addition of markers, subdomains are no longer
   needed.</p>
 
   <p>The <code>LoggerFactoryAdapter</code> has been simplified and
@@ -2467,7 +2467,7 @@
   compatible, drop-in replacement for log4j version 1.2.9. 
   </p>
 
-  <p>This release reflects changes in the SLF4J API, i.e renaming of
+  <p>This release reflects changes in the SLF4J API, i.e. renaming of
   <code>org.slf4j.ULogger</code> interface as
   <code>org.slf4j.Logger</code>.
   </p>

@@ -246,10 +246,10 @@
     instance regardless of whether the SLF4J logger is disabled for
     the given level or nor. <b>Consequently, j.u.l. to SLF4J
     translation can seriously increase the cost of disabled logging
-    statements (60 fold or 6000%) and measurably impact the
+    statements (60-fold or 6000%) and measurably impact the
     performance of enabled log statements (20% overall increase).</b>
     As of logback version 0.9.25, it is possible to completely
-    eliminate the 60 fold translation overhead for disabled log
+    eliminate the 60-fold translation overhead for disabled log
     statements with the help of <a
     href="http://logback.qos.ch/manual/configuration.html#LevelChangePropagator">LevelChangePropagator</a>.
     </p>

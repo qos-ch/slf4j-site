@@ -1,6 +1,6 @@
 /*
   Many thanks to Ian Zamojc izamojc(at)zamtools.com for making
-  suggestions to improbve the site look and feel.
+  suggestions to improve the site look and feel.
 */
 
 
@@ -490,7 +490,7 @@ code {
     font-style: italic;
 }
 
-/* for highligting breaking changes */
+/* for highlighting breaking changes */
 div.breaking {
     border: 1px solid #F44; 
     background-color: #FED; 

@@ -278,7 +278,7 @@ class B extends A {
       org.slf4j.LoggerFactory</a>
     </h3>
 
-    <p>When this errors occurs, the exception looks as follows:</p>
+    <p>When this error occurs, the exception looks as follows:</p>
     <p class="source">java.lang.IllegalAccessError: tried to access field org.slf4j.impl.StaticLoggerBinder.SINGLETON \
      from class org.slf4j.LoggerFactory
   at org.slf4j.LoggerFactory.&lt;clinit&gt;(LoggerFactory.java:60)
@@ -329,7 +329,7 @@ class B extends A {
     when you include <em>cassandra-all</em> as a dependency in your
     project, the <em>cassandra-all</em> declaration will cause both
     <em>slf4j-log4j12.jar</em> and <em>log4j.jar</em> to be pulled in
-    as dependencies. In case you do not wish to use log4j as the the
+    as dependencies. In case you do not wish to use log4j as the
     SLF4J backend, you can instruct Maven to exclude these two
     artifacts as shown next:</p>
 
@@ -382,7 +382,7 @@ class B extends A {
     </p>
     
     <p>Mixing different versions of <em>slf4j-api.jar</em> and SLF4J
-    binding (a.k.a provider since 2.0.0) can cause problems. For
+    binding (a.k.a. provider since 2.0.0) can cause problems. For
     example, if you are using slf4j-api-${project.version}.jar, then
     you should also use slf4j-simple-${project.version}.jar, using
     slf4j-simple-1.5.5.jar will not work.</p>
@@ -399,7 +399,7 @@ class B extends A {
     should be fine.
     </p>
 
-    <p>At initialization time, if SLF4J suspects that there may be a
+    <p>At initialization time, if SLF4J suspects that there may be an
     api vs. binding version mismatch problem, it will emit a warning
     about the suspected mismatch.
     </p>
@@ -584,12 +584,12 @@ class B extends A {
     </h3>
 
     <p><span class="label">since 1.7.15</span> Logging calls made
-    during the initilization phase are recorded and replayed
-    post-inititilization. Note that the replayed logging calls are
+    during the initialization phase are recorded and replayed
+    post-initialization. Note that the replayed logging calls are
     subject to filtering by the underlying logging system.</p>
 
     <p>In principle, replaying only occurs for applications which are
-    already multi-threaded at the time the first logging call occurs.
+    already multithreaded at the time the first logging call occurs.
     </p>
 
     <p>See also <a
@@ -619,7 +619,7 @@ class B extends A {
     <code>LoggerFactory</code>.
     </p>
   
-    <p>If any substitute logger had to be created, SLF4J will emit a a
+    <p>If any substitute logger had to be created, SLF4J will emit a
     listing of such loggers. This list is intended to let you know
     that any logging calls made to these loggers during initialization
     have been dropped.

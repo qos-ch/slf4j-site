@@ -37,7 +37,7 @@
     
     <li><a href="#when">When should SLF4J be used?</a></li>
     
-    <li><a href="#yet_another_facade"> Is SLF4J yet another loggingfacade?</a></li>
+    <li><a href="#yet_another_facade"> Is SLF4J yet another logging facade?</a></li>
     
     <li><a href="#why_new_project"> If SLF4J fixes JCL, then why
     wasn't the fix made in JCL instead of creating a new project?
@@ -101,13 +101,13 @@
 
     <li>
       <a href="#jmpsModuleNames">What are the JPMS module names of the
-      various SLF4J artificats?
+      various SLF4J artifacts?
       </a>
     </li>
 
     <li>
       <a href="#bindingProviderDifference">What is the difference
-      between an SLFJ binding and an SLF4J provider?
+      between an SLF4J binding and an SLF4J provider?
       </a>
     </li>
 
@@ -205,7 +205,7 @@
     <dt class="doAnchor separator" name="what_is">What is SLF4J?</dt>
     <dd>
       <p>SLF4J is a simple facade for logging systems allowing the
-      end-user to plug-in the desired logging system at deployment
+      end-user to plug in the desired logging system at deployment
       time.
       </p>      
     </dd>
@@ -385,7 +385,7 @@
 
       <p>In version 2.0.0, SLF4J has been modularized per <a
       href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-      specificaton. The <a href="#jmpsModuleNames">JPMS module names</a> are listed
+      specification. The <a href="#jmpsModuleNames">JPMS module names</a> are listed
       in another FAQ entry.</p>
 
       <p>More visibly, slf4j-api now relies on the <a
@@ -433,7 +433,7 @@
           <td>2.0.x</td>
           <td>no bindings can be found warning message</td>
           <td>2.0.x providers do <b>not</b> act as 1.7.x/1.6.x
-          comptatible bindings</td>
+          compatible bindings</td>
         </tr>
         
         <tr class="striped">
@@ -765,7 +765,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       exclusion</a> is described in the Maven documentation. Excluding
       commons-logging explicitly for multiple dependencies distributed
       on several <em>pom.xml</em> files can be a cumbersome and a
-      relatively error prone process.
+      relatively error-prone process.
       </p>
 
       <p><b>alternative 2) provided scope</b></p>
@@ -877,13 +877,13 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
     </dd>
     
     <dt class="doAnchor separator" name="jmpsModuleNames">What are the JPMS
-    module names of the various SLF4J artificats?
+    module names of the various SLF4J artifacts?
     </dt>
     
     <dd>
       <p>Although compatible with Java 8, SLF4J version 2.0 supports
       JPMS modularisation as introduced in Java 9. Here are the JPMS
-      module names for the various artificats shipping in SLF4J.</p>
+      module names for the various artifacts shipping in SLF4J.</p>
 
       <table class="bodyTable striped" cellspacing="4" cellpadding="4">
         <tr>
@@ -981,7 +981,7 @@ debug(String msg, Throwable t);</pre>
       <pre class="prettyprint source">debug(String msg, Throwable t);</pre>
       
       <p>can be used to log exceptions. Note that this method
-      ensures that every logged exception is accompanied with a
+      ensures that every logged exception is accompanied by a
       descriptive message.</p>
       
       
@@ -1004,7 +1004,7 @@ debug(String msg, Throwable t);</pre>
       
       <p>You might legitimately argue that not all exceptions have a
       meaningful message to accompany them. Moreover, a good exception
-      should already contain a self explanatory description. The
+      should already contain a self-explanatory description. The
       accompanying message may therefore be considered redundant.
       </p>
       
@@ -1136,7 +1136,7 @@ logger.debug("The new entry is {}.", entry);</pre>
       smaller/cleaner with only the Object... variant.</p>
      
       
-      <p>Array type arguments, including multi-dimensional arrays,
+      <p>Array type arguments, including multidimensional arrays,
       are also supported.</p>
       
       <p>SLF4J uses its own message formatting implementation which
@@ -1168,7 +1168,7 @@ logger.debug("The new entry is {}.", entry);</pre>
       <pre class="prettyprint source">logger.debug("Set {1,2} differs from {{}}", "3");</pre>
       <p>which would have printed as "Set {1,2} differs from {3}". </p>
       
-      <p>In the extremely rare case where the the "{}" pair occurs
+      <p>In the extremely rare case where the "{}" pair occurs
       naturally within your text and you wish to disable the special
       meaning of the formatting anchor, then you need to escape the
       '{' character with '\', that is the backslash character. Only
@@ -1456,7 +1456,7 @@ try {
       <code>MyLoggerAdapter</code>, and a factory, namely
       <code>MyLoggerFactory</code>, the last remaining step is to
       modify the <code>StaticLoggerBinder</code> class so that it
-      returns an new instance of <code>MyLoggerFactory</code>. Note
+      returns a new instance of <code>MyLoggerFactory</code>. Note
       that as of version 2.0, you need to
       implement <code>SLF4JServiceProvider</code>.
       </p>
@@ -1476,7 +1476,7 @@ try {
         <li>create a factory for the adapter created in the previous step,</li>
         <li>implement <code>SLF4JServiceProvider</code> class to use
           the factory you created in the previous step; for SLF4J
-          versoin 1.7 and earlier, you need to
+          version 1.7 and earlier, you need to
           copy <code>StaticLoggerBinder</code></li>
       </y>
       
@@ -1665,7 +1665,7 @@ try {
       there might be a noticeable difference.
       </p>
       
-      <p>However, more recent logging systems, e.g log4j or logback,
+      <p>However, more recent logging systems, e.g. log4j or logback,
       support a distinct logger context for each application running
       in the application server. Thus, even if a single copy of
       <em>log4j.jar</em> or <em>logback-classic.jar</em> is deployed

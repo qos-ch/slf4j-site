@@ -737,12 +737,12 @@ public class MyApp {
 
   <ol>
     <li>Use Java 5 or later.</li>
-    <li>Download slf4j-ext-${project.version}.jar and javassist.jar, and put them
+    <li>Download slf4j-ext-${latest.stable.version}.jar and javassist.jar, and put them
     both in the same directory.</li>
     <li>Ensure your application is properly configured with
-    slf4j-api-${project.version}.jar and a suitable backend.</li>
+    slf4j-api-${latest.stable.version}.jar and a suitable backend.</li>
 
-    <li>Instead of "java ..." use "java --javaagent:PATH/slf4j-ext-${project.version}.jar=time,verbose,level=info ..."
+    <li>Instead of "java ..." use "java --javaagent:PATH/slf4j-ext-${latest.stable.version}.jar=time,verbose,level=info ..."
     <br/>
     (replace PATH with the path to the jar)
     </li>
@@ -800,9 +800,9 @@ Hello World
 
   <p>The same effect could have been had by using this command (with
   the relative path to javassist.jar and
-  slf4j-ext-${project.version}.jar being ../jars):</p>
+  slf4j-ext-${latest.stable.version}.jar being ../jars):</p>
 
-  <p class="source">java -javaagent:../jars/slf4j-ext-${project.version}.jar HelloWorld 1 2 3 4</p>
+  <p class="source">java -javaagent:../jars/slf4j-ext-${latest.stable.version}.jar HelloWorld 1 2 3 4</p>
 
   <p></p>
 
@@ -846,14 +846,14 @@ Hello World
 
   <p>The javassist library is used for the actual byte code
   manipulation and must be available to be able to add any logging
-  statements.  slf4j-ext-${project.version} has been configured to
+  statements.  slf4j-ext-${latest.stable.version} has been configured to
   look for the following:
   </p>
 
   <ul>
     <li>"javassist-3.4.GA.jar" relatively to
-    slf4j-ext-${project.version}.jar as would be if Maven had downloaded
-    both from the repository and slf4j-ext-${project.version}.jar was
+    slf4j-ext-${latest.stable.version}.jar as would be if Maven had downloaded
+    both from the repository and slf4j-ext-${latest.stable.version}.jar was
     referenced directly in the Maven repository in the
     "-javaagent"-argument.</li>
     <li>"javassist-3.4.GA.jar" in the same directory as slf4j-ext</li>

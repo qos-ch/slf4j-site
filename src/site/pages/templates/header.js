@@ -2,14 +2,15 @@ document.write('<div id="header">');
 document.write('  <table width="100%" border="0">')
 ;document.write(' <tr>');
 document.write('    <td><a href="http://www.slf4j.org/">');
-document.write('      <img src="' + prefix + 'images/logos/slf4j-logo.jpg" alt="" border="0" height="100"/>');
+//document.write('      <img src="' + prefix + 'images/logos/slf4j-logo.jpg" alt="" border="0" height="100"/>');
+document.write('      <img src="' + prefix + 'images/logos/SLF4J_72dpi.png" alt="" border="0" height="70"/>');
 document.write('       </a>')
 document.write('    </td>')
 
 
-document.write('   <td style="vertical-align:bottom;"> ');
-document.write('    <div style="height: 40px; line-height: 40px; text-align: center; vertical-align: middle;background-color: cornsilk; border-style: dotted; border-color: #F00;">&nbsp;Please voice your opinion regarding the proposed <a href="https://github.com/qos-ch/slf4j/discussions/280">Fluent API change</a></div> ');
-document.write('   </td> ');
+//document.write('   <td style="vertical-align:bottom;"> ');
+//document.write('    <div style="height: 40px; line-height: 40px; text-align: center; vertical-align: middle;background-color: cornsilk; border-style: dotted; border-color: #F00;">&nbsp;Please voice your opinion regarding the proposed <a href="https://github.com/qos-ch/slf4j/discussions/280">Fluent API change</a></div> ');
+//document.write('   </td> ');
 
 document.write('   <td style="vertical-align:bottom;">');
 

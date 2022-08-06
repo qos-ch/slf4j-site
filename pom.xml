@@ -17,10 +17,9 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <latest.stable.version>1.7.36</latest.stable.version>
-    <latest.2.version>2.0.0-alpha8</latest.2.version>    
-    <alpha.version>${project.version}</alpha.version>    
-
+    <latest.1.version>1.7.36</latest.1.version>        
+    <latest.2.version>2.0.0-beta1</latest.2.version>
+    <latest.stable.version>${latest.2.version}</latest.stable.version>    
     
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-site-plugin.version>3.7.1</maven-site-plugin.version>

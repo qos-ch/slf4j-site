@@ -40,16 +40,50 @@
      class names in <code/>
    -->
 
-   <!-- 
    <hr noshade="noshade" size="1"/>
    
-   <h3>2022-0 - Release of SLF4J 2.0.0-alpha7</h3>
+   <h3>2022-08-06 - Release of SLF4J 2.0.0-beta1</h3>
 
-   <p>Correct corrupt "Export-Package" declaration in
-   <em>MANIFEST.MF</em> in <em>log4j-over-slf4j</em> module. This
-   fixes <a href="https://jira.qos.ch/browse/SLF4J-541">SLF4J-541</a>
-   reported by Flavio Donz&eacute;.</p>
-   -->
+   <p>&bull; Methods in the <code>LoggingEventBuilder</code> interface
+   returning an instance of <code>LoggingEventBuilder</code> are now
+   annotated with <code>@CheckReturnValue</code>.  This allows compile
+   time detection of missing calls to one of the terminating
+   <code>log()</code> methods. Many thanks to Yuriy Artamonov and
+   Vladimir Sitnikov for their help and valuable suggestions on this
+   matter.
+   </p>
+
+   <p>Support for this check is included in IntelliJ IDEA out of the
+   box. For more information on this feature in IntelliJ IDEA, select
+   File &#8594; Setting &#8594; Editor &#8594; Inspections and then
+   Java &#8594; Probable Bugs &#8594; "Result of method call
+   ignored". </p>
+
+   <p>As for Eclipse, this feature has been requested in <a
+   href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=572496">bug
+   572496</a>.</p>
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.0-beta1 from the source code repository
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
+   under Linux Debian 11.2.</p>
+   
+   <hr noshade="noshade" size="1"/>
+   
+   <h3>2022-08-05 - Release of SLF4J 2.0.0-beta0</h3>
+
+   <p>&bull; After
+   a <a href="https://github.com/qos-ch/slf4j/discussions/280">long
+   debate</a>,
+   added <code>setMessage(String)</code>, <code>setMessage(Supplier&lt;String&gt;)</code>
+   and <code>log()</code> methods to
+   the <code>LoggingEventBuilder</code> interface. </p>
+
+     
+   <p>&bull; The binary of this version can be reproduced by checking out the
+   tag v_2.0.0-beta0 from the source code repository
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
+     under Linux Debian 11.2.</p>
    
    <hr noshade="noshade" size="1"/>
 

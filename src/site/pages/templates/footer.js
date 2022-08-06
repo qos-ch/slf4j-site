@@ -12,13 +12,10 @@ document.write('  <td valign="top" align="left">Copyright &copy; 2004-2022  <a h
 //document.write('  </td>');
 
 
-document.write('</tr>')
-
 AAT = '@'
 DOOTT = '.'
-document.write('<tr>')
-document.write('<td align="left" colspan="1">')
-document.write('We are actively looking for volunteers to proofread the documentation. Please send your corrections or suggestions for improvement to "corrections' + AAT +'qos'+DOOTT+'ch".');
+document.write('<td align="right" >')
+document.write('Logo created by <a href="https://www.facebook.com/Lise-Martins-Graphic-Designer-102159252581148/">Lisette Martins</a>');
 document.write('</td>')
 document.write('</tr>')
 

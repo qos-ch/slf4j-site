@@ -313,11 +313,12 @@
       </p>
       
       <p>For example, if you were using the NOP implementation and
-      would like to switch to log4j version 1.2, simply replace
-      <em>slf4j-nop.jar</em> with <em>slf4j-log4j12.jar</em> on
-      your class path but do not forget to add log4j-1.2.x.jar as
+      would like to switch to <a
+      href="https://reload4j.qos.ch">reload4j</a>, simply replace
+      <em>slf4j-nop.jar</em> with <em>slf4j-reload4j.jar</em> on your
+      classpath but do not forget to add <em>reload4j.jar</em> as
       well. Want to switch to java.util.logging?  Just replace
-      <em>slf4j-log4j12.jar</em> with <em>slf4j-jdk14.jar</em>.
+      <em>slf4j-reload4j.jar</em> with <em>slf4j-jdk14.jar</em>.
       </p>
       
       
@@ -379,14 +380,13 @@
 
       <p>
       
-      <p>SLF4J 2.0.0 incorporates a <a href="manual.html#fluent">fluent
-      api</a>. Otherwise, there are no client facing API changes in
-      2.0.x. For most users, upgrading to version 2.0..x should be a
-      drop-in replacement, as long as the logging provider is updated
-      as well.
+      <p>SLF4J 2.0.0 incorporates an optional <a
+      href="manual.html#fluent">fluent api</a>. Otherwise, there are
+      no client facing API changes in 2.0.x. For most users, upgrading
+      to version 2.0..x should be a drop-in replacement, as long as
+      the logging provider is updated as well.
       </p>
       
-
       <p>In version 2.0.0, SLF4J has been modularized per <a
       href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
       specification. The <a href="#jmpsModuleNames">JPMS module names</a> are listed

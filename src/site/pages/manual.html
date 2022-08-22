@@ -101,9 +101,10 @@ public class HelloWorld {
 }</pre>
 
      <p>To run this example, you first need to <a
-     href="download.html">download the slf4j distribution</a>, and
-     then to unpack it. Once that is done, add the file
-     <em>slf4j-api-${latest.stable.version}.jar</em> to your class path.</p>
+     href="download.html">obtain slf4j</a> artifacts.  Once that is
+     done, add the file
+     <em>slf4j-api-${latest.stable.version}.jar</em> to your class
+     path.</p>
 
      <p>Compiling and running <em>HelloWorld</em> will result in the
      following output being printed on the console.</p>
@@ -112,16 +113,17 @@ public class HelloWorld {
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.</pre>
 
+     <p>If you are using SLF4J 1.7 or earlier, the message would be:</p>
      
 <pre>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</pre>
 
-     <p>This warning is printed because no slf4j binding could be
-     found on your class path.</p>
+     <p>This warning is printed because no slf4j provider (or binding)
+     could be found on your class path.</p>
 
      <p>The warning will disappear as soon as you add a <a
-     href="#swapping">binding</a> to your class path. Assuming you add
+     href="#swapping">provider</a> to your class path. Assuming you add
      <em>slf4j-simple-${latest.stable.version}.jar</em> so that your class
      path contains:</p>
      
@@ -269,8 +271,9 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 
       <p>As mentioned previously, SLF4J supports various logging
       frameworks. The SLF4J distribution ships with several jar files
-      referred to as "SLF4J bindings", with each binding corresponding
-      to a supported framework.  </p>
+      referred to as "SLF4J provider", with each provider
+      corresponding to a supported framework. SLF4J 1.7 and earlier
+      used the term "binding" for providers. </p>
 
       <dl>
 

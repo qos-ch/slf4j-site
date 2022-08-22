@@ -376,10 +376,14 @@
     </dt>
 
     <dd>
-     
-      <p>There are no client facing API changes in 2.0.x. For most
-      users upgrading to version 2.0..x should be a drop-in replacement
-      as long as the logging provider is updated as well.
+
+      <p>
+      
+      <p>SLF4J 2.0.0 incorporates a <a href="manual.html#fluent">fluent
+      api</a>. Otherwise, there are no client facing API changes in
+      2.0.x. For most users, upgrading to version 2.0..x should be a
+      drop-in replacement, as long as the logging provider is updated
+      as well.
       </p>
       
 
@@ -1387,8 +1391,9 @@ class Bar {
 
     <dd>
       <p>Yes, as of SLF4J 1.6.0, but not in previous versions. The
-      SLF4J API supports parametrization in the presence of an
-      exception, assuming the exception is the last parameter. Thus,
+      SLF4J API supports parametrization (of 1 or more objects) in the
+      presence of an exception, assuming the exception is the last
+      parameter. Thus,
     </p>
     <pre class="prettyprint">String s = "Hello world";
 try {
@@ -1412,7 +1417,10 @@ try {
      as a plain object and its stack trace will NOT be printed.
      However, such situations should not occur in practice.
      </p>
-    
+
+     <p>As mentioned earlier, it is possible to pass one or more 
+     parameters in addition to the exception.</p>
+     
     </dd>
   </dl>
 

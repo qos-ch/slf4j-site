@@ -42,6 +42,44 @@
 
    <hr noshade="noshade" size="1"/>
    
+   <h3>2022-08-20 - Release of SLF4J 2.0.0</h3>
+
+   <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
+   adds a backward-compatible <a
+   href="manual.html#fluent">fluent logging api</a>.
+   <br/>   <br/>
+   Moreover, SLF4J has been modularized per <a
+   href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
+   specification. The resulting internal changes are <a class="big
+   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
+   page.
+   </p>
+
+   <p>SLF4J 2.0.x series requires Java 8. It builds upon the 1.8.x
+   series and adds a backward-compatible <a
+   href="manual.html#fluent">fluent logging api</a>.  By
+   backward-compatible, we mean that existing logging frameworks do
+   not have to be changed for the user to benefit from the fluent
+   logging API. However, existing frameworks must migrate to the
+   <code>ServiceLoader</code> mechanism.  The resulting internal
+   changes are <a class="big bold"
+   href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
+   </p>
+
+   
+   <p>&bull; Except minor javadoc changes, this release is identical to
+   2.0.0-beta1 released earlier this month.</p>
+
+
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.0 from the source code repository
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
+   under Linux Debian 11.2.</p>
+   
+   
+   <hr noshade="noshade" size="1"/>
+   
    <h3>2022-08-06 - Release of SLF4J 2.0.0-beta1</h3>
 
    <p>&bull; Methods in the <code>LoggingEventBuilder</code> interface
@@ -172,28 +210,6 @@
     </p>
     
    <h3>2022-01-13 - Release of SLF4J 2.0.0-alpha6</h3>
-
-   <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
-   adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.
-   <br/>   <br/>
-   Moreover, SLF4J has been modularized per <a
-   href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specification. The resulting internal changes are <a class="big
-   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
-   page.
-   </p>
-
-   <p>SLF4J 2.0.x series requires Java 8. It builds upon the 1.8.x
-   series and adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.  By
-   backward-compatible, we mean that existing logging frameworks do
-   not have to be changed for the user to benefit from the fluent
-   logging API. However, existing frameworks must migrate to the
-   <code>ServiceLoader</code> mechanism.  The resulting internal
-   changes are <a class="big bold"
-   href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
-   </p>
 
    <p>&bull; SLF4J now ships with the <em>slf4j-reload4j</em> module
    delegating to the reload4j backend. <a
@@ -364,27 +380,7 @@
    <hr noshade="noshade" size="1"/>
 
    <h3>October 1st, 2019  - Release of SLF4J 2.0.0-alpha1</h3>
-
-   <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
-   adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.
-   <br/>   <br/>
-   Moreover, SLF4J has been modularized per <a
-   href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specification. The resulting internal changes are <a class="big
-   bold" href="faq.html#changesInVersion18">detailed</a> in the FAQ
-   page.
-   </p>
-
-   <p>SLF4J version 2.0.0 requires Java 8. It builds upon the 1.8.x
-   series and adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.  By
-   backward-compatible, we mean that existing logging frameworks do
-   not have to be changed for the user to benefit from the fluent
-   logging API.
-   </p>
-
-   
+  
    <p>&bull; Refactored the fluent-api in
    <code>org.slf4j.Logger</code> interface to ease the work required
    by downstream implementations.
@@ -518,7 +514,7 @@
    modularized per <a
    href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
    specification. The resulting internal changes are <a class="big
-   bold" href="faq.html#changesInVersion18">detailed</a> in the FAQ
+   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
    page. </p>
 
    <p class="highlight">The the 1.8.x series requires Java&nbsp;6 or
@@ -529,7 +525,7 @@
    <p>In the 1.8.x series, SLF4J has been modularized
    per <a href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
    specification. The resulting internal changes are <a class="big
-   bold" href="faq.html#changesInVersion18">detailed</a> in the FAQ
+   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
    page. Moreover, SLF4J now requires Java&nbsp;6 or later as
    slf4j-api now relies on
    the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html">ServiceLoader</a>

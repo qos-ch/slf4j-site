@@ -14,8 +14,10 @@ document.write('    <a href="https://github.com/qos-ch/slf4j">Source Repository<
 document.write('    <a href="http://www.qos.ch/shop/products/professionalSupport">Support offerings</a>');
 
 document.write('  <p class="menu_header">Native implementations</p>');
-document.write('    <a href="https://logback.qos.ch/">Logback</a>');
-document.write('    <a href="https://github.com/jhannes/logevents">logevents</a>');
+document.write('    <a href="' + prefix +'count/logback.html">Logback</a>');
+document.write('    <a href="' + prefix +'count/logevents.html">logevents</a>');
+//document.write('    <a href="https://logback.qos.ch/">Logback</a>');
+//document.write('    <a href="https://github.com/jhannes/logevents">logevents</a>');
 
 document.write('    <p class="menu_header">Wrapped implementations</p>');
 document.write('    <a href="api/org/slf4j/jul/JDK14LoggerAdapter.html">JUL</a>');
@@ -31,7 +33,8 @@ document.write('<p>&nbsp;</p>');
 document.write('<p class="sponsoredBy">&nbsp;Sponsored by:</p>');
 
 document.write('<div class="pub">');
-document.write('    <a href="https://research.atspotify.com/" style="">');
+document.write('    <a href="' + prefix +'count/spotify.html" style="">');
+//document.write('    <a href="https://research.atspotify.com/" style="">');
 document.write('      <img alt="Spotify R&amp;D" src="' + prefix + 'images/logos/spotify-rnd-black.png" width="150"/>');
 document.write('    </a>');
 

@@ -108,9 +108,14 @@ public class HelloWorld {
      <p>Compiling and running <em>HelloWorld</em> will result in the
      following output being printed on the console.</p>
 
+<pre>SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.</pre>
+
+     
 <pre>SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</pre>
+SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further details.</pre>
 
      <p>This warning is printed because no slf4j binding could be
      found on your class path.</p>
@@ -155,7 +160,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 12:     oldT = t;        
 13:     t = temperature;
 14:
-15:     <b>logger.debug("Temperature set to {}. Old temperature was {}.", t, oldT);</b>
+15:     <b>logger.debug("Temperature set to {}. Old value was {}.", t, oldT);</b>
 16:
 17:     if(temperature.intValue() > 50) {
 18:       <b>logger.info("Temperature has risen above 50 degrees.");</b>
@@ -170,12 +175,11 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
       2.0.0 requires Java 8 and introduces a backward-compatible
       fluent logging API. By backward-compatible, we mean that
       existing logging frameworks do not have to be changed in order
-      for the user to benefit from the <a href="#fluent">fluent
-      logging API</a>.
+      for the user to benefit from the fluent logging API</a>.
       </p>
-
+      
       <p>The idea is to build a logging event piece by piece with a <a
-      href="apidocs/org/slf4j/spi/LoggingEventBuilder.html">LoggingEventBuilder</a>
+      href="apidocs/org/slf4j/spi/LoggingEventBuilder.html"><code><b>LoggingEventBuilder</b></code></a>
       and to log once the event is fully built. The
       <code>atTrace()</code>, <code>atDebug()</code>,
       <code>atInfo()</code>, <code>atWarn()</code> and
@@ -188,7 +192,13 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
       preserving the nanosecond level performance of the traditional
       logging interface.</p>
 
-
+      <p>When using the fluent API, you must terminate the invocation
+      chain by calling one of the <code>log()</code> method
+      variants. Forgetting to call any of the <code>log()</code>
+      method variants will result in no logging regardless of the
+      logging level. Fortunately, many IDEs will alert you with a "No
+      return value" compiler warning.</p>
+      
       <p>Here are few usage examples:</p>
 
       <p>The statement</p> 
@@ -207,20 +217,17 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
         int oldT = 16;
 
         // using traditional API
-        logger.debug("Temperature set to {}. Old temperature was {}.", newT, oldT);
-
-        // using fluent API, add arguments one by one and then log message
-        logger.<b>atDebug()</b>.addArgument(newT).addArgument(oldT).log("Temperature set to {}. Old temperature was {}.");
+        logger.debug("Temperature set to {}. Old value was {}.", newT, oldT);
 
         // using fluent API, log message with arguments
-        logger.<b>atDebug()</b>.log("Temperature set to {}. Old temperature was {}.", newT, oldT);
-
-        // using fluent API, add one argument and then log message providing one more argument
-        logger.<b>atDebug()</b>.addArgument(newT).log("Temperature set to {}. Old temperature was {}.", oldT);
+        logger.<b>atDebug()</b>.log("Temperature set to {}. Old value was {}.", newT, oldT);
+        
+        // using fluent API, add arguments one by one and then log message
+        logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(newT).addArgument(oldT).<b>log()</b>;
 
         // using fluent API, add one argument with a Supplier and then log message with one more argument.
         // Assume the method t16() returns 16.
-        logger.<b>atDebug()</b>.addArgument(() -> t16()).log(msg, "Temperature set to {}. Old temperature was {}.", oldT);
+        logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(() -> t16()).addArgument(oldT).<b>log()</b>;
       </pre>
 
       <p>The fluent logging API allows the specification of many
@@ -246,7 +253,7 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
         logger.debug("oldT={} newT={} Temperature changed.", newT, oldT);
 
         // using fluent API
-        logger.atDebug().<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log("Temperature changed.");          
+        logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();          
       </pre>
 
       <p>The key-value pair variant of the API stores the key-value

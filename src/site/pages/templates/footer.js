@@ -15,7 +15,8 @@ document.write('  <td valign="top" align="left">Copyright &copy; 2004-2022  <a h
 AAT = '@'
 DOOTT = '.'
 document.write('<td align="right" >')
-document.write('Logo created by <a href="https://www.facebook.com/Lise-Martins-Graphic-Designer-102159252581148/">Lisette Martins</a>');
+document.write('Logo created by <a href="' + prefix +'count/lisette.html">Lisette Martins</a>');
+//document.write('Logo created by <a href="https://www.facebook.com/Lise-Martins-Graphic-Designer-102159252581148/">Lisette Martins</a>');
 document.write('</td>')
 document.write('</tr>')
 

@@ -42,6 +42,28 @@
 
    <hr noshade="noshade" size="1"/>
    
+   <h3>2022-09-14 - Release of SLF4J 2.0.1</h3>
+
+   <p>&bull; The <code>Logger.makeLoggingEventBuilder</code> method
+   semantics has changed so that overriding implementations should now
+   always build a new <code>LoggingEventBuilder</code> instance as
+   appropraiate for the implementation, i.e the logging backend. For
+   more details see <a
+   href="https://jira.qos.ch/browse/SLF4J-560">SLF4J-560</a>.</p>
+
+   <p>&bull; Deprecated unused <code>LoggerFactoryBinder</code> and
+   <code>MarkerFactoryBinder</code> classes. This issue was raised in
+   <a href="https://jira.qos.ch/browse/SLF4J-555">SLF4J-555</a> by
+   Witalij Berdinskich who provided the relevant patch.  </p>
+
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.1 from the source code repository
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
+   under Linux Debian 11.2.</p>
+
+   
+   <hr noshade="noshade" size="1"/>
+   
    <h3>2022-08-20 - Release of SLF4J 2.0.0</h3>
 
    <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and

@@ -252,7 +252,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
         int oldT = 16;
 
         // using classical API
-        logger.debug("oldT={} newT={} Temperature changed.", newT, oldT);
+        logger.debug("oldT={} newT={} Temperature changed.", oldT, newT);
 
         // using fluent API
         logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();          

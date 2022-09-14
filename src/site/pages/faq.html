@@ -673,13 +673,15 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       is not exactly exciting nor endearing.) 
       </p>
 
-      <p>The <a
-      href="http://velocity.apache.org/engine/devel/developer-guide.html#Configuring_Logging">logging
-      strategy adopted by the Velocity project</a> is a good example
-      of the "custom logging abstraction" anti-pattern. By adopting an
-      independent logging abstraction strategy, Velocity developers
-      have made life harder for themselves, but more importantly, they
-      made life harder for their users.
+      <p>The logging strategy adopted by the <a
+      href="https://velocity.apache.org/">Velocity project</a> is a
+      good example of the "custom logging abstraction"
+      anti-pattern. By adopting an independent logging abstraction
+      strategy, Velocity developers have made life harder for
+      themselves, but more importantly, they made life harder for
+      their users. Note that Velocity has <a
+      href="https://velocity.apache.org/engine/devel/developer-guide.html#logging">since
+      adopted slf4j</a>.
       </p>
 
       <p>Some projects try to detect the presence of SLF4J on the
@@ -1712,7 +1714,7 @@ try {
       </p>          
       
       <p>The Apache Commons wiki contains an <a
-      href="http://wiki.apache.org/commons/Logging/StaticLog">informative
+      href="https://cwiki.apache.org/confluence/display/COMMONS/Logging+StaticLog">informative
       article</a> covering the same question.</p>
       
       <p><b>Logger serialization</b></p>

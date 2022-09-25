@@ -1,7 +1,13 @@
 # slf4j-site
-slf4j-site
 
+This repository contains the contents of [https://www.slf4j.org](https://www.slf4j.org) site
 
-The site can be built by invoking the command
+# Build instructions
 
-mvn install
+The site is copied more than built.
+
+The command for "building" the site contents is:
+
+`mvn install`
+
+This copies html files from `src/site/pages/` folder to `target/site` folder, performing variable replacements along the way.

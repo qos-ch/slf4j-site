@@ -27,6 +27,7 @@
       <div id="content">
 
 
+
     <h2>SLF4J user manual</h2>
     
     <p>The Simple Logging Facade for Java (SLF4J) serves as a simple
@@ -37,6 +38,14 @@
     the addition of only a single mandatory dependency, namely
     <em>slf4j-api-${latest.stable.version}.jar</em>.</p>
 
+    <h3 class="doAnchor" name="where_coordinates">Where are the Maven coordinates?</h3>
+
+    <p>At this time if you are only interested in obtaining the
+    coordinates for using SLF4J API with a logging backend, you can <a
+    href="#projectDep">jump to the relevant section</a>.</p>
+
+    <h3 class="doAnchor" name="salient_changes">Salient historical changes</h3>
+    
     <p><span class="label">since 1.6.0</span> If no binding is found on the
     class path, then SLF4J will default to a no-operation
     implementation.
@@ -294,11 +303,13 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 
         <dt><em>slf4j-reload4j-${latest.stable.version}.jar</em>
         </dt>
-        <dd><span class="label notice">since 1.7.33</span> Binding/provider for
-        <a href="http://reload4j.qos.ch">reload4j</a>
-        framework. Reload4j is a drop-in replacement for log4j version
-        1.2.7. You also need to place <em>reload4j.jar</em> on your
-        class path.</p>
+        <dd>
+          <p><span class="label notice">since 1.7.33</span>
+          Binding/provider for <a
+          href="http://reload4j.qos.ch">reload4j</a>
+          framework. Reload4j is a drop-in replacement for log4j
+          version 1.2.7. You also need to place <em>reload4j.jar</em>
+          on your class path.</p>
 
        
         <dt><em>slf4j-jdk14-${latest.stable.version}.jar</em> </dt>
@@ -326,7 +337,14 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
         JCL.<p/>
         </dd>     
         
-        <dt><em>logback-classic-${logback.version}.jar (requires logback-core-${logback.version}.jar)</em></dt>
+        <dt>
+          <em>logback-classic-${logback-jakarta.version}.jar for use with Jakarta EE, requires logback-core-${logback-jakarta.version}.jar</em>
+          <br/>
+          or
+          <br/>
+          <em>logback-classic-${logback-javax.version}.jar for use with Javax EE, requires logback-core-${logback-javax.version}.jar</em>
+
+        </dt>
 
         <dd><span class="label notice">Native implementation</span> There are also
         SLF4J bindings/providers external to the SLF4J project, e.g. <a
@@ -451,32 +469,84 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       declaration.
       </p>
 
-      <p><span class="label notice">logback-classic</span> If you wish
-      to use logback-classic as the underlying logging framework, all
-      you need to do is to declare "ch.qos.logback:logback-classic" as
-      a dependency in your <em>pom.xml</em> file as shown below. In
-      addition to <em>logback-classic-${logback.version}.jar</em>,
-      this will pull in
-      <em>slf4j-api-${latest.stable.version}.jar</em> as well as
-      <em>logback-core-${logback.version}.jar</em> into your
-      project. Note that explicitly declaring a dependency on
-      <em>logback-core-${logback.version}</em> or
-      <em>slf4j-api-${latest.stable.version}.jar</em> is not wrong and
-      may be necessary to impose the correct version of said artifacts
-      by virtue of Maven's "nearest definition" dependency mediation
+      <!-- ========================================================= -->
+     
+      <p><span class="label notice">SLF4J API</span> SLF4J API ships
+      within the "org.slf4j:slf4j-api" artifact. You can explicitly
+      declare a dependency to it your in your <em>pom.xml</em> file as
+      shown below.  Note that most logging implementations will
+      automatically pull-in slf4j-api as a dependency. However, it is
+      often a good idea to declare an explicit dependency to slf4j-api
+      in order to fix the correct version of slf4j-api your project by
+      virtue of  of Maven's "nearest definition" dependency mediation
       rule.
+      </p>
+
+
+<pre class="prettyprint source">&lt;dependency> 
+  &lt;groupId>org.slf4j&lt;/groupId>
+  &lt;artifactId>slf4j-api&lt;/artifactId>
+  &lt;version>${latest.stable.version}&lt;/version>
+&lt;/dependency></pre>
+
+      <!-- ========================================================= -->
+     <p><span class="label notice">logback-classic</span> <span
+     class="label notice big">1.3.x</span> <span class="label">(Javax
+     EE)</span> If you wish to use logback-classic for Javax EE as the
+     underlying logging framework, all you need to do is to declare
+     "ch.qos.logback:logback-classic" as a dependency in your
+     <em>pom.xml</em> file as shown below. In addition to
+     <em>logback-classic-${logback-javax.version}.jar</em>, this will
+     pull in <em>slf4j-api-${latest.stable.version}.jar</em> as well
+     as <em>logback-core-${logback-javax.version}.jar</em> into your
+     project. Note that explicitly declaring a dependency on
+     <em>logback-core-${logback-javax.version}</em> or
+     <em>slf4j-api-${latest.stable.version}.jar</em> is not wrong and
+     may be necessary to impose the correct version of said artifacts
+     by virtue of Maven's "nearest definition" dependency mediation
+     rule.
       </p>
 
 <pre class="prettyprint source">&lt;dependency> 
   &lt;groupId>ch.qos.logback&lt;/groupId>
   &lt;artifactId>logback-classic&lt;/artifactId>
-  &lt;version>${logback.version}&lt;/version>
+  &lt;version>${logback-javax.version}&lt;/version>
 &lt;/dependency></pre>
 
      <p/>
 
      <!-- ================================== -->
-     <p><span class="label notice">reload4j</span> If you wish to use
+
+     <p><span class="label notice">logback-classic</span>
+     <span class="label notice big">1.4.x</span>
+     <span class="label">(Jakarta EE)</span>     
+
+      If you wish to use logback-classic (for Jakaerta EE)
+      as the underlying logging framework, all you need to do is to
+      declare "ch.qos.logback:logback-classic" as a dependency in your
+      <em>pom.xml</em> file as shown below. In addition to
+      <em>logback-classic-${logback-jakarta.version}.jar</em>, this
+      will pull in <em>slf4j-api-${latest.stable.version}.jar</em> as
+      well as <em>logback-core-${logback-jakarta.version}.jar</em>
+      into your project. Note that <em>explicitly</em> declaring a
+      dependency on <em>logback-core-${logback-jakarta.version}</em>
+      or <em>slf4j-api-${latest.stable.version}.jar</em> is not wrong
+      and may be necessary to impose the correct version of said
+      artifacts by virtue of Maven's "nearest definition" dependency
+      mediation rule.
+      </p>
+
+<pre class="prettyprint source">&lt;dependency> 
+  &lt;groupId>ch.qos.logback&lt;/groupId>
+  &lt;artifactId>logback-classic&lt;/artifactId>
+  &lt;version>${logback-jakarta.version}&lt;/version>
+&lt;/dependency></pre>
+
+     <p/>
+
+     <!-- ================================== -->
+
+      <p><span class="label notice">reload4j</span> If you wish to use
      reload4j as the underlying logging framework, all you need to do
      is to declare "org.slf4j:slf4j-reload4j" as a dependency in your
      <em>pom.xml</em> file as shown below. In addition to
@@ -499,10 +569,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 
      <!-- ================================== -->     
 
-     <p><span class="label notice">log4j</span> As of version 1.7.35,
-     declaring a dependency on <code>org.slf4j:slf4j-log4j12</code>
-     redirects to <code>org.slf4j:slf4j-reload4j</code> by virtue of
-     Maven &lt;relocation&gt; directive. </p>
+     <p><span class="label notice">log4j 1.2.x</span> As of SLF4J
+     version 1.7.36, declaring a dependency on
+     <code>org.slf4j:slf4j-log4j12</code> redirects to
+     <code>org.slf4j:slf4j-reload4j</code> by virtue of Maven
+     &lt;relocation&gt; directive. </p>
 
 <pre class="prettyprint source">&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
@@ -533,7 +604,28 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
   &lt;version>${latest.stable.version}&lt;/version>
 &lt;/dependency></pre>
 
+     <!-- ================================== -->
+     
+      <p><span class="label notice">SLF4J Simple</span> If you
+      wish to use org.slf4j.simple as the underlying logging
+      implementation, all you need to do is to declare
+      "org.slf4j:slf4j-simple" as a dependency in your <em>pom.xml</em>
+      file as shown below. In addition to
+      <em>slf4j-simple-${latest.stable.version}.jar</em>, this will
+      pull in <em>slf4j-api-${latest.stable.version}.jar</em> into
+      your project.  Note that explicitly declaring a dependency on
+      <em>slf4j-api-${latest.stable.version}.jar</em> is not wrong and
+      may be necessary to impose the correct version of said artifact
+      by virtue of Maven's "nearest definition" dependency mediation
+      rule.</p>
 
+<pre class="prettyprint source">&lt;dependency> 
+  &lt;groupId>org.slf4j&lt;/groupId>
+  &lt;artifactId>slf4j-simple&lt;/artifactId>
+  &lt;version>${latest.stable.version}&lt;/version>
+&lt;/dependency></pre>
+
+  <!-- =========================================================== -->
    
       <h3 class="doAnchor" name="compatibility">Binary
       compatibility</h3>

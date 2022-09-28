@@ -45,9 +45,9 @@
    
    <h3 class="doAnchor" name="2.0.3">2022-09-28 - Release of SLF4J 2.0.3</h3>
 
-   <p>&bull; Fixed bug in the way the fluent API omitted populating the
-   timestamp field in
-   <code>Reload4jLoggerAdapter</code>.  This issue was reported
+   <p>&bull; Fixed a bug in <code>Reload4jLoggerAdapter</code> when
+   used in conjunction with the fluent API, the timestamp would not be
+   correctly set.  This issue was reported
    in <a href="https://jira.qos.ch/browse/SLF4J-546">SLF4J-546</a> by
    Joseph Walton.</p>
 

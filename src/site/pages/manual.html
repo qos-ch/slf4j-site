@@ -473,7 +473,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      
       <p><span class="label notice">SLF4J API</span> SLF4J API ships
       within the "org.slf4j:slf4j-api" artifact. You can explicitly
-      declare a dependency to it your in your <em>pom.xml</em> file as
+      declare a dependency to it in your <em>pom.xml</em> file as
       shown below.  Note that most logging implementations will
       automatically pull-in slf4j-api as a dependency. However, it is
       often a good idea to declare an explicit dependency to slf4j-api
@@ -492,8 +492,9 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       <!-- ========================================================= -->
      <p><span class="label notice">logback-classic</span> <span
      class="label notice big">1.3.x</span> <span class="label">(Javax
-     EE)</span> If you wish to use logback-classic for Javax EE as the
-     underlying logging framework, all you need to do is to declare
+     EE)</span> If you wish to use logback-classic for <span
+     class="green big">Javax EE</span> as the underlying logging
+     framework, all you need to do is to declare
      "ch.qos.logback:logback-classic" as a dependency in your
      <em>pom.xml</em> file as shown below. In addition to
      <em>logback-classic-${logback-javax.version}.jar</em>, this will
@@ -521,9 +522,10 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      <span class="label notice big">1.4.x</span>
      <span class="label">(Jakarta EE)</span>     
 
-      If you wish to use logback-classic (for Jakaerta EE)
-      as the underlying logging framework, all you need to do is to
-      declare "ch.qos.logback:logback-classic" as a dependency in your
+      If you wish to use logback-classic for <span class="big
+      green">Jakarta EE</span> as the underlying logging framework,
+      all you need to do is to declare
+      "ch.qos.logback:logback-classic" as a dependency in your
       <em>pom.xml</em> file as shown below. In addition to
       <em>logback-classic-${logback-jakarta.version}.jar</em>, this
       will pull in <em>slf4j-api-${latest.stable.version}.jar</em> as

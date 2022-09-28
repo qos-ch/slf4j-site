@@ -45,6 +45,28 @@
    
    <h3 class="doAnchor" name="2.0.3">2022-09-28 - Release of SLF4J 2.0.3</h3>
 
+   <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
+   adds a backward-compatible <a
+   href="manual.html#fluent">fluent logging api</a>.
+   <br/>   <br/>
+   Moreover, SLF4J has been modularized per <a
+   href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
+   specification. The resulting internal changes are <a class="big
+   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
+   page.
+   </p>
+
+   <p>SLF4J 2.0.x series requires Java 8. It builds upon the 1.8.x
+   series and adds a backward-compatible <a
+   href="manual.html#fluent">fluent logging api</a>.  By
+   backward-compatible, we mean that existing logging frameworks do
+   not have to be changed for the user to benefit from the fluent
+   logging API. However, existing frameworks must migrate to the
+   <code>ServiceLoader</code> mechanism.  The resulting internal
+   changes are <a class="big bold"
+   href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
+   </p>
+
    <p>&bull; Fixed a bug in <code>Reload4jLoggerAdapter</code> when
    used in conjunction with the fluent API, the timestamp would not be
    correctly set.  This issue was reported
@@ -98,33 +120,9 @@
    
    <h3 class="doAnchor" name="2.0.0">2022-08-20 - Release of SLF4J 2.0.0</h3>
 
-   <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
-   adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.
-   <br/>   <br/>
-   Moreover, SLF4J has been modularized per <a
-   href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
-   specification. The resulting internal changes are <a class="big
-   bold" href="faq.html#changesInVersion200">detailed</a> in the FAQ
-   page.
-   </p>
-
-   <p>SLF4J 2.0.x series requires Java 8. It builds upon the 1.8.x
-   series and adds a backward-compatible <a
-   href="manual.html#fluent">fluent logging api</a>.  By
-   backward-compatible, we mean that existing logging frameworks do
-   not have to be changed for the user to benefit from the fluent
-   logging API. However, existing frameworks must migrate to the
-   <code>ServiceLoader</code> mechanism.  The resulting internal
-   changes are <a class="big bold"
-   href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
-   </p>
-
    
    <p>&bull; Except minor javadoc changes, this release is identical to
    2.0.0-beta1 released earlier this month.</p>
-
-
    
    <p>&bull; The binary of this version can be reproduced by checking
    out the tag v_2.0.0 from the source code repository

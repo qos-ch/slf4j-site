@@ -10,7 +10,7 @@ The command for "building" the site contents is:
 
     mvn install
 
-This copies html files from `src/site/pages/` folder to `target/site` folder, performing variable replacements along the way.
+This copies html files from `src/site/pages/` folder to `target/site/` folder, performing variable replacements along the way.
 
-The local version of the website can then 'be navigated at
+The local version of the website can then be navigated at
 [target/site/index.html](target/site/index.html)

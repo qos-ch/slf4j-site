@@ -24,8 +24,10 @@ document.write('    <a href="api/org/slf4j/jul/JDK14LoggerAdapter.html">JUL</a>'
 document.write('    <a href="api/org/slf4j/log4j12/Log4jLoggerAdapter.html">Log4j</a>');
 document.write('    <a href="api/org/slf4j/reload4j/Reload4jLoggerAdapter.html">reload4j</a>');
 document.write('    <a href="api/org/slf4j/simple/SimpleLogger.html">Simple</a>');
-document.write('    <p class="menu_header">Other backends</p>');
+document.write('    <p class="menu_header">Others</p>');
 document.write('    <a href="https://tinylog.org/v2/download/#slf4j">tinylog</a>');
+document.write('    <a href="https://logging.apache.org/log4j/2.x/manual/api-separation.html#Using_Log4j2_as_an_SLF4J_Implementation">Log4j 2</a>');
+document.write('    <a href="https://github.com/jboss-logging/jboss-logging#supported-log-managers">JBoss Logging</a>');
 document.write('  </p>');
 
 

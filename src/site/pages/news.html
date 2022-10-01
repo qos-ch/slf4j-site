@@ -8,12 +8,11 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/site.css" />
     <link rel="stylesheet" type="text/css" href="css/prettify.css" />
   </head>
- <body onload="prettyPrint(); decorate();">
+ <body onload="prettyPrint()">
     <script type="text/javascript">prefix='';</script>
     <script type="text/javascript" src="js/prettify.js"></script>
     <script type="text/javascript" src="js/jquery-min.js"></script>
-    <script type="text/javascript" src="js/decorator.js"></script>
-    
+
     <div id="container">
 
       <script src="templates/header.js" type="text/javascript"></script>
@@ -43,7 +42,29 @@
 
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.3">2022-09-28 - Release of SLF4J 2.0.3</h3>
+   <h3>2022-09-14 - Release of SLF4J 2.0.1</h3>
+
+   <p>&bull; The <code>Logger.makeLoggingEventBuilder</code> method
+   semantics has changed so that overriding implementations should now
+   always build a new <code>LoggingEventBuilder</code> instance as
+   appropraiate for the implementation, i.e the logging backend. For
+   more details see <a
+   href="https://jira.qos.ch/browse/SLF4J-560">SLF4J-560</a>.</p>
+
+   <p>&bull; Deprecated unused <code>LoggerFactoryBinder</code> and
+   <code>MarkerFactoryBinder</code> classes. This issue was raised in
+   <a href="https://jira.qos.ch/browse/SLF4J-555">SLF4J-555</a> by
+   Witalij Berdinskich who provided the relevant patch.  </p>
+
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.1 from the source code repository
+   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
+   under Linux Debian 11.2.</p>
+
+   
+   <hr noshade="noshade" size="1"/>
+   
+   <h3>2022-08-20 - Release of SLF4J 2.0.0</h3>
 
    <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
    adds a backward-compatible <a
@@ -67,62 +88,11 @@
    href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
    </p>
 
-   <p>&bull; Fixed a bug in <code>Reload4jLoggerAdapter</code> when
-   used in conjunction with the fluent API, the timestamp would not be
-   correctly set.  This issue was reported
-   in <a href="https://jira.qos.ch/browse/SLF4J-546">SLF4J-546</a> by
-   Joseph Walton.</p>
-
-   <p>&bull; The binary of this version can be reproduced by checking
-   out the tag v_2.0.3 from the source code repository
-   (GitHub). Release built using Java "19" 2022-09-20 build 19+36-2038
-   under Linux Debian 11.2.</p>
-
-   
-   <hr noshade="noshade" size="1"/>
-   
-   <h3 class="doAnchor" name="2.0.2">2022-09-20 - Release of SLF4J 2.0.2</h3>
-
-   <p>&bull; Fixed bug in the <code>setContextMap()</code> method
-   of <code>Reload4jMDCAdapter</code>.  This issue was reported
-   in <a href="https://jira.qos.ch/browse/SLF4J-563">SLF4J-563</a> by
-   Michael Wartes.</p>
-
-   <p>&bull; The binary of this version can be reproduced by checking
-   out the tag v_2.0.2 from the source code repository
-   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
-   under Linux Debian 11.2.</p>
-
-   
-   <hr noshade="noshade" size="1"/>
-   
-   <h3 class="doAnchor" name="2.0.1">2022-09-14 - Release of SLF4J 2.0.1</h3>
-
-   <p>&bull; The <code>Logger.makeLoggingEventBuilder</code> method
-   semantics has changed so that overriding implementations should now
-   always build a new <code>LoggingEventBuilder</code> instance as
-   appropraiate for the implementation, i.e the logging backend. For
-   more details see <a
-   href="https://jira.qos.ch/browse/SLF4J-560">SLF4J-560</a>.</p>
-
-   <p>&bull; Deprecated unused <code>LoggerFactoryBinder</code> and
-   <code>MarkerFactoryBinder</code> classes. This issue was raised in
-   <a href="https://jira.qos.ch/browse/SLF4J-555">SLF4J-555</a> by
-   Witalij Berdinskich who provided the relevant patch.  </p>
-
-   <p>&bull; The binary of this version can be reproduced by checking
-   out the tag v_2.0.1 from the source code repository
-   (GitHub). Release built using Java "18" 2022-03-22 build 18+36-2087
-   under Linux Debian 11.2.</p>
-
-   
-   <hr noshade="noshade" size="1"/>
-   
-   <h3 class="doAnchor" name="2.0.0">2022-08-20 - Release of SLF4J 2.0.0</h3>
-
    
    <p>&bull; Except minor javadoc changes, this release is identical to
    2.0.0-beta1 released earlier this month.</p>
+
+
    
    <p>&bull; The binary of this version can be reproduced by checking
    out the tag v_2.0.0 from the source code repository
@@ -132,7 +102,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.0-beta1">2022-08-06 - Release of SLF4J 2.0.0-beta1</h3>
+   <h3>2022-08-06 - Release of SLF4J 2.0.0-beta1</h3>
 
    <p>&bull; Methods in the <code>LoggingEventBuilder</code> interface
    returning an instance of <code>LoggingEventBuilder</code> are now
@@ -160,7 +130,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.0-beta0">2022-08-05 - Release of SLF4J 2.0.0-beta0</h3>
+   <h3>2022-08-05 - Release of SLF4J 2.0.0-beta0</h3>
 
    <p>&bull; After
    a <a href="https://github.com/qos-ch/slf4j/discussions/280">long
@@ -177,7 +147,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="2.0.0-alpha7">2022-03-17 - Release of SLF4J 2.0.0-alpha7</h3>
+   <h3>2022-03-17 - Release of SLF4J 2.0.0-alpha7</h3>
 
    <p>&bull; Mirroring the change in the 1.7.x series, in this release
    also the "slf4j-log4j12" artifact automatically instructs Maven to
@@ -216,7 +186,7 @@
 
    
    
-   <h3 class="doAnchor" name="1.7.36">2022-02-08 - Release of SLF4J 1.7.36</h3>
+   <h3>2022-02-08 - Release of SLF4J 1.7.36</h3>
 
    <p>Correct corrupt "Export-Package" declaration in
    <em>MANIFEST.MF</em> in <em>log4j-over-slf4j</em> module. This
@@ -233,7 +203,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-    <h3 class="doAnchor" name="1.7.35">2022-01-25 - Release of SLF4J 1.7.35</h3>
+    <h3>2022-01-25 - Release of SLF4J 1.7.35</h3>
 
     <p>&bull; In this release, the "slf4j-log4j12" artifact
     automatically instructs Maven to use the "slf4j-reload4j" artifact
@@ -255,13 +225,13 @@
     Alexander Veit.
     </p>
     
-    <h3 class="doAnchor" name="1.7.34">2022-01-25 - Release of SLF4J 1.7.34</h3>
+    <h3>2022-01-25 - Release of SLF4J 1.7.34</h3>
 
     <p>The relocation element in slf4j-log4j12 had incorrect
     version number. Version 1.7.34 should not be used.
     </p>
     
-   <h3 class="doAnchor" name="2.0.0-alpha6">2022-01-13 - Release of SLF4J 2.0.0-alpha6</h3>
+   <h3>2022-01-13 - Release of SLF4J 2.0.0-alpha6</h3>
 
    <p>&bull; SLF4J now ships with the <em>slf4j-reload4j</em> module
    delegating to the reload4j backend. <a
@@ -276,7 +246,7 @@
 
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="1.7.33">2022-01-13 - Release of SLF4J 1.7.33</h3>
+   <h3>2022-01-13 - Release of SLF4J 1.7.33</h3>
 
    <p>&bull; SLF4J now ships with the <em>slf4j-reload4j</em> module
    delegating to the reload4j backend. <a
@@ -292,7 +262,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.0-alpha5">30th of August, 2021 - Release of SLF4J 2.0.0-alpha5</h3>
+   <h3>30th of August, 2021 - Release of SLF4J 2.0.0-alpha5</h3>
 
    <p>&bull; The
    <em>META-INF/services/java.lang.System&dollar;LoggerFinder</em>
@@ -304,7 +274,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.0-alpha4">12th of August, 2021 - Release of SLF4J 2.0.0-alpha4</h3>
+   <h3>12th of August, 2021 - Release of SLF4J 2.0.0-alpha4</h3>
 
    <p>&bull; Added support for the <a
    href="https://openjdk.java.net/jeps/264">Java Platform Logging API
@@ -315,7 +285,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.0-alpha3">10th of August, 2021 - Release of SLF4J 2.0.0-alpha3</h3>
+   <h3>10th of August, 2021 - Release of SLF4J 2.0.0-alpha3</h3>
   
    <p>In addition to fixes imported from the 1.7 branch, such as <a
    href="https://jira.qos.ch/browse/SLF4J-515">SLF4J-515</a>, this
@@ -345,7 +315,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.32">20th of July, 2021 - Release of SLF4J 1.7.32</h3>
+   <h3>20th of July, 2021 - Release of SLF4J 1.7.32</h3>
 
    <p>In the slf4j-simple module, <code>SimpleLogger</code> now caters
    for concurrent access. This fixes <a
@@ -355,7 +325,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="2.0.0-alpha2">2nd of July, 2021 - Release of SLF4J 2.0.0-alpha2</h3>
+   <h3>2nd of July, 2021 - Release of SLF4J 2.0.0-alpha2</h3>
         
    <p>&bull; Fixed important bug in the fluent API. The
    <code>LoggingEventBuilder.addArgument(Supplier)</code> method now
@@ -398,7 +368,7 @@
    
    
    
-   <h3 class="doAnchor" name="1.7.31">18th of June, 2021 - Release of SLF4J 1.7.31</h3>
+   <h3>18th of June, 2021 - Release of SLF4J 1.7.31</h3>
 
    <p>In the jcl-over-slf4j module avoid <code>Object</code> to
    <code>String</code> conversion. This issue was reported in <a
@@ -413,7 +383,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.30">16th of December, 2019 - Release of SLF4J 1.7.30</h3>
+   <h3>16th of December, 2019 - Release of SLF4J 1.7.30</h3>
 
    <p>Fixed a memory leak in case of no provided binding and
    multithreaded initialization as described in <a
@@ -422,7 +392,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.29">31st of October, 2019 - Release of SLF4J 1.7.29</h3>
+   <h3>31st of October, 2019 - Release of SLF4J 1.7.29</h3>
 
    <p>In the pom file for <em>jcl-over-slf4j</em> module, the Apache
    license is now explicitly mentioned. In previous versions, the
@@ -431,7 +401,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="2.0.0-alpha1">October 1st, 2019  - Release of SLF4J 2.0.0-alpha1</h3>
+   <h3>October 1st, 2019  - Release of SLF4J 2.0.0-alpha1</h3>
   
    <p>&bull; Refactored the fluent-api in
    <code>org.slf4j.Logger</code> interface to ease the work required
@@ -457,7 +427,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.28">10th of August, 2019 - Release of SLF4J 1.7.28</h3>
+   <h3>10th of August, 2019 - Release of SLF4J 1.7.28</h3>
 
    <p>&bull; Added <code>Automatic-Module-Name</code> in
    <em>MANIFEST.MF</em> files in various SLF4J artifacts. This fixes
@@ -507,7 +477,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.27">6th of August, 2019 - Release of SLF4J 1.7.27</h3>
+   <h3>6th of August, 2019 - Release of SLF4J 1.7.27</h3>
 
 
    <p>This version had the incorrect "Automatic-Module-Name" for the
@@ -517,7 +487,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="2.0.0-alpha0">13th of June, 2019  - Release of SLF4J 2.0.0-alpha0</h3>
+   <h3>13th of June, 2019  - Release of SLF4J 2.0.0-alpha0</h3>
 
    <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
    adds a backward-compatible <a
@@ -534,7 +504,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.8.0-beta5">2019 - Release of SLF4J 1.8.0-beta5</h3>
+   <h3>2019 - Release of SLF4J 1.8.0-beta5</h3>
 
    <p>Fixed ignored Throwable issue in log4j-over-slf4j as reported in
    <a href="https://jira.qos.ch/browse/SLF4J-233">SLF4J-233</a> by
@@ -560,7 +530,7 @@
    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="1.8.0-beta4">February 19th, 2019 - Release of SLF4J 1.8.0-beta4</h3>
+   <h3>February 19th, 2019 - Release of SLF4J 1.8.0-beta4</h3>
 
    <p class="highlight">In the 1.8.x series, SLF4J has been
    modularized per <a
@@ -618,7 +588,7 @@
    href="https://jira.qos.ch/browse/SLF4J-454">SLF4J-454</a>.
 
    
-   <h3 class="doAnchor" name="1.7.26">February 16th, 2019 - Release of SLF4J 1.7.26</h3>
+   <h3>February 16th, 2019 - Release of SLF4J 1.7.26</h3>
 
    <p>Due to popular demand in relation to <a
    href="https://nvd.nist.gov/vuln/detail/CVE-2018-8088">CVE-2018-8088</a>,
@@ -635,7 +605,7 @@
    
    <hr noshade="noshade" size="1"/> 
    
-   <h3 class="doAnchor" name="1.8.0-beta2">21st of March, 2018 - Release of SLF4J 1.8.0-beta2</h3>
+   <h3>21st of March, 2018 - Release of SLF4J 1.8.0-beta2</h3>
    
 
    <p>Automatic module name for the artifact <em>jul-to-slf4j.jar</em>
@@ -665,7 +635,7 @@
    and <a href="https://jira.qos.ch/browse/SLF4J-431">SLF4J-431</a>.</p>
   
    
-   <h3 class="doAnchor" name="1.8.0-beta1">January 30th, 2018 - Release of SLF4J 1.8.0-beta1</h3>
+   <h3>January 30th, 2018 - Release of SLF4J 1.8.0-beta1</h3>
    
    <p>Fix Travis build issues as reported in <a
    href="https://jira.qos.ch/browse/SLF4J-427">SLF4J-427</a> by 
@@ -686,7 +656,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.8.0-beta0">October 20th, 2017 - Release of SLF4J 1.8.0-beta0</h3>
+   <h3>October 20th, 2017 - Release of SLF4J 1.8.0-beta0</h3>
 
    <p>Given that the same package name in different modules is a
    showstopper in Java 9, the <code>org.slf4j.impl</code> package has
@@ -701,7 +671,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.8.0-alpha2">April 25th, 2017 - Release of SLF4J 1.8.0-alpha2</h3>
+   <h3>April 25th, 2017 - Release of SLF4J 1.8.0-alpha2</h3>
 
    <p>The JPMS module names for <code>log4j-over-slf4j</code> and
    <code>jcl-over-slf4j</code> are now based on the names of the
@@ -722,7 +692,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.8.0-alpha1">April 13th, 2017 - Release of SLF4J 1.8.0-alpha1</h3>
+   <h3>April 13th, 2017 - Release of SLF4J 1.8.0-alpha1</h3>
 
    <p>Removed spurious System.out.println in the slf4j-log4j12
    module. See <a
@@ -731,7 +701,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.8.0-alpha0">April 7th, 2017 - Release of SLF4J 1.8.0-alpha0</h3>
+   <h3>April 7th, 2017 - Release of SLF4J 1.8.0-alpha0</h3>
 
    <p>SLF4J has been modularized per <a
    href="http://openjdk.java.net/projects/jigsaw/spec/">JPMS/Jigsaw</a>
@@ -745,7 +715,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.25">March 16th, 2017 - Release of SLF4J 1.7.25</h3>
+   <h3>March 16th, 2017 - Release of SLF4J 1.7.25</h3>
 
    <p>In slf4j-simple module, added a configuration option to
    enable/disable caching of the System.out/err target. This
@@ -766,7 +736,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.24">February 23rd, 2017 - Release of SLF4J 1.7.24</h3>
+   <h3>February 23rd, 2017 - Release of SLF4J 1.7.24</h3>
 
    <p>In its MANIFEST.MF file, the jcl-over-slf4j module now declares
    exporting <code>org.apache.commons.logging</code> version "1.2"
@@ -790,7 +760,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.23">February 15th, 2017 - Release of SLF4J 1.7.23</h3>
+   <h3>February 15th, 2017 - Release of SLF4J 1.7.23</h3>
 
    <p class="highlight">Update to SLF4J version 1.7.23 to enable
    slf4j-log4j12 to run under Java 9.</p>
@@ -818,7 +788,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.22">December 13th, 2016 - Release of SLF4J 1.7.22</h3>
+   <h3>December 13th, 2016 - Release of SLF4J 1.7.22</h3>
 
    <p>Add support for OFF level in <code>SimpleLogger</code>. This
    feature was requested in <a
@@ -834,7 +804,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.21">April 4th, 2016 - Release of SLF4J 1.7.21</h3>
+   <h3>April 4th, 2016 - Release of SLF4J 1.7.21</h3>
 
    <p>Fixed a memory leak due to a race-condition occurring during
    SLF4J initialization. In that case, some
@@ -852,7 +822,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.20">March 29th, 2016 - Release of SLF4J 1.7.20</h3>
+   <h3>March 29th, 2016 - Release of SLF4J 1.7.20</h3>
 
    <p class="red">Releases 1.7.19 and 1.7.20 suffer from a <a
    href="http://jira.qos.ch/browse/SLF4J-364">memory leak</a>. Please
@@ -868,7 +838,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.19">March 14th, 2016 - Release of SLF4J 1.7.19</h3>
+   <h3>March 14th, 2016 - Release of SLF4J 1.7.19</h3>
 
    <p class="red">Releases 1.7.19 and 1.7.20 suffer from a <a
    href="http://jira.qos.ch/browse/SLF4J-364">memory leak</a>. Please
@@ -890,7 +860,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.18">26th of February, 2016 - Release of SLF4J 1.7.18</h3>
+   <h3>26th of February, 2016 - Release of SLF4J 1.7.18</h3>
 
    <p>Initialization of the slf4j-simple module is now thread safe
    fixing <a href="http://jira.qos.ch/browse/SLF4J-356">SLF4J-356</a>.
@@ -904,7 +874,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.17">19th of February, 2016 - Release of SLF4J 1.7.17</h3>
+   <h3>19th of February, 2016 - Release of SLF4J 1.7.17</h3>
 
    <p>When running under Android, skip binding ambiguity check during
    initialization for better performance. The fix introduced in version 1.7.14
@@ -913,7 +883,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.16">11th of February, 2016 - Release of SLF4J 1.7.16</h3>
+   <h3>11th of February, 2016 - Release of SLF4J 1.7.16</h3>
 
    <p>The <code>MANIFEST.MF</code> file in slf4j-api.jar module was
    missing an export statement for the <em>org.slf4j.event</em>
@@ -923,7 +893,7 @@
    
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.15">9th of February, 2016 - Release of SLF4J 1.7.15</h3>
+   <h3>9th of February, 2016 - Release of SLF4J 1.7.15</h3>
 
    <p>In previous versions of SLF4J, if the application was already
    multithreaded at the time the first SLF4J logger was created, logs
@@ -936,7 +906,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.14">24th of January, 2016 - Release of SLF4J 1.7.14</h3>
+   <h3>24th of January, 2016 - Release of SLF4J 1.7.14</h3>
 
    <p>The assignment of the INITIALIZATION_STATE variable in
    <code>LoggerFactory</code> is now guaranteed to be consistent for
@@ -988,7 +958,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.13">10th of November, 2015 - Release of SLF4J 1.7.13</h3>
+   <h3>10th of November, 2015 - Release of SLF4J 1.7.13</h3>
 
 
    <p>Fixed <code>LoggerFactory</code> initialisation problem in
@@ -1033,7 +1003,7 @@
   
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.12">March 26th, 2015 - Release of SLF4J 1.7.12</h3>
+   <h3>March 26th, 2015 - Release of SLF4J 1.7.12</h3>
 
    <p>All java files have been reformatted to with the code formatter
    style defined in <i>codeStyle.xml</i>. This style uses 4 spaces for
@@ -1069,7 +1039,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.10">6th of January, 2015 - Release of SLF4J 1.7.10</h3>
+   <h3>6th of January, 2015 - Release of SLF4J 1.7.10</h3>
 
    <p>The <code>MDC.putCloseable</code> method now explicitly returns
    <code>MDC.MDCloseable</code> instead of the more generic
@@ -1083,7 +1053,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.9">16th of December, 2014 - Release of SLF4J 1.7.9</h3>
+   <h3>16th of December, 2014 - Release of SLF4J 1.7.9</h3>
 
    <p class="highlight"><a href="codes.html#loggerNameMismatch">Spot
    incorrectly named loggers</a> by setting the
@@ -1112,14 +1082,14 @@
    that many Scala users will be affected by this issue for the
    foreseeable future, we have decided to renounce the user of JSR 305
    annotations in SLF4J for the time being.
-   </p>
+	 </p>
 
    <p>Numerous small code improvements too minor to be listed
    here.</p>
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.7">4th of April, 2014 - Release of SLF4J 1.7.7 </h3>
+   <h3>4th of April, 2014 - Release of SLF4J 1.7.7 </h3>
 
    <p>SFL4J API now uses generics. This enhancement was contributed by
    Otavio Garcia. Due to erasure of generics in Java, the changes are
@@ -1133,7 +1103,7 @@
    module.</p>
 
 
-   <h3 class="doAnchor" name="1.7.6">February 5th, 2014 - Release of SLF4J 1.7.6</h3>
+   <h3>February 5th, 2014 - Release of SLF4J 1.7.6</h3>
 
    <p>Added slf4j-android module to the slf4j distribution. This
    module is contributed by Andrey Korzhevskiy.</p>
@@ -1186,7 +1156,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.5">25th of March, 2013 - Release of SLF4J 1.7.5</h3>
+   <h3>25th of March, 2013 - Release of SLF4J 1.7.5</h3>
 
    <p class="highlight">Given the significance of these performance
    improvements, users are highly encouraged to migrate to SLF4J
@@ -1206,14 +1176,14 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.4">18th of March, 2013 - Release of SLF4J 1.7.4</h3>
+   <h3>18th of March, 2013 - Release of SLF4J 1.7.4</h3>
 
    <p>Added a package private <code>reset()</code> method to
    <code>SimpleLoggerFactory</code> for testing purposes.</p>
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.3">15th of March, 2013 - Release of SLF4J 1.7.3</h3>
+   <h3>15th of March, 2013 - Release of SLF4J 1.7.3</h3>
 
    <p>The jul-to-slf4j bridge now correctly handles cases where the
    message string contains {}-placeholders but has no or zero
@@ -1229,7 +1199,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.2">11th of October, 2012 - Release of SLF4J 1.7.2</h3>
+   <h3>11th of October, 2012 - Release of SLF4J 1.7.2</h3>
 
    <p>Added osgi-over-slf4j module which serves as an OSGi LogService
    implementation delegating to slf4j. This module is maintained by
@@ -1254,7 +1224,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.1">14th of September, 2012 - Release of SLF4J 1.7.1</h3>
+   <h3>14th of September, 2012 - Release of SLF4J 1.7.1</h3>
 
    <p><a
    href="apidocs/org/slf4j/impl/SimpleLogger.html"><code>SimpleLogger</code></a>
@@ -1269,7 +1239,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.7.0">6th of September, 2012 - Release of SLF4J 1.7.0</h3>
+   <h3>6th of September, 2012 - Release of SLF4J 1.7.0</h3>
 
    <p><span class="bold big green">SLF4J now requires JDK 1.5.</span></p>
 
@@ -1290,7 +1260,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.6.6">11th of June, 2012 - Release of SLF4J 1.6.6</h3>
+   <h3>11th of June, 2012 - Release of SLF4J 1.6.6</h3>
 
    <p>Source repository has been moved to <a
    href="https://github.com/qos-ch/slf4j">https://github.com/qos-ch/slf4j</a>
@@ -1315,7 +1285,7 @@
    reported by Laurent Pellegrino with Piotr Jagielski providing the
    appropriate patch.</p>
 
-   <h3 class="doAnchor" name="1.6.5">4th of June, 2012 - Release of SLF4J 1.6.5</h3>
+   <h3>4th of June, 2012 - Release of SLF4J 1.6.5</h3>
 
    <p>In the slf4j-log4j12 module, upgraded the log4j dependency to
    version 1.2.17.</p>
@@ -1330,7 +1300,7 @@
    Mikhail Mazursky who also provided the relevant patch.
    </p>
 
-   <h3 class="doAnchor" name="1.6.4">October 31st, 2011 - Release of SLF4J 1.6.4</h3>
+   <h3>October 31st, 2011 - Release of SLF4J 1.6.4</h3>
 
    <p>Fixed in thread-safety issues in <code>BasicMDCAdapter</code>
    fixing <a href="http://bugzilla.slf4j.org/show_bug.cgi?id=203">bug
@@ -1344,7 +1314,7 @@
    1.5 preventing it from running under JDK 1.4. Interestingly enough,
    this issue has never been reported by the user community.</p>
 
-   <h3 class="doAnchor" name="1.6.3">October 17th, 2011 - Release of SLF4J 1.6.3</h3>
+   <h3>October 17th, 2011 - Release of SLF4J 1.6.3</h3>
 
    <p><code>LogEvent</code> class in slf4j-ext module now correctly
    passes the event data as a parameter object. This fixes <a
@@ -1363,7 +1333,7 @@
    reported by Anthony Whitford.
    </p>
 
-   <h3 class="doAnchor" name="1.6.2">August 19th, 2011 - Release of SLF4J 1.6.2</h3>
+   <h3>August 19th, 2011 - Release of SLF4J 1.6.2</h3>
 
    <p>Fixed <a
    href="http://bugzilla.slf4j.org/show_bug.cgi?id=138">bug
@@ -1388,7 +1358,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.6.1">July 5th, 2010 - Release of SLF4J 1.6.1</h3>
+   <h3>July 5th, 2010 - Release of SLF4J 1.6.1</h3>
 
    <p>Updated log4j dependency to version 1.2.16 and <a
    href="http://cal10n.qos.ch/">CAL10N</a> dependency to version
@@ -1405,7 +1375,7 @@
 
    <hr noshade="noshade" size="1"/>
 
-   <h3 class="doAnchor" name="1.6.0">May 8th, 2010 - Release of SLF4J 1.6.0</h3>
+   <h3>May 8th, 2010 - Release of SLF4J 1.6.0</h3>
 
    <p>It is expected that <em>all</em> SLF4J releases in the 1.6.x
    series will be mutually compatible.

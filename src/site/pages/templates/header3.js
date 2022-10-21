@@ -64,6 +64,8 @@ document.write('<div id="header">');
 
 document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/site3.css"/>');
 document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/menu2.css"/>');
+document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/stackoverflow-light.min.css"/>');
+
 document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/font/fontawesome.min.css"/>');
 document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/font/brands.min.css"/>');
 document.write('<link rel="stylesheet" type="text/css" href="'+prefix+'css/font/solid.min.css"/>');

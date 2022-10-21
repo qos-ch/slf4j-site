@@ -237,7 +237,6 @@ div#top-content > #manualIndex {
     margin: 1rem;
     padding: 0px;
     background-color: #ffffff;
-    Xfont-size: smaller;
 }
 
 
@@ -265,16 +264,13 @@ p.menu {
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-    Xfont-size: smaller;
 }
 
 
 .headerline {
     background-color: #FFD0A0;
     border: 1px solid #CCCCCC;
-    Xont-size: small;
     margin: 0px;
-
     padding-top: 4px;
 }
 
@@ -320,8 +316,7 @@ p.menu_header {
     border: none;
     margin-left: auto;
     margin-right: auto;
-
-    display: block;
+    max-width: 100%;
 }
 
 span.canonical {
@@ -329,7 +324,6 @@ span.canonical {
     color: #0079C5;
     font-family: "Comic Sans MS", sans-serif;
     white-space: nowrap;
-    Xfont-size: smaller;
 
     border-top: 2px solid #DDD;
     border-left: 2px solid #DDD;

@@ -17,7 +17,6 @@
       <div id="content">
 
 
-
     <h2>SLF4J user manual</h2>
     
     <p>The Simple Logging Facade for Java (SLF4J) serves as a simple
@@ -89,15 +88,16 @@
     logger is in turn used to log the message "Hello World".
     </p>
 
-<pre class="prettyprint source">import org.slf4j.Logger;
+<pre><code>import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class HelloWorld {
+
   public static void main(String[] args) {
     Logger logger = LoggerFactory.getLogger(HelloWorld.class);
     logger.info("Hello World");
   }
-}</pre>
+}</code></pre>
 
      <p>To run this example, you first need to <a
      href="download.html">obtain slf4j</a> artifacts.  Once that is
@@ -147,7 +147,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      
      <p></p>
 
-      <pre class="prettyprint source"> 1: <b>import org.slf4j.Logger;</b>
+      <pre><code> 1: <b>import org.slf4j.Logger;</b>
  2: <b>import org.slf4j.LoggerFactory;</b>
  3: 
  4: public class Wombat {
@@ -167,7 +167,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 18:       <b>logger.info("Temperature has risen above 50 degrees.");</b>
 19:     }
 20:   }
-21: } </pre>
+21: } </code></pre>
       
 
       <h3 class="doAnchor" name="fluent">Fluent Logging API</h3>
@@ -203,33 +203,32 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       <p>Here are few usage examples:</p>
 
       <p>The statement</p> 
-      <pre class="prettyprint source">logger.atInfo().log("Hello world.");</pre>
+      <pre><code>logger.atInfo().log("Hello world.");</code></pre>
 
       <p>is equivalent to:</p>
 
-      <pre class="prettyprint source">logger.info("Hello world.");</pre>
+      <pre><code>logger.info("Hello world.");</code></pre>
 
       
       <p>The following log statements are equivalent in their output
       (for the default implementation):</p>
      
-      <pre class="prettyprint source">
-        int newT = 15;
-        int oldT = 16;
+      <pre><code>int newT = 15;
+int oldT = 16;
 
-        // using traditional API
-        logger.debug("Temperature set to {}. Old value was {}.", newT, oldT);
+// using traditional API
+logger.debug("Temperature set to {}. Old value was {}.", newT, oldT);
 
-        // using fluent API, log message with arguments
-        logger.<b>atDebug()</b>.log("Temperature set to {}. Old value was {}.", newT, oldT);
-        
-        // using fluent API, add arguments one by one and then log message
-        logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(newT).addArgument(oldT).<b>log()</b>;
+// using fluent API, log message with arguments
+logger.<b>atDebug()</b>.log("Temperature set to {}. Old value was {}.", newT, oldT);
+   
+// using fluent API, add arguments one by one and then log message
+logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(newT).addArgument(oldT).<b>log()</b>;
 
-        // using fluent API, add one argument with a Supplier and then log message with one more argument.
-        // Assume the method t16() returns 16.
-        logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(() -> t16()).addArgument(oldT).<b>log()</b>;
-      </pre>
+// using fluent API, add one argument with a Supplier and then log message with one more argument.
+// Assume the method t16() returns 16.
+logger.<b>atDebug()</b>.setMessage("Temperature set to {}. Old value was {}.").addArgument(() -> t16()).addArgument(oldT).<b>log()</b>;
+      </code></pre>
 
       <p>The fluent logging API allows the specification of many
       different types of data to a <code>org.slf4j.Logger</code>
@@ -246,16 +245,15 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 
       <p>The following log statements are equivalent:</p>
       
-      <pre class="prettyprint source">
-        int newT = 15;
-        int oldT = 16;
+      <pre><code>int newT = 15;
+int oldT = 16;
 
-        // using classical API
-        logger.debug("oldT={} newT={} Temperature changed.", oldT, newT);
+// using classical API
+logger.debug("oldT={} newT={} Temperature changed.", oldT, newT);
 
-        // using fluent API
-        logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();          
-      </pre>
+// using fluent API
+logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();
+      </code></pre>
 
       <p>The key-value pair variant of the API stores the key-value
       pairs as separates objects. The default implementation as
@@ -385,9 +383,9 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       <p>Here is a graphical illustration of the general idea.
       </p>
 
-      <p><a href="images/concrete-bindings.png">
-      <img border="1" src="images/concrete-bindings.png" alt="click to enlarge" width="800"/>
-      </a></p>
+      <a href="images/concrete-bindings.png">
+      <img src="images/concrete-bindings.png" alt="click to enlarge" width="800"/>
+      </a>
 
       <p>The SLF4J interfaces and their various adapters are extremely
       simple. Most developers familiar with the Java language should
@@ -473,11 +471,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       </p>
 
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-api&lt;/artifactId>
   &lt;version>${latest.stable.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
       <!-- ========================================================= -->
      <p><span class="label notice">logback-classic</span> <span
@@ -498,11 +496,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      rule.
       </p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>ch.qos.logback&lt;/groupId>
   &lt;artifactId>logback-classic&lt;/artifactId>
   &lt;version>${logback-javax.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
      <p/>
 
@@ -528,11 +526,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       mediation rule.
       </p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>ch.qos.logback&lt;/groupId>
   &lt;artifactId>logback-classic&lt;/artifactId>
   &lt;version>${logback-jakarta.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
      <p/>
 
@@ -552,11 +550,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      by virtue of Maven's "nearest definition" dependency mediation
      rule.</p>
       
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-reload4j&lt;/artifactId>
   &lt;version>${latest.stable.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
 
      <!-- ================================== -->     
@@ -567,11 +565,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
      <code>org.slf4j:slf4j-reload4j</code> by virtue of Maven
      &lt;relocation&gt; directive. </p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-log4j12&lt;/artifactId>
   &lt;version>${latest.stable.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
      <p/>
 
@@ -590,11 +588,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       by virtue of Maven's "nearest definition" dependency mediation
       rule.</p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-jdk14&lt;/artifactId>
   &lt;version>${latest.stable.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
      <!-- ================================== -->
      
@@ -611,11 +609,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       by virtue of Maven's "nearest definition" dependency mediation
       rule.</p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-simple&lt;/artifactId>
   &lt;version>${latest.stable.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
   <!-- =========================================================== -->
    
@@ -683,11 +681,11 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       href="http://openjdk.java.net/jeps/264">JDK Platform
       Logging</a>. </p>
 
-<pre class="prettyprint source">&lt;dependency> 
+<pre><code>&lt;dependency> 
   &lt;groupId>org.slf4j&lt;/groupId>
   &lt;artifactId>slf4j-jdk-platform-logging&lt;/artifactId>
   &lt;version>${latest.2.version}&lt;/version>
-&lt;/dependency></pre>
+&lt;/dependency></code></pre>
 
 
       
@@ -722,7 +720,8 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
     
       
       <h3 class="doAnchor" name="summary">Executive summary</h3>
-      
+
+      <div clas="bodyTable">
       <table  class="bodyTable striped" cellspacing="4" cellpadding="4">
         <tr>
           <th align="left">Advantage</th>
@@ -797,9 +796,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
           href="faq.html#logging_performance">improved performance</a>
           results.</td>
         </tr>
-        
-         
-  </table>
+  </table></div>
 
   <script src="templates/footer.js" type="text/javascript"></script>
 

@@ -16,7 +16,7 @@ function scpLogback() {
 }
 
 function doRsync() {
-    ssh root@ge.qos.ch "rsync -r -p -z -l --exclude=log/ --delete rsync://yvo.qos.ch/www/www.slf4j.org /var/www"
+    ssh root@exo1.qos.ch "rsync -r -p -z -l --exclude=log/ --delete rsync://yvo.qos.ch/www/www.slf4j.org /var/www"
 }
 
 

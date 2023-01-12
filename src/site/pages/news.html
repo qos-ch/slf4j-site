@@ -32,9 +32,7 @@
      class names in <code/>
    -->
 
-   <hr noshade="noshade" size="1"/>
-   
-   <h3 class="doAnchor" name="2.0.3">2022-09-28 - Release of SLF4J 2.0.3</h3>
+   <h2>On the 2.0.x series</h2>
 
    <p class="highlight">The the 2.0.x series requires Java&nbsp;8 and
    adds a backward-compatible <a
@@ -57,6 +55,81 @@
    changes are <a class="big bold"
    href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
    </p>
+
+   <hr noshade="noshade" size="1"/>
+   
+   <h3 class="doAnchor" name="2.0.6">2022-12-12 - Release of SLF4J 2.0.6</h3>
+
+
+   <p>&bull; When replaying events occuring during initialization, the
+   <code>LoggerFactory#replaySingleEvent</code> method now applies
+   filtering by level by invoking the filtering methods of the
+   underlying logging system whereas previous the underlying system
+   was invoked without filtering. This fixes <a
+   href="https://jira.qos.ch/browse/SLF4J-575">SLF4J-575</a> reported
+   by Patrick Doyle.</p>
+
+   <p>&bull; Artifacts creation now invokes the BND tool to generate
+   OSGi headers, in particular "uses" clases. This fixes <a
+   href="https://jira.qos.ch/browse/SLF4J-574">SLF4J-574</a> reported
+   Jonah Graham who also provided the relevant PR.</p>
+   
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.6 from the source code repository
+   (GitHub). Release built using Java "19" 2022-09-20 build 19+36-2038
+   under Linux Debian 11.2.</p>
+
+   
+   <hr noshade="noshade" size="1"/>
+   
+   <h3 class="doAnchor" name="2.0.5">2022-11-25 - Release of SLF4J 2.0.5</h3>
+
+   <p>&bull; If a <code>SecurityManager</code> is installed, then
+   <code>LoggerFactory</code> will now load providers as a privileged
+   action by invoking
+   <code>AccessController.doPrivileged()</code>. This will allow
+   Wildfy-Core to upgrade to SLF4J 2.0.x as discussed in <a
+   href="https://github.com/qos-ch/slf4j/pull/304">PR 304</a>
+   contributed by Piotr P. Karwasz.
+   </p>  
+     
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.5 from the source code repository
+   (GitHub). Release built using Java "19" 2022-09-20 build 19+36-2038
+   under Linux Debian 11.2.</p>
+       
+   <hr noshade="noshade" size="1"/>
+   
+   <h3 class="doAnchor" name="2.0.4">2022-11-17 - Release of SLF4J 2.0.4</h3>
+
+   <p>&bull; <code>LoggerFactory</code> now uses the class loader that
+   loaded <code>LoggerFactory</code> class itself to find providers of
+   type <code>SLF4JServiceProvider</code>. Previously, the thread
+   context class loader was used. This was unintentional and the
+   current behavior more closely matches that of the SLF4J 1.7 series
+   and earlier. This tentatively fixes <a
+   href="https://jira.qos.ch/browse/SLF4J-544">SLF4J-544</a> as well
+   as several other related/duplicating issues.
+   </p>  
+     
+   <p>&bull; The <code>MANIFEST.MF</code> files of slf4j-api,
+   slf4j-jdk14, slf4j-nop, slf4j-reload4j and slf4j-simple modules now
+   declare the appropriate OSGi <code>Require-Capability</code> and
+   <code>Provide-Capability</code> statements in relation to
+   <code>org.slf4j.spi.SLF4JServiceProvider</code> service. This fixes
+   <a href="https://jira.qos.ch/browse/SLF4J-572">SLF4J-572</a>
+   reported by Stefan Bischof who also provided the relevant PR.  
+   </p>
+
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.4 from the source code repository
+   (GitHub). Release built using Java "19" 2022-09-20 build 19+36-2038
+   under Linux Debian 11.2.</p>
+   
+   <hr noshade="noshade" size="1"/>
+   
+   <h3 class="doAnchor" name="2.0.3">2022-09-28 - Release of SLF4J 2.0.3</h3>
 
    <p>&bull; Fixed a bug in <code>Reload4jLoggerAdapter</code> when
    used in conjunction with the fluent API, the timestamp would not be

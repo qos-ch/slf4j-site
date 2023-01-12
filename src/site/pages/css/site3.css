@@ -13,8 +13,6 @@
     --max-menu-width: 14rem;
 
     --main-logo-height: 2rem;
-    --sponsor-icon-height: calc(var(--main-logo-height) * 0.5);
-    --x-logo-height: calc(var(--main-logo-height) * 0.5);
     --logo-in-menu-height: 2.5ex;
 }
 
@@ -27,15 +25,6 @@ body {
     padding: 0px;
     counter-reset: example; /* Create an example counter scope */
 
-    /*display: grid;*/
-
-    /*gap: 0rem;*/
-    /*grid-template-columns: 1fr;*/
-    /*grid-template-areas:*/
-    /*    'headerArea'*/
-    /*    'contentArea';*/
-
-    /* mobile first */
     margin-left: 1rem;
     margin-right: 1rem;
 }
@@ -54,8 +43,6 @@ table {
 
     :root {
         --main-logo-height: 3rem;
-        --sponsor-icon-height: calc(var(--main-logo-height) * 0.7);
-        --x-logo-height: calc(var(--main-logo-height) * 0.7);
     }
 
     body {
@@ -79,8 +66,16 @@ img.logo {
     height: var(--main-logo-height);
 }
 
-img.sponsorIcon {
-    height: var(--sponsor-icon-height);
+img.avatar-icon,
+img.sponsor-icon,
+img.twitter-logo{
+    max-height: calc(var(--main-logo-height))
+}
+
+div.twitter,
+div.avatar {
+    width:  calc(var(--main-logo-height) );
+    margin: 3px;
 }
 
 pre, div.bodyTable {
@@ -110,12 +105,7 @@ img.data {
     /*max-width: calc(var(--max-width-on-wide-screen) * 0.75);*/
 }
 
-.twitter-logo{
-    height: var(--x-logo-height);
-}
-.github-logo {
-    height: var(--logo-in-menu-height);
-}
+
 
 /*-----------------------------------------*/
 
@@ -149,18 +139,32 @@ img.data {
     align-self: end;
 }
 
+#header-grid-icons-item-flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* vertical alignment: */
+    /*justify-content: flex-end;*/
+}
+
 #header-grid-line-item {
     grid-area: header-line-area;
 }
 
 div#ad {
     grid-area: ad-area;
-    margin: 0.5rem;
 }
 
 div#ad,
 .horizontal-ad {
     max-height: calc(var(--main-logo-height) * 2);
+}
+
+.top-message {
+    background-color: #f9f9f9;
+    color: #999;
+    text-align: center;
+    border-bottom: 1px solid #EEE;
+    border-radius: 3px;
 }
 
 div#sponsor {
@@ -178,6 +182,10 @@ div#sponsor {
     padding: 0px;
 }
 
+div.pub {
+    margin: 0px;
+    padding: 0px;
+}
 p.sponsoredBy {
     padding: 2px;
     margin: 0px;
@@ -188,6 +196,7 @@ p.sponsoredBy {
     border-bottom: solid 1px #CCCCCC;
 }
 div.spotify {
+    margin: 3px;
     background-color: #FFEEDD;
 }
 img.spotify {

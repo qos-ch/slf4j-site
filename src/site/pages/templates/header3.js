@@ -2,7 +2,7 @@
 function insertLogoAndMenu() {
     document.write('    <div class="dropdown">');
     document.write('        <button id="mainMenuButton" class="link">');
-    document.write('            <img class="logo" src="'+ prefix +'images/logos/SLF4J_72dpi.png"/>');
+    document.write('              <span class="bar">&#x2630;&nbsp;</span>  <img class="logo" src="'+ prefix +'images/logos/SLF4J_72dpi.png"/>');
     document.write('        </button>');
     document.write('        <div class="dropdown-menu information-grid">');
     document.write('            <div>'); // hanging div start

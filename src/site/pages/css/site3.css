@@ -12,8 +12,7 @@
     --min-menu-width: 12rem;
     --max-menu-width: 14rem;
 
-    --main-logo-height: 2rem;
-    --logo-in-menu-height: 2.5ex;
+    --main-logo-height: 1.5rem;
 }
 
 body {
@@ -42,7 +41,7 @@ table {
 @media (min-width: 1000px) {
 
     :root {
-        --main-logo-height: 3rem;
+        --main-logo-height: 2.5rem;
     }
 
     body {

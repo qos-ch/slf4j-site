@@ -56,6 +56,49 @@
    href="faq.html#changesInVersion200">detailed</a> in the FAQ page.
    </p>
 
+
+    <div style="display: flex;">
+      <div style="margin-right: 1rem;">
+         <a href="https://github.com/jvm-repo-rebuild/reproducible-central/">
+          <img style="max-height: 5rem;" src="images/reproducible.svg"/>
+         </a>
+      </div>
+      <div><p>Starting early 2022, logback artifacts are binary reproducible, as
+         <a  href="https://github.com/jvm-repo-rebuild/reproducible-central/tree/master/content/org/slf4j"> independently attested
+          </a>  by reproducible-central.
+       </p>
+      </div>
+    </div>
+
+   
+   <hr noshade="noshade" size="1"/>
+   
+   <h3 class="doAnchor" name="2.0.7">2023-03-17 - Release of SLF4J 2.0.7</h3>
+
+   <p>&bull; Fixed several OSGi MANIFEST.MF related issues, namely 
+     <a href="https://jira.qos.ch/browse/SLF4J-581">SLF4J-581</a>,
+     <a href="https://jira.qos.ch/browse/SLF4J-579">SLF4J-579</a> and
+     <a href="https://jira.qos.ch/browse/SLF4J-583">SLF4J-583</a>. Many
+     thanks to Hannes Wellmann for providing the relevant PRs and for
+     his precious collaboration..</p>
+
+   <p>&bull; Fixed missing javadoc artifacts. This issue was repoerted
+   by Witalij Berdinskich in <a
+   href="https://jira.qos.ch/browse/SLF4J-584">SLF4J-584</a>.
+
+   <p>&bull; SLF4J artifacts now include a LICENSE.txt file in
+   published artifacts. This enhancement was requested by Tobias
+   Wittmann in <a
+   href="https://jira.qos.ch/browse/SLF4J-582">SLF4J-582</a>.
+
+   
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.7 from the source code repository
+   (GitHub). Release built using Java "19" 2022-09-20 build 19+36-2038
+   under Linux Debian 11.2.</p>
+
+   
    <hr noshade="noshade" size="1"/>
    
    <h3 class="doAnchor" name="2.0.6">2022-12-12 - Release of SLF4J 2.0.6</h3>

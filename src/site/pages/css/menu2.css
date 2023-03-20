@@ -1,6 +1,6 @@
 
 :root {
-    --menu-arrow-color: #ffd0a0;
+    --menu-bars-color: #4183c4;
     --menu-background: #F0F0F0; /* #fff8e8 */
     --menu-background-hover: #E0E0E0;
     --menu-header-background: #fff8e8;
@@ -86,17 +86,17 @@ button.link.active + div.dropdown-menu {
     gap: 0rem;
 }
 
-button.link::before {
-    /*content: '\1A06'; */
-    content: '\21E3';
+span.bar {
     font-size: calc(var(--main-logo-height) * 0.9);
     font-weight: bold;
     vertical-align: super;
-    color: var(--menu-arrow-color);
+    color: var(--menu-bars-color);
 }
 
-button.link.active::before {
-    content: '\21E1';
+span.bar:hover {
+    color: #26b;
 }
+
+
 
 

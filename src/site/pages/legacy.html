@@ -44,10 +44,10 @@
     <p>
     </p>
     
-    <h2 class="doAnchor" name="jcl-over-slf4j">Gradual migration to
+    <h2 class="doAnchor" id="jcl-over-slf4j">Gradual migration to
     SLF4J from Jakarta Commons Logging (JCL)</h2>
     
-    <h4 class="doAnchor" name="jclOverSLF4J"><em>jcl-over-slf4j.jar</em></h4>
+    <h4 class="doAnchor" id="jclOverSLF4J"><em>jcl-over-slf4j.jar</em></h4>
     
     <p>To ease migration to SLF4J from JCL, SLF4J distributions
     include the jar file <em>jcl-over-slf4j.jar</em>. This jar file is
@@ -72,7 +72,7 @@
     class loader issues related to commons logging.
     </p>
     
-    <h3  class="doAnchor" name="slf4jJCL"><em>slf4j-jcl.jar</em></h3>
+    <h3  class="doAnchor" id="slf4jJCL"><em>slf4j-jcl.jar</em></h3>
     
     <p>Some of our users after having switched to SLF4J API realize that
     in some contexts the use of JCL is mandatory and their use of SLF4J
@@ -87,7 +87,7 @@
     </p>
     
     <h3 class="doAnchor"
-    name="jclRecursion"><em>jcl-over-slf4j.jar</em> should not be
+    id="jclRecursion"><em>jcl-over-slf4j.jar</em> should not be
     confused with <em>slf4j-jcl.jar</em></h3>
     
     
@@ -117,7 +117,7 @@
     </p>
     
     
-    <h2 class="doAnchor" name="log4j-over-slf4j">log4j-over-slf4j</h2>
+    <h2 class="doAnchor" id="log4j-over-slf4j">log4j-over-slf4j</h2>
     
     <p>SLF4J ship with a module called <em>log4j-over-slf4j</em>.  It
     allows log4j users to migrate existing applications to SLF4J without
@@ -126,7 +126,7 @@
     described below.
     </p>
     
-    <h4 class="doAnchor" name="losHow">How does it work?</h4>
+    <h4 class="doAnchor" id="losHow">How does it work?</h4>
     
     <p>The log4j-over-slf4j module contains replacements of most widely
     used log4j classes, namely <code>org.apache.log4j.Category</code>,
@@ -156,7 +156,7 @@
     href="http://logback.qos.ch/manual/index.html">its manual</a>.
     </p>
     
-    <h4 class="doAnchor" name="losFail">When does it not work?</h4>
+    <h4 class="doAnchor" id="losFail">When does it not work?</h4>
     
     <p>The <em>log4j-over-slf4j</em> module will not work when the
     application calls log4j components that are not present in the
@@ -170,7 +170,7 @@
 
     
     
-    <h4 class="doAnchor" name="losOverhead">What about the
+    <h4 class="doAnchor" id="losOverhead">What about the
     overhead?</h4>
     
     <p>The overhead of using log4j-over-slf4j instead of log4j
@@ -187,7 +187,7 @@
     </p>
 
     <!--
-    <h4 class="doAnchor" name="log4jRecursion">log4j-over-slf4j.jar
+    <h4 class="doAnchor" id="log4jRecursion">log4j-over-slf4j.jar
     and slf4j-log4j12.jar cannot be present simultaneously
     </h4>
     
@@ -201,7 +201,7 @@
     </p>
     -->
     
-    <h4 class="doAnchor" name="log4jRecursion2">log4j-over-slf4j.jar
+    <h4 class="doAnchor" id="log4jRecursion2">log4j-over-slf4j.jar
     and slf4j-reload4j.jar cannot be present simultaneously
     </h4>
     
@@ -217,7 +217,7 @@
     </p>
 
     
-    <h2 class="doAnchor" name="jul-to-slf4j">jul-to-slf4j bridge</h2>
+    <h2 class="doAnchor" id="jul-to-slf4j">jul-to-slf4j bridge</h2>
     
     <p>The <em>jul-to-slf4j.jar</em> artifact includes a
     java.util.logging (jul) handler, namely
@@ -257,7 +257,7 @@
     </ol>
     
     
-    <h4 class="doAnchor" name="julRecursion">jul-to-slf4j.jar and slf4j-jdk14.jar cannot be present
+    <h4 class="doAnchor" id="julRecursion">jul-to-slf4j.jar and slf4j-jdk14.jar cannot be present
     simultaneously
     </h4>
     

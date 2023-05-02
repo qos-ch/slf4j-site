@@ -257,10 +257,10 @@ logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)<
       </code></pre>
 
       <p>The key-value pair variant of the API stores the key-value
-      pairs as separates objects. The default implementation as
-      shipping in the <code>org.slf4j.Logger</code> class
+      pairs as separates objects. The default implementation currently
+      in the <code>org.slf4j.Logger</code> class
       <em>prefixes</em> key-value pairs to the message.  Logging
-      backends are free and even encouraged to offer a more
+      backends are free and are even encouraged to offer a more
       customizable behaviour.</p>
 
       
@@ -277,13 +277,13 @@ logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)<
 
         <dt><em>slf4j-log4j12-${latest.stable.version}.jar</em>
         </dt>
-        <dd>Binding/provider for <a
-        href="http://logging.apache.org/log4j/1.2/index.html">log4j
-        version 1.2</a>, a widely used logging framework. <span
-        class="red">Given that log4j 1.x has been declared EOL in 2015
-        and again in 2022, as of SLF4J 1.7.35, the <em>slf4j-log4j
-        module</em> automatically redirects to the
-        <em>slf4j-reload4j</em> module at <b>build time</b>.</span>
+        <dd>Binding/provider
+        for <a href="http://logging.apache.org/log4j/1.2/index.html">log4j
+        version 1.2</a>, a widely used logging framework. Given that
+        log4j 1.x has been declared EOL in 2015 and again in 2022, as
+        of SLF4J 1.7.35, the <em>slf4j-log4j module</em> automatically
+        redirects to the
+        <em>slf4j-reload4j</em> module at <b>build time</b>.
         Assuming you wish to continue to use the log4j 1.x framework,
         we strongly encourage you to use <code>slf4j-reload4j</code>
         instead. See below.  <p/>

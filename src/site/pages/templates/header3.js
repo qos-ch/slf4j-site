@@ -41,6 +41,7 @@ function insertLogoAndMenu() {
     document.write('                <div class="dropdown-links">');
     document.write('                    <a href="' + prefix +'count/logback.html">  Logback</a>');
     document.write('                    <a href="' + prefix +'count/logevents.html">logevents</a>');
+    document.write('                    <a href="' + prefix +'count/penna.html">penna</a>');    
     document.write('                </div>');
     document.write('             </div>'); // hanging div END
     document.write('            <div>'); // hanging div START

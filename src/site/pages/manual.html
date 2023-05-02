@@ -252,8 +252,8 @@ int oldT = 16;
 // using classical API
 logger.debug("oldT={} newT={} Temperature changed.", oldT, newT);
 
-// using fluent API
-logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();
+// using fluent API 
+logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)</b>.addKeyValue("newT", newT).log();
       </code></pre>
 
       <p>The key-value pair variant of the API stores the key-value

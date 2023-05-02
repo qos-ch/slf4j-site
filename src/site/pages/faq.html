@@ -27,8 +27,9 @@
     
     <li><a href="#yet_another_facade"> Is SLF4J yet another logging facade?</a></li>
     
-    <li><a href="#why_new_project"> If SLF4J fixes JCL, then why
-    wasn't the fix made in JCL instead of creating a new project?
+    <li><a href="#why_new_project"> If SLF4J fixes Jakarta Commons
+    Logging (JCL), then why wasn't the fix made in JCL instead of
+    creating a new project?
     </a>
     </li>
     
@@ -49,6 +50,9 @@
     <code>IllegalAccessError</code> exceptions when using SLF4J. Why
     is that?</a></li>
 
+    <li><a href="#missingLogMethodCall">When using the fluent
+    API, how can I make my IDE alert me when I forget to call the
+    log() method? </a></li>
 
     <li>
       <a href="#license">Why is SLF4J licensed under X11 type
@@ -250,26 +254,27 @@
     another logging facade?</h3>
     
     
-      <p>SLF4J is conceptually very similar to Jakarta Commons Logging
-      (JCL). As such, it can be thought of as yet another logging
-      facade. However, SLF4J is much simpler in design and arguably
-      more robust. In a nutshell, SLF4J avoid the class loader issues
-      that plague JCL.
+      <p>SLF4J is conceptually very similar to Apache Commons Logging
+      a.k.a. Jakarta Commons Logging (JCL). As such, it can be thought
+      of as yet another logging facade. However, SLF4J is much simpler
+      in design and arguably more robust. In a nutshell, SLF4J avoid
+      the class loader issues that plague JCL.
       </p>
       
       
       
     
-    <h3 class="doAnchor separator" id="why_new_project">If SLF4J fixes JCL,
-    then why wasn't the fix made in JCL instead of creating a new
-    project?
+    <h3 class="doAnchor separator" id="why_new_project">If SLF4J fixes
+    Jakarta Commons Logging (JCL), then why wasn't the fix made in JCL
+    instead of creating a new project?
     </h3>
     
     
       <p>This is a very good question. First, SLF4J static binding
-      approach is very simple, perhaps even laughably so. It was not
-      easy to convince developers of the validity of that
-      approach. Note that as of version 2.0.0, SLF4J uses the
+      approach (prior to version 2.0) is very simple, perhaps even
+      laughably so. It was not easy to convince developers of the
+      validity of that approach. Note that as of version 2.0.0, SLF4J
+      uses the
       <code>ServiceLoader</code> mechanism offered by the Java
       platform. This new approach is still relatively static and
       therefore predictable.
@@ -343,9 +348,9 @@
         </tr>
         
         <tr>
-          <td>slf4j-log4j12</td>
+          <td>slf4j-log4j (replaced by slf4j-reload4j) </td>
           <td align="left">JDK 8, plus any other library
-          dependencies required by the log4j appenders in use</td>
+          dependencies required by the log4j/reload4j appenders in use</td>
         </tr>
         <tr>
           <td>slf4j-jdk14</td>
@@ -530,12 +535,36 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
 
       <p>Please also read the FAQ entry on <a
       href="#compatibility">backward compatibility</a> for a more
-      general explanation.</p>
-
+        general explanation.</p>
       
-    
-    
+    <!-- ==================================================== -->
+          
+    <h3 class="doAnchor separator" id="missingLogMethodCall">When using the fluent API, how can
+    I make my IDE alert me when I forget to call the log() method?
+    </h3>
 
+    <p>When using the fluent API, you must terminate the invocation
+    chain by calling one of the log() method variants. Forgetting to
+    call any of the log() method variants will result in no logging
+    regardless of the logging level. Fortunately, if this happens,
+    some IDEs will alert you with a compiler warning.
+    </p>
+    
+    <p>IntelliJ IDEA will alert you if you activate the "Results of
+    method call ignored" inspection. This inspection is configured
+    Settings&rarr;Editor &rarr; Inspections &rarr; Java &rarr;
+    Probable Bugs &rarr; "Results of method call ignored". This IDE
+    inspection looks for methods annotated with "*.CheckReturnValue"
+    annotations which the relevant methods in <a
+    href="../apidocs/org/slf4j/spi/LoggingEventBuilder.html">LoggingEventBuilder</a>
+    do include. Moreover, you probably want to set the severity of
+    this inspection to "ERROR"</p>
+
+    <p>We have asked for a similar feature in Eclipse
+    in <a href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=572496">Bug
+    572496</a>. Please vote for this bug if you are also interested in
+    it.</p>
+    
     <!-- ==================================================== -->
 
     <h3 class="doAnchor separator" id="license">Why is SLF4J licensed under

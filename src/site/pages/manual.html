@@ -197,8 +197,9 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
       chain by calling one of the <code>log()</code> method
       variants. Forgetting to call any of the <code>log()</code>
       method variants will result in no logging regardless of the
-      logging level. Fortunately, many IDEs will alert you with a "No
-      return value" compiler warning.</p>
+      logging level. Fortunately, if this happens, some IDEs
+      will <a href="faq.html#missingLogMethodCall">alert you with a
+      compiler warning</a>.</p>
       
       <p>Here are few usage examples:</p>
 
@@ -319,10 +320,11 @@ logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)<
         
         <dt><em>slf4j-jcl-${latest.stable.version}.jar</em></dt>
         
-        <dd>Binding/provider for <a
-        href="http://commons.apache.org/logging/">Jakarta Commons
-        Logging</a>. This binding will delegate all SLF4J logging to
-        JCL.<p/>
+        <dd>Binding/provider
+        for <a href="http://commons.apache.org/logging/">Apache
+        Commons Logging</a>. This binding will delegate all SLF4J
+        logging to Apache Commins Logging a.k.a. Jakarta Commons
+        Logging (JCL) .<p/>
         </dd>     
         
         <dt>
@@ -394,12 +396,12 @@ logger.atDebug().setMessge("Temperature changed.").<b>addKeyValue("oldT", oldT)<
       not make use nor does it directly access any class loaders. As a
       consequence, SLF4J suffers from none of the class loader
       problems or memory leaks observed with Jakarta Commons Logging
-      (JCL).
+      (JCL) also called Apache Commons Logging.
       </p>
 
       <p>Given the simplicity of the SLF4J interfaces and its
       deployment model, developers of new logging frameworks should
-      find it very easy to write SLF4J bindings.
+      find it very easy to write SLF4J providers.
       </p>
      
       <h3 class="doAnchor" id="libraries">Libraries</h3>

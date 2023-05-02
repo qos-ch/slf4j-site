@@ -1,6 +1,6 @@
 
 
-//   <h3><a name="LoggerContext" href="#LoggerContext"><span
+//   <h3><a id="LoggerContext" href="#LoggerContext"><span
 //    class="anchor"/></a>Logger context</h3>
 
 function decorate() {
@@ -34,19 +34,19 @@ function decoratePropertiesInTables(anchor) {
 
    var tmpHTML = p.innerHTML;
    var propName = e.innerHTML;
-   var nameAttr = $(e).attr('name')
+   var idAttr = $(e).attr('id')
     
-   if(nameAttr == null) {
+   if(idAttr == null) {
      var containerAttr = $(e).attr('container')
      if(containerAttr != null) 
-       nameAttr = containerAttr+capitaliseFirstLetter(propName);
+       idAttr = containerAttr+capitaliseFirstLetter(propName);
      else 
-       nameAttr = propName;
+       idAttr = propName;
    }
    
-   p.innerHTML = "<a name='" + nameAttr + "' href='#" + nameAttr +
+   p.innerHTML = "<a id='" + idAttr + "' href='#" + idAttr +
                 "'><span class='anchor'/></a><b>" +tmpHTML +"</b>";
-   scrollIfMatch(p, nameAttr, anchor);
+   scrollIfMatch(p, idAttr, anchor);
  } // for 
 }
 
@@ -55,12 +55,12 @@ function decorateConversionWordInTables(anchor) {
  for(var i = 0; i < elems.length; i++) {
    var e = elems[i];
    var tmpHTML = e.innerHTML;
-   var nameAttr = $(e).attr('name')
-   if(nameAttr == null) 
+   var idAttr = $(e).attr('id')
+   if(idAttr == null) 
      continue;
-   e.innerHTML = "<a name='" + nameAttr + "' href='#" + nameAttr +
+   e.innerHTML = "<a id='" + idAttr + "' href='#" + idAttr +
                 "'><span class='anchor'/></a>" +tmpHTML;
-   scrollIfMatch(e, nameAttr, anchor);
+   scrollIfMatch(e, idAttr, anchor);
  }
 }
 
@@ -70,18 +70,18 @@ function decorateDoAnchor(anchor) {
    for(var i = 0; i < elems.length; i++) {
      var e = elems[i];
      var tmpHTML = e.innerHTML;
-     var nameAttr = $(e).attr('name')
-     if(nameAttr == null) {
-       nameAttr = camelCase($.trim(tmpHTML))
+     var idAttr = $(e).attr('id')
+     if(idAttr == null) {
+       idAttr = camelCase($.trim(tmpHTML))
      }
-     e.innerHTML = "<a name='" + nameAttr + "' href='#" + nameAttr +
+     e.innerHTML = "<a id='" + idAttr + "' href='#" + idAttr +
                 "'><span class='anchor'/></a>" +tmpHTML;
-     scrollIfMatch(e, nameAttr, anchor);
+     scrollIfMatch(e, idAttr, anchor);
    }
 } 
 
-function scrollIfMatch(element, nameAttr, anchor) {
-  if(anchor != null && nameAttr.toString() == anchor)
+function scrollIfMatch(element, idAttr, anchor) {
+  if(anchor != null && idAttr.toString() == anchor)
      element.scrollIntoView(true);
 
 

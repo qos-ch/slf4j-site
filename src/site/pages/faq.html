@@ -139,6 +139,9 @@
     
     <li><a href="#trace">Why was the TRACE level introduced only in
     SLF4J version 1.4.0?  </a></li>
+
+    <li><a href="#marker">What are markers and
+    what are they goood for?</a></li>
     
     <li><a href="#i18n">Does the SLF4J logging API support I18N
     (internationalization)? </a></li>
@@ -189,18 +192,18 @@
   
   <h2>Generalities</h2>
   
-  <dl>
-    <dt class="doAnchor separator" name="what_is">What is SLF4J?</dt>
-    <dd>
+
+    <h3 class="doAnchor" id="what_is">What is SLF4J?</h3>
+    
       <p>SLF4J is a simple facade for logging systems allowing the
       end-user to plug in the desired logging system at deployment
       time.
       </p>      
-    </dd>
     
-    <dt class="doAnchor separator" name="when">When should SLF4J be used?</dt>
+
+
+    <h3 class="doAnchor separator" id="when">When should SLF4J be used?</h3>
     
-    <dd>
       <p>In short, libraries and other embedded components should
       consider SLF4J for their logging needs because libraries cannot
       afford to impose their choice of logging framework on the
@@ -241,12 +244,12 @@
       
       
       
-    </dd>
+
+
+    <h3 class="doAnchor separator" id="yet_another_facade">Is SLF4J yet
+    another logging facade?</h3>
     
-    <dt class="doAnchor separator" name="yet_another_facade">Is SLF4J yet
-    another logging facade?</dt>
     
-    <dd>
       <p>SLF4J is conceptually very similar to Jakarta Commons Logging
       (JCL). As such, it can be thought of as yet another logging
       facade. However, SLF4J is much simpler in design and arguably
@@ -256,13 +259,13 @@
       
       
       
-    </dd>
-    <dt class="doAnchor separator" name="why_new_project">If SLF4J fixes JCL,
+    
+    <h3 class="doAnchor separator" id="why_new_project">If SLF4J fixes JCL,
     then why wasn't the fix made in JCL instead of creating a new
     project?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>This is a very good question. First, SLF4J static binding
       approach is very simple, perhaps even laughably so. It was not
       easy to convince developers of the validity of that
@@ -286,14 +289,14 @@
       at least a decade.
       </p>
       
-    </dd>
     
-    <dt class="doAnchor separator" name="need_to_recompile">When using SLF4J, do
+    
+    <h3 class="doAnchor separator" id="need_to_recompile">When using SLF4J, do
     I have to recompile my application to switch to a different
     logging system?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>No, you do not need to recompile your application. You can
       switch to a different logging system by removing the previous
       SLF4J provider and replacing it with the provider of your
@@ -310,13 +313,13 @@
       </p>
       
       
-    </dd>
-
-    <dt class="doAnchor separator" name="requirements">What are SLF4J's
-    requirements?
-    </dt>
     
-    <dd>
+
+    <h3 class="doAnchor separator" id="requirements">What are SLF4J's
+    requirements?
+    </h3>
+    
+    
       
       <p>As of version 2.0.0, SLF4J requires JDK 8 or later. Version
       1.7.0 requires JDK 1.5 or later.
@@ -357,14 +360,14 @@
       </table>
       
       
-    </dd>
+    
 
     <!-- ==================================================== -->
-    <dt class="doAnchor separator" name="changesInVersion200">
+    <h3 class="doAnchor separator" id="changesInVersion200">
       What has changed in SLF4J version 2.0.0?
-    </dt>
+    </h3>
 
-    <dd>
+    
 
       <p>
       
@@ -440,17 +443,17 @@
       </table>
 
       
-    </dd>
+    
 
     
     <!-- ==================================================== -->
     <!-- entry has order dependees -->
 
-    <dt class="doAnchor separator" name="compatibility">Are SLF4J versions
+    <h3 class="doAnchor separator" id="compatibility">Are SLF4J versions
     backward compatible?
-    </dt>
+    </h3>
 
-    <dd>
+    
       <p>From the clients perspective, the SLF4J API is backward
       compatible for all versions. This means than you can upgrade
       from SLF4J version 1.0 to any later version without
@@ -479,16 +482,16 @@
       your code will require slf4j-api version 2.0 or later.</p>
       
       
-    </dd>
+    
 
     <!-- ==================================================== -->
 
-    <dt class="doAnchor separator" name="IllegalAccessError">I am getting
+    <h3 class="doAnchor separator" id="IllegalAccessError">I am getting
     <code>IllegalAccessError</code> exceptions when using SLF4J. Why
     is that?
-    </dt>
+    </h3>
 
-    <dd>
+    
 
       <p>Here are the exception details.</p>
 
@@ -530,16 +533,16 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       general explanation.</p>
 
       
-    </dd>
+    
     
 
     <!-- ==================================================== -->
 
-    <dt class="doAnchor separator" name="license">Why is SLF4J licensed under
+    <h3 class="doAnchor separator" id="license">Why is SLF4J licensed under
     X11 type license instead of the Apache Software License?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>SLF4J is licensed under a permissive X11 type license
       instead of the <a
       href="http://www.apache.org/licenses/">ASL</a> or the <a
@@ -550,14 +553,14 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       </p>
       
       
-    </dd>
+    
 
     <!-- ==================================================== -->
-    <dt class="doAnchor separator" name="where_is_binding">Where can I get a
+    <h3 class="doAnchor separator" id="where_is_binding">Where can I get a
     particular SLF4J provider/binding?
-    </dt>
+    </h3>
     
-    <dd>
+    
       
       <p>SLF4J providers for <a
       href="api/org/slf4j/impl/SimpleLogger.html">SimpleLogger</a>, <a
@@ -579,13 +582,13 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       </p>
       
       
-    </dd>
     
-    <dt class="doAnchor separator" name="configure_logging">Should my library
+    
+    <h3 class="doAnchor separator" id="configure_logging">Should my library
     attempt to configure logging?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p><b>Embedded components such as libraries not only do not need
       to configure the underlying logging framework, they really
       should not do so</b>. They should invoke SLF4J to log but should
@@ -598,16 +601,16 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       </p>      
       
       
-    </dd>
+    
     
     <!-- ======================================================= -->
 
-    <dt class="doAnchor separator" name="optional_dependency">In order to reduce
+    <h3 class="doAnchor separator" id="optional_dependency">In order to reduce
     the number of dependencies of our software we would like to make
     SLF4J an optional dependency. Is that a good idea?      
-    </dt>
+    </h3>
 
-    <dd>
+    
       <p><a
       href="http://stackoverflow.com/questions/978670/is-it-worth-wrapping-a-logging-framework-in-an-additional-layer">This
       question pops up</a> whenever a software project reaches a point
@@ -682,7 +685,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       logging.  While one can come up with a seemingly working
       SLF4J-wrapper within hours, many technical issues will emerge
       over time which Wombat developers will have to deal with. Note
-      that SLF4J has evolved over several years and has 500 bug
+      that SLF4J has evolved over several years and has 580 bug
       reports filed against it.</p>
 
       <p>For the above reasons, developers of frameworks should resist
@@ -691,20 +694,20 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       more difficult for the users of said frameworks and make logging
       code paradoxically more vulnerable to change.
       </p>
-    </dd>
+    
 
 
    <!-- ======================================================= -->
 
-    <dt class="doAnchor separator" name="maven2">What about Maven transitive
+    <h3 class="doAnchor separator" id="maven2">What about Maven transitive
     dependencies?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>As an author of a library built with Maven, you might want to
-      test your application using a provider, say slf4j-log4j12 or
-      logback-classic, without forcing log4j or logback-classic as a
-      dependency upon your users. This is rather easy to accomplish.
+      test your application using a provider, say slf4j-reload4j or
+      logback-classic, without forcing reload4j or logback-classic as
+      a dependency upon your users. This is rather easy to accomplish.
       </p>
 
       <p>Given that your library's code depends on the SLF4J API, you
@@ -723,7 +726,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       
       <pre class="prettyprint source">&lt;dependency&gt;
   &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
-  &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+  &lt;artifactId&gt;slf4j-reload4j&lt;/artifactId&gt;
   &lt;version&gt;${latest.stable.version}&lt;/version&gt;
   <b>&lt;scope&gt;test&lt;/scope&gt;</b>
 &lt;/dependency&gt;</pre>
@@ -740,14 +743,14 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
 
       
       
-    </dd>
+    
     
     <!-- ====================================================== -->
-    <dt class="doAnchor separator" name="excludingJCL">How do I exclude
+    <h3 class="doAnchor separator" id="excludingJCL">How do I exclude
     commons-logging as a Maven dependency?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p><b>alternative 1) explicit exclusion</b></p>
 
       <p>Many software projects using Maven declare commons-logging as
@@ -801,11 +804,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       </p>
 
       <p><b>alternative 3) empty artifacts</b></p>
-
-      <p class="bold red">Version99 service will be disabled at the of
-      2022.</p>
-
-      
+     
       <p>An alternative approach is to depend on an <b>empty</b>
       <em>commons-logging.jar</em> artifact. This clever <a
       href="http://day-to-day-stuff.blogspot.com/2007/10/announcement-version-99-does-not-exist.html">approach
@@ -813,11 +812,11 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       Oosten.
       </p>
 
-      <p>The empty artifact is available from a <a
-      href="http://version99.qos.ch">http://version99.qos.ch</a> a
-      high-availability Maven repository, replicated on several
-      hosts.</p>
+      <p>Such empty artifacts are available at a <a
+      href="http://version99.qos.ch">https://version99.qos.ch</a>.</p>
 
+      <!--
+      
       <p>The following declaration adds the version99 repository to
       the set of remote repositories searched by Maven. This
       repository contains empty artifacts for commons-logging and
@@ -855,8 +854,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
 &lt;/dependencyManagement>
 
 &lt;!-- Do not forget to declare a dependency on jcl-over-slf4j in the        --&gt;
-&lt;!-- dependencies section. Note that the dependency on commons-logging     --&gt;
-&lt;!-- will be imported transitively. You don't have to declare it yourself. --&gt;
+&lt;!-- dependencies section.                                                 --&gt;
 &lt;dependencies>
   &lt;dependency>
     &lt;groupId>org.slf4j&lt;/groupId>
@@ -867,14 +865,14 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
 &lt;/dependencies>
 </pre>
 
-
-    </dd>
+-->
     
-    <dt class="doAnchor separator" name="jmpsModuleNames">What are the JPMS
+    
+    <h3 class="doAnchor separator" id="jmpsModuleNames">What are the JPMS
     module names of the various SLF4J artifacts?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>Although compatible with Java 8, SLF4J version 2.0 supports
       JPMS modularisation as introduced in Java 9. Here are the JPMS
       module names for the various artifacts shipping in SLF4J.</p>
@@ -917,7 +915,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
         </tr>
 
       </table>
-    </dd>
+    
     
   </dl>
   
@@ -926,12 +924,12 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
   
   <dl>
     
-    <dt class="doAnchor separator" name="string_or_object">Why don't the
+    <h3 class="doAnchor separator" id="string_or_object">Why don't the
     printing methods in the Logger interface accept message of type
     Object, but only messages of type String?
-    </dt>
+    </h3>
     
-    <dd>
+    
       
       <p>In SLF4J 1.0beta4, the printing methods such as debug(),
       info(), warn(), error() in the <a
@@ -979,15 +977,15 @@ debug(String msg, Throwable t);</pre>
       descriptive message.</p>
       
       
-    </dd>
+    
     
     <!-- ====================================================== -->
 
-    <dt class="doAnchor separator" name="exception_message">Can I log an
+    <h3 class="doAnchor separator" id="exception_message">Can I log an
     exception without an accompanying message?
-    </dt>
+    </h3>
 
-    <dd>
+    
       <p>In short, no.</p>
       
       <p>If <code>e</code> is an <code>Exception</code>, and you
@@ -1036,19 +1034,19 @@ debug(String msg, Throwable t);</pre>
       accompanying message as a good a thing (TM).
       </p>
       
-    </dd>     
+         
     
     <!-- ====================================================== -->
     
     
-    <dt class="doAnchor separator" name="logging_performance">What is the
+    <h3 class="doAnchor separator" id="logging_performance">What is the
     fastest way of (not) logging?
-    </dt>
+    </h3>
 
-    <dd>    
-      <p>SLF4J supports an advanced feature called parameterized
-      logging which can significantly boost logging performance for
-      <em>disabled</em> logging statement.</p>
+        
+      <p>SLF4J supports a feature called parameterized logging which
+      can significantly boost logging performance for
+      <em>disabled</em> logging statements.</p>
       
       <p> For some Logger <code>logger</code>, writing,</p>
       <pre class="prettyprint source">logger.debug("Entry number: " + i + " is " + String.valueOf(entry[i]));</pre>
@@ -1184,14 +1182,14 @@ logger.debug("The new entry is {}.", entry);</pre>
       <pre class="prettyprint source">logger.debug("File name is C:\\\\{}.", "file.zip");</pre>
       <p>will print as "File name is C:\file.zip".</p>
       
-    </dd>
+    
     
     <!-- ================================================= -->
     
-    <dt class="doAnchor separator" name="string_contents">How can I log the
-    string contents of a single (possibly complex) object?</dt>
+    <h3 class="doAnchor separator" id="string_contents">How can I log the
+    string contents of a single (possibly complex) object?</h3>
     
-    <dd>
+    
       <p> In relatively rare cases where the message to be logged
       is the string form of an object, then the parameterized
       printing method of the appropriate level can be
@@ -1213,17 +1211,17 @@ logger.debug("The new entry is {}.", entry);</pre>
       
       
       
-    </dd>
+    
     
     <!-- ================================================= -->
     
     
-    <dt class="doAnchor separator" name="fatal">Why doesn't the
+    <h3 class="doAnchor separator" id="fatal">Why doesn't the
     <code>org.slf4j.Logger</code> interface have methods for the FATAL
     level?
-    </dt>
+    </h3>
     
-    <dd>      
+          
       <p>The <a href="apidocs/org/slf4j/Marker.html">Marker</a>
       interface, part of the <code>org.slf4j</code> package, renders
       the FATAL level largely redundant. If a given error requires
@@ -1277,13 +1275,13 @@ class Bar {
       other logging frameworks from making use of marker data.
       </p>
       
-    </dd>
+    
     
     <!-- ======================================================= -->
-    <dt class="doAnchor separator" name="trace">Why was the TRACE level
-    introduced only in SLF4J version 1.4.0?</dt>
+    <h3 class="doAnchor separator" id="trace">Why was the TRACE level
+    introduced only in SLF4J version 1.4.0?</h3>
     
-    <dd>
+    
       
       <p>The addition of the TRACE level has been frequently and
       hotly debated request. By studying various projects, we
@@ -1307,7 +1305,7 @@ class Bar {
       </p>
       
       <p>Note that while the cost of evaluating a disabled log
-      request is in the order of a few <code>nanoseconds</code>, the
+      request is in the order of a few <em>nanoseconds</em>, the
       use of the TRACE level (or any other level for that matter) is
       discouraged in tight loops where the log request might be
       evaluated millions of times. If the log request is enabled,
@@ -1322,14 +1320,63 @@ class Bar {
       </p>
       
       
-    </dd>
 
     <!-- ================================================= -->
-    <dt class="doAnchor separator" name="i18n">Does the SLF4J logging API
-    support I18N (internationalization)?
-    </dt>
     
-    <dd>
+    
+    <h3 class="doAnchor separator" id="marker">What are markers and
+    what are they goood for?
+    </h3>
+
+    <p>Markers can be used to color or mark a single log
+    statement. What you do with these colors, i.e. markers, is
+    entirely up to you. However, two patterns seem to be common for
+    marker usage.
+    </p>
+
+    <ol>
+      <li><b>Triggering</b>: Some appender could be instructed to take
+      an action in the presence of a certain marker. For example,
+      SMTPAppender can be configured to send an email whenever a
+      logging event is marked with the NOTIFY_ADMIN marker regardless
+      of the log level. See <a
+      href="https://logback.qos.ch/manual/appenders.html#OnMarkerEvaluator">marker-based
+      triggering</a> in the logback documentation. You may also
+      combine log levels and markers for triggering.</li>
+
+      <li><b>Filtering:</b> Markers are very useful for making certain
+      valuable log statements stand out. For example, you can
+      color/mark all your persistence related logs (in various and
+      multiple class files) with the color "DB". You could then filter
+      for "DB": to disable logging except for log statements marked
+      with DB. See the <a
+      href="https://logback.qos.ch/manual/filters.html">chapter on
+      filters</a> in the logback documentation for more information
+      (search for MarkerFilter). Note that filtering on markers can be
+      performed not just by logback but by log analysis tools as well.
+      </li>
+    </ol>
+    
+    <p>Before the advent of Markers, to achieve similar behavior, you
+    had the option 1) using custom levels 2) use modified logger
+    names. SLF4J API currently does not support custom levels. As for
+    option 2, suffixing (or prefixing) logger names is workable if a
+    one or two loggers need to be modified. The approach becomes
+    impractical as soon 3 or more loggers need to be "sub-classed"
+    because the associated configuration files become unmanageable.
+    </p>
+
+    <p>Even though a single marker can be already very useful, as of
+    SLF4J version 2.0, it is possible to set multiple markers per log
+    statement.</p>
+    
+
+    <!-- ================================================= -->
+    <h3 class="doAnchor separator" id="i18n">Does the SLF4J logging API
+    support I18N (internationalization)?
+    </h3>
+    
+    
       <p>Yes, as of version 1.5.9, SLF4J ships with a package called
       <code>org.slf4j.cal10n</code> which adds <a
       href="localization.html">localized/internationalized logging</a>
@@ -1337,16 +1384,16 @@ class Bar {
       href="http://cal10n.qos.ch">CAL10N API</a>.</p>
 
       
-    </dd>          
+              
 
     <!-- ================================================= -->
 
-    <dt class="doAnchor separator" name="noLoggerFactory">Is it possible to
+    <h3 class="doAnchor separator" id="noLoggerFactory">Is it possible to
     retrieve loggers without going through the static methods in
     <code>LoggerFactory</code>?
-    </dt>
+    </h3>
 
-    <dd>
+    
 
       <p>Yes. <code>LoggerFactory</code> is essentially a wrapper
       around an <a
@@ -1370,16 +1417,16 @@ class Bar {
       if you need additional flexibility, then do consider using the
       <code>ILoggerFactory</code> interface as an alternative to
       inventing your own logging API.</p>
-    </dd>
+    
     
     <!-- ================================================= -->
 
-    <dt class="doAnchor separator" name="paramException">In the presence of an
+    <h3 class="doAnchor separator" id="paramException">In the presence of an
     exception/throwable, is it possible to parameterize a logging
-    statement?</dt>
+    statement?</h3>
 
 
-    <dd>
+    
       <p>Yes, as of SLF4J 1.6.0, but not in previous versions. The
       SLF4J API supports parametrization (of 1 or more objects) in the
       presence of an exception, assuming the exception is the last
@@ -1411,7 +1458,7 @@ try {
      <p>As mentioned earlier, it is possible to pass one or more 
      parameters in addition to the exception.</p>
      
-    </dd>
+    
   </dl>
 
 
@@ -1422,16 +1469,13 @@ try {
 
     <!-- ============================================================= -->
 
-    <dt class="doAnchor separator" name="slf4j_compatible">How do I make my
+    <h3 class="doAnchor separator" id="slf4j_compatible">How do I make my
     logging framework SLF4J compatible?
-    </dt>
+    </h3>
     
-    
-    <dd>
-      
       <p>Adding supporting for the SLF4J is surprisingly
-      easy. Essentially, you copying an existing provider and tailoring
-      it a little (as explained below) does the trick.
+      easy. Essentially, you copying an existing provider and
+      tailoring it a little (as explained below) should do the trick.
       </p>
       
       <p>Assuming your logging system has notion of a
@@ -1441,57 +1485,63 @@ try {
       slf4j-jdk14, and slf4j-reload4j modules for examples of
       adapters.
       </p>
+
+      <p>Instead of adapting your existing Logger to the
+      <code>org.slf4j.Logger</code> interface, you may also implement
+      the <code>org.slf4j.Logger</code> interface directly, in which
+      case no adapter would be necessary. This is the approach taken
+      by the slf4j-simple module.</p>
       
-      <p>Once you have written an appropriate adapter, say
-      <code>MyLoggerAdapter</code>, you need to provide a factory
-      class implementing the <code>org.slf4j.ILoggerFactory</code>
-      interface. This factory should return instances
-      <code>MyLoggerAdapter</code>. Let <code>MyLoggerFactory</code>
-      be the name of your factory class.
+      <p>Once you have written an appropriate adapter or logger
+      implementation, say <code>MyLoggerAdapter</code>, you need to
+      provide a factory class implementing the
+      <code>org.slf4j.ILoggerFactory</code> interface. This factory
+      must return instances <code>MyLoggerAdapter</code>. Let
+      <code>MyLoggerFactory</code> be the name of your factory class.
       </p>
       
-      <p>Once you have the adapter, namely
-      <code>MyLoggerAdapter</code>, and a factory, namely
-      <code>MyLoggerFactory</code>, the last remaining step is to
-      modify the <code>StaticLoggerBinder</code> class so that it
-      returns a new instance of <code>MyLoggerFactory</code>. Note
-      that as of version 2.0, you need to
-      implement <code>SLF4JServiceProvider</code>.
+      <p>The last remaining step is to create a provider class say
+      <code>MySLF4JServiceProvider</code> implementing the
+      <code>org.slf4j.spi.SLF4JServiceProvider</code> interface. The
+      <code>MySLF4JServiceProvider</code> class must be declared in
+      the
+      <em>META-INF/services/org.slf4j.spi.SLF4JServiceProvider</em>
+      file of your module.
       </p>
       
-      <p>For Marker or MDC support, you could use the one of the
-      existing NOP implementations.
+      <p>For Marker or MDC support, you can use the one of the
+      existing implementations or write your own extensions.
       </p>
       
       <p>In summary, to create an SLF4J provider for your logging
       system, follow these steps:</p>
       
       <ol>
-        <li>start with a copy of an existing module,</li>
+        <li>start with a copy of an existing module, </li>            
         <li>create an adapter between your logging system and
         <code>org.slf4j.Logger</code> interface
         </li>
         <li>create a factory for the adapter created in the previous step,</li>
         <li>implement <code>SLF4JServiceProvider</code> class to use
-          the factory you created in the previous step; for SLF4J
-          version 1.7 and earlier, you need to
-          copy <code>StaticLoggerBinder</code></li>
-      </y>
+        the factory you created in the previous step</li>
+        <li>declare your provider in <em>META-INF/services/org.slf4j.spi.SLF4JServiceProvider</em></li>
+      </ol>
+
       
       
-    </dd>
+    
 
     <!-- ============================================================= -->
 
-    <dt class="doAnchor separator" name="marker_interface">How can my logging
+    <h3 class="doAnchor separator" id="marker_interface">How can my logging
     system add support for the <code>Marker</code> interface?
-    </dt>
-    <dd>
+    </h3>
+    
       
-      <p>Markers constitute a revolutionary concept which is
-      supported by logback but not other existing logging
-      systems. Consequently, SLF4J conforming logging systems are
-      allowed to ignore marker data passed by the user.
+      <p>Markers are a relatively new feature which are supported
+      several but not all logging systems. Consequently, SLF4J
+      conforming logging systems are allowed to ignore marker data
+      passed by the user.
       </p>
       
       <p>However, even though marker data may be ignored, the user
@@ -1499,7 +1549,8 @@ try {
       would not be able to switch between logging systems that
       support markers and those that do not.  
       </p>
-      
+
+     
       <p>The <code>MarkerIgnoringBase</code> class can serve as a
       base for adapters or native implementations of logging
       systems lacking marker support. In
@@ -1513,31 +1564,22 @@ try {
       </p>
       
       
-    </dd>
+    
     
     <!-- ============================================================= -->
 
-    <dt class="doAnchor separator" name="version_checks">How does SLF4J's
+    <h3 class="doAnchor separator" id="version_checks">How does SLF4J's
     version check mechanism work?
-    </dt>
-    
-    <dd>
-      <p>The version check performed by SLF4J API during its
-      initialization is an <em>elective</em> process. Conforming SLF4J
-      implementations may choose <em>not</em> to participate, in which
-      case, no version check will be performed.
+    </h3>
+        
+      <p>As of version 2.0.x, the version check performed by SLF4J API
+      during initialization is a <em>mandatory</em>
+      process. Conforming SLF4J implementations must return the
+      desired API version via the <code>getRequestedApiVersion</code>
+      method in the class implementing the
+      <em>SLF4JServiceProvider</em> interface.
       </p>
-      
-      <p>However, if an SLF4J implementation decides to participate,
-      than it needs to declare a variable called
-      REQUESTED_API_VERSION within its copy of the
-      <code>StaticLoggerBinder</code> class. The value of this
-      variable should be equal to the version of the slf4j-api.jar
-      it is compiled with. If the implementation is upgraded to a
-      newer version of slf4j-api, than you also need to update the
-      value of REQUESTED_API_VERSION. 
-      </p>
-      
+            
       <p>For each version, SLF4J API maintains a list of compatible
       versions. SLF4J will emit a version mismatch warning only if
       the requested version is not found in the compatibility
@@ -1546,38 +1588,18 @@ try {
       use every 6 to 12 months, you can still participate in the
       version check without incurring a mismatch warning. For
       example, logback has a different release schedule but still
-      participates in version checks.</p>
-      
-      <p><b>As of SLF4J 1.5.5</b>, all providers shipped within the
-      SLF4J distribution, e.g. slf4j-log4j12, slf4j-simple and
-      slf4j-jdk14, declare the REQUESTED_API_VERSION field with a
-      value equal to their SLF4J version. It follows that, for example
-      if slf4j-simple-1.5.8.jar is mixed with slf4j-api-1.6.0.jar,
-      given that 1.5.8 is not on the compatibility list of SLF4J
-      version 1.6.x, a version mismatch warning will be issued.
-      </p>
-
-      <p>Note that SLF4J versions prior to 1.5.5 did not have a
-      version check mechanism.  Only slf4j-api-1.5.5.jar and later can
-      emit version mismatch warnings.
-      </p>
-
-      
-    </dd>
+      participates in version checks.</p>                
     
   </dl>
   
   <h2>General questions about logging</h2>
   
   
-
-  <dl>
-
-    <!-- ============================================================= -->
-    <dt class="doAnchor separator" name="declared_static">Should Logger members
+  <!-- ============================================================= -->
+    <h3 class="doAnchor separator" id="declared_static">Should Logger members
     of a class be declared as static?
-    </dt>
-    <dd>
+    </h3>
+    
       
       <p>We <code>used</code> to recommend that loggers members be
       declared as instance variables instead of static. After further
@@ -1734,16 +1756,16 @@ try {
       discussion</a> in the commons-logging wiki.
       </p>
       
-    </dd>       
+           
   </dl>
   
   <!-- ============================================================= -->
   <dl>
-    <dt class="doAnchor separator" name="declaration_pattern">Is there a
+    <h3 class="doAnchor separator" id="declaration_pattern">Is there a
     recommended idiom for declaring a logger in a class?
-    </dt>
+    </h3>
     
-    <dd>
+    
       <p>The following is the recommended logger declaration
       idiom. For reasons <a href="#declared_static">explained
       above</a>, it is left to the user to determine whether loggers
@@ -1780,8 +1802,6 @@ public class MyClass {
       
      <p>This pattern can be cut and pasted across classes.</p>
 
-    </dd>
-  </dl>
     
   <script src="templates/footer.js" type="text/javascript"></script>
   </div>

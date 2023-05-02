@@ -21,17 +21,17 @@
 
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="noProviders">No SLF4J providers
+    <h3 class="doAnchor" id="noProviders">No SLF4J providers
     were found.
     </h3>
 
-    <p>This <b>warning</b>, i.e. not an error, message is reported when
-    no SLF4J providers could be found on the class path.  Placing one
-    (and only one) of <em>slf4j-nop.jar</em>
+    <p>This <b>warning</b>, i.e. not an error, message is reported
+    when no SLF4J providers could be found on the class path.  Placing
+    one (and only one) of the many available providers such
+    as <em>slf4j-nop.jar</em>
     <em>slf4j-simple.jar</em>, <em>slf4j-reload4j.jar</em>,
     <em>slf4j-jdk14.jar</em> or <em>logback-classic.jar</em> on the
-    class path should solve the problem. Note that these providers
-    must target slf4j-api 2.0.x or later.
+    class path should solve the problem.  
     </p>
 
     <p>In the absence of a provider, SLF4J will default to a
@@ -58,7 +58,7 @@
     
     <!-- ====================================================== -->    
 
-    <h3 class="doAnchor" name="ignoredBindings">Class path contains
+    <h3 class="doAnchor" id="ignoredBindings">Class path contains
     SLF4J bindings targeting slf4j-api versions 1.7.x or earlier
     </h3>
 
@@ -88,7 +88,7 @@
     <!-- ====================================================== -->
 
     <h3 class="doAnchor"
-    name="unsuccessfulInit">IllegalStateException:
+    id="unsuccessfulInit">IllegalStateException:
     <code>org.slf4j.LoggerFactory</code> in failed state. Original
     exception was thrown EARLIER.
     </h3>
@@ -105,7 +105,7 @@
 
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="release">The method
+    <h3 class="doAnchor" id="release">The method
     <code>o.a.commons.logging.impl.SLF4FLogFactory#release</code> was
     invoked.      
     </h3>
@@ -138,7 +138,7 @@
     
      <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="unsupported_operation_in_jcl_over_slf4j">Operation
+    <h3 class="doAnchor" id="unsupported_operation_in_jcl_over_slf4j">Operation
     [suchAndSuch] is not supported in jcl-over-slf4j.
     </h3>
 
@@ -161,7 +161,7 @@
     </p>
 
     <!-- ====================================================== -->
-    <h3 class="doAnchor" name="loggerNameMismatch">Detected logger
+    <h3 class="doAnchor" id="loggerNameMismatch">Detected logger
     name mismatch</h3>
 
     <p>Logger name mismatch warnings are printed only if the
@@ -216,7 +216,7 @@ class B extends A {
 
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="StaticLoggerBinder">Failed to load class
+    <h3 class="doAnchor" id="StaticLoggerBinder">Failed to load class
     <code>org.slf4j.impl.StaticLoggerBinder</code></h3>
 
     <p>This warning message is reported when the
@@ -259,7 +259,7 @@ class B extends A {
 
 <!--
     <h3>
-      <a name="illegalAccess" href="#illegalAccess">java.lang.IllegalAccessError: tried to access field
+      <a id="illegalAccess" href="#illegalAccess">java.lang.IllegalAccessError: tried to access field
       org.slf4j.impl.StaticLoggerBinder.SINGLETON from class
       org.slf4j.LoggerFactory</a>
     </h3>
@@ -286,7 +286,7 @@ class B extends A {
 -->
 
     <!-- ====================================================== -->
-    <h3 class="doAnchor" name="multiple_bindings">Multiple bindings
+    <h3 class="doAnchor" id="multiple_bindings">Multiple bindings
     were found on the class path
     </h3>
 
@@ -358,7 +358,7 @@ class B extends A {
   
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="version_mismatch">slf4j-api version
+    <h3 class="doAnchor" id="version_mismatch">slf4j-api version
     does not match that of the binding</h3>
 
     <p>An SLF4J binding designates an artifact such as
@@ -392,7 +392,7 @@ class B extends A {
 
     <!-- ====================================================== -->
     
-    <h3 class="doAnchor" name="null_LF">Logging factory implementation
+    <h3 class="doAnchor" id="null_LF">Logging factory implementation
     cannot be null</h3>
 
     <p>This error is reported when the <code>LoggerFactory</code>
@@ -405,7 +405,7 @@ class B extends A {
 
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="log4jDelegationLoop">Detected both
+    <h3 class="doAnchor" id="log4jDelegationLoop">Detected both
     log4j-over-slf4j.jar AND slf4j-reload4j on the class path,
     preempting <code>StackOverflowError</code>.
     </h3>
@@ -458,7 +458,7 @@ class B extends A {
     <!-- ====================================================== -->
 
 
-    <h3 class="doAnchor" name="jclDelegationLoop">Detected both
+    <h3 class="doAnchor" id="jclDelegationLoop">Detected both
     jcl-over-slf4j.jar AND slf4j-jcl.jar on the class path, preempting
     <code>StackOverflowError</code>.
     </h3>
@@ -500,7 +500,7 @@ class B extends A {
     </p>
 
     <!-- ====================================================== -->
-    <h3 class="doAnchor" name="no_tlm">Exception in
+    <h3 class="doAnchor" id="no_tlm">Exception in
     thread "main" java.lang.NoSuchFieldError: tlm</h3>
 
     <pre class="prettyprint source">
@@ -538,7 +538,7 @@ class B extends A {
     
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="no_static_mdc_binder">Failed to load
+    <h3 class="doAnchor" id="no_static_mdc_binder">Failed to load
     class "org.slf4j.impl.StaticMDCBinder"</h3>
     
     <p>This error indicates that appropriate SLF4J binding could not
@@ -551,7 +551,7 @@ class B extends A {
 
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="null_MDCA">MDCAdapter cannot be null 
+    <h3 class="doAnchor" id="null_MDCA">MDCAdapter cannot be null 
     </h3>
 
     <p>This error is reported when <code>org.slf4j.MDC</code> class
@@ -563,7 +563,7 @@ class B extends A {
     
    <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="replay">A number (N) of logging calls
+    <h3 class="doAnchor" id="replay">A number (N) of logging calls
     during the initialization phase have been intercepted and are now
     being replayed. These are subject to the filtering rules of the
     underlying logging system.
@@ -583,7 +583,7 @@ class B extends A {
  
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="substituteLogger" >Substitute loggers
+    <h3 class="doAnchor" id="substituteLogger" >Substitute loggers
     were created during the default configuration phase of the
     underlying logging system</h3>
 
@@ -616,7 +616,7 @@ class B extends A {
   
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor" name="log4j_version">SLF4J versions 1.4.0 and
+    <h3 class="doAnchor" id="log4j_version">SLF4J versions 1.4.0 and
     later requires log4j 1.2.12 or later</h3>
 
     <p>The trace level was added to log4j in version 1.2.12 released
@@ -636,7 +636,7 @@ class B extends A {
     <!-- ====================================================== -->
 
      <h3 class="doAnchor"
-     name="log4j_version">java.lang.NoClassDefFoundError:
+     id="log4j_version">java.lang.NoClassDefFoundError:
      org/slf4j/event/LoggingEvent</h3>
 
      <p>Logback-classic version 1.1.4 and later require slf4j-api

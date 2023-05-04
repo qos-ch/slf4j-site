@@ -267,12 +267,14 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       <h3 class="doAnchor" id="swapping">Binding with a logging
       framework at deployment time</h3>
 
-      <p>As mentioned previously, SLF4J supports various logging
-      frameworks. The SLF4J distribution ships with several jar files
-      referred to as "SLF4J provider", with each provider
-      corresponding to a supported framework. SLF4J 1.7 and earlier
-      used the term "binding" for providers. </p>
+      <p>As mentioned previously, SLF4J is intended as a facade for
+      various logging frameworks. The SLF4J distribution ships with
+      several jar files referred to as "providers", with each provider
+      corresponding to a supported logging framework. SLF4J versions
+      1.7 and earlier used the term "binding" for providers. </p>
 
+      <p>Here is a non-exhaustive list of artifacts.</p>
+      
       <dl>
 
         <dt><em>slf4j-log4j12-${latest.stable.version}.jar</em>
@@ -302,8 +304,9 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
 
        
         <dt><em>slf4j-jdk14-${latest.stable.version}.jar</em> </dt>
-        <dd>Binding/provider for java.util.logging, also referred to as JDK 1.4
-        logging <p/></dd>
+        <dd>Binding/provider for <span
+        class="big">java.util.logging</span>, also referred to as JDK
+        1.4 logging <p/></dd>
 
         <dt><em>slf4j-nop-${latest.stable.version}.jar</em></dt>
         <dd>Binding/provider for <a
@@ -317,7 +320,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
         System.err. Only messages of level INFO and higher are
         printed. This binding may be useful in the context of small
         applications.<p/></dd>
-        
+         
         <dt><em>slf4j-jcl-${latest.stable.version}.jar</em></dt>
         
         <dd>Binding/provider
@@ -357,8 +360,8 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
 
       <p>To switch logging frameworks, just replace slf4j bindings on
       your class path. For example, to switch from java.util.logging
-      to log4j, just replace slf4j-jdk14-${latest.stable.version}.jar with
-      slf4j-log4j12-${latest.stable.version}.jar.
+      to reload4j, just replace slf4j-jdk14-${latest.stable.version}.jar with
+      slf4j-reload4j-${latest.stable.version}.jar.
       </p>
 
       <p>SLF4J does not rely on any special class loader machinery. In

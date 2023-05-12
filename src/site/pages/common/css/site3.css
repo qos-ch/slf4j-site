@@ -50,10 +50,10 @@ table {
         margin-right: auto;
     }
 
-    div#ad,
+/*    div#ad,
     .horizontal-ad {
         max-height: calc(var(--main-logo-height) * 2);
-    }
+    }*/
 
     #header, #content {
         max-width: var(--max-width-on-wide-screen);
@@ -62,7 +62,7 @@ table {
 
 /** =================================================== */
 img.logo {
-    height: var(--main-logo-height);
+    max-height: var(--main-logo-height);
 }
 
 img.avatar-icon,
@@ -76,13 +76,14 @@ div.avatar {
     width:  calc(var(--main-logo-height) );
     margin: 3px;
 }
-
 pre, div.bodyTable {
     overflow: auto;
     overflow-wrap: normal;
 }
+pre {background-color: #FFEEDD; min-height: 2ex;}
+
 .example, pre > code {
-    /*word-break: normal;*/
+    word-break: normal;
     white-space: pre;
     overflow: auto;
     min-height: 2ex;
@@ -100,9 +101,9 @@ img.data {
     max-width: 100%;
     min-width: 300px;
     height: auto;
-
-    /*max-width: calc(var(--max-width-on-wide-screen) * 0.75);*/
 }
+
+
 
 
 
@@ -114,7 +115,7 @@ img.data {
 
 #header-grid {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr;
     grid-template-areas:
         'logo-menu-area   icons-area'
         'header-line-area header-line-area'
@@ -168,12 +169,6 @@ div#ad,
 
 div#sponsor {
     float: right;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    max-width: 10rem;
-
     border-color: #F00;
     margin: 0px;
     margin-top: 1rem;
@@ -201,11 +196,12 @@ div.spotify {
 img.spotify {
     max-height: calc(var(--main-logo-height));
 }
-
-img.exoscale {
+img.stf {
+    max-height: calc(var(--main-logo-height) * 1.4  );
+}
+img.exoscale { 
     max-height: calc(var(--main-logo-height) * 0.8);
 }
-
 #content {
     /*grid-area: contentArea;*/
 }
@@ -231,8 +227,8 @@ div#top-content > #manualIndex {
     margin: 1rem;
     padding: 0px;
     background-color: #ffffff;
+    Xfont-size: smaller;
 }
-
 
 #quote {
     grid-area: top-content-quote;
@@ -249,7 +245,6 @@ div#creative-commons {
     padding: 0px;
     border-top: 1px solid #CCCCCC;
     margin-top: 3ex;
-    Xfont-size: smaller;
 }
 
 
@@ -258,6 +253,7 @@ p.menu {
     padding-bottom: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
+
 }
 
 
@@ -265,7 +261,7 @@ p.menu {
     background-color: #FFD0A0;
     border: 1px solid #CCCCCC;
     margin: 0px;
-    padding-top: 4px;
+    padding-top: 2px;
 }
 
 a {
@@ -310,7 +306,8 @@ p.menu_header {
     border: none;
     margin-left: auto;
     margin-right: auto;
-    max-width: 100%;
+    display: block; /* causes images to be stacked? */
+    /** max-width: 100%;  maybe important in */
 }
 
 span.canonical {
@@ -666,11 +663,20 @@ p.menu {
 /* Style the tab content */
 .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 0px;
     border: 1px solid #ccc;
     border-top: none;
 }
 
 /* tab END ================================ */
 
+.champion {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: cornsilk;
+    border-style: dotted;
+    border-color: #F00;
+}
 

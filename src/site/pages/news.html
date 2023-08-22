@@ -70,10 +70,56 @@
       </div>
     </div>
 
+
+   <hr noshade="noshade" size="1"/>
+
+
+
+   <h3 class="doAnchor" name="2.0.8">2023-0xx - Release of SLF4J 2.0.8</h3>
+
+   <p>&bull; Added a Bill of Materials (BOM) file to the project. This
+   was a frequently requested addition as expressed in <a
+   href="https://jira.qos.ch/browse/SLF4J-437">SLF4J-437</a>. Garret
+   Wilson's <a
+   href="https://www.garretwilson.com/blog/2023/06/14/improve-maven-bom-pattern">Improving
+   the Maven Bill of Materials (BOM) Pattern</a> document was
+   instrumental in making this happen.
+   </p>
+
+   <p>&bull; Added a <em>module-info.java</em> file to <em>jul-to-slf4j</em>
+   module. This was requested in <a
+   href="https://jira.qos.ch/browse/SLF4J-596">SLF4J-596</a> by Gili
+   Tzabari.</p>
+
+   <p>&bull; Fixed typo in the name of the
+   <code>SLF4JPlarformLoggerFactory</code> class which was renamed as
+   <code>SLF4JPlatformLoggerFactory</code>. This issue was raised in
+   <a href="https://jira.qos.ch/browse/SLF4J-598">SLF4J-598</a> by
+   Ethan McCue who also provided the relevant PR.</p>
    
+   
+   <p>&bull; The slf4j-jdk-platform-logging module now uses
+   <code>MessageFormat</code> as specified in the API javadocs of <a
+   href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/System.Logger.html#log(java.lang.System.Logger.Level,java.lang.String,java.lang.Object...)"><code>System.Logger#log</code></a>
+   method. This issue was reported in <a
+   href="https://jira.qos.ch/browse/SLF4J-529">SLF4J-529</a> by Taku
+   Miyakawa who also provided the relevant patch.</p>
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.8 from the source code repository
+   (GitHub). Release built using Java "20" 2023-03-21 build 20+36-2344 under Linux Debian 11.6.
+   </p>
+
+   <!--
+   -->
+
+
+
+    
    <hr noshade="noshade" size="1"/>
    
-   <h3 class="doAnchor" name="2.0.7">2023-03-17 - Release of SLF4J 2.0.7</h3>
+   <h3 class="doAnchor" name="2.0.7">2023-03-17 - Release of SLF4J
+   2.0.7</h3>
 
    <p>&bull; Fixed several OSGi MANIFEST.MF related issues, namely 
      <a href="https://jira.qos.ch/browse/SLF4J-581">SLF4J-581</a>,

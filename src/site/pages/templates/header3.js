@@ -47,7 +47,7 @@ function insertLogoAndMenu() {
     document.write('            <div>'); // hanging div START
     document.write('                <div class="dropdown-heading">Wrapped implementations</div>');
     document.write('                <div class="dropdown-links">');
-    document.write('                   <a href="api/org/slf4j/jul/JDK14LoggerAdapter.html">slf4j-jdk14</a>');
+    document.write('                   <a href="api/org/slf4j/jul/JDK14LoggerAdapter.html">slf4j-jdk14 (for java.util.logging)</a>');
     document.write('                   <a href="api/org/slf4j/reload4j/Reload4jLoggerAdapter.html">slf4j-log4j 1.x (superseded by slf4j-reload4j)</a>');
     document.write('                   <a href="api/org/slf4j/reload4j/Reload4jLoggerAdapter.html">slf4j-reload4j</a>');
     document.write('                   <a href="api/org/slf4j/simple/SimpleLogger.html">slf4j-simple</a>');
@@ -56,8 +56,9 @@ function insertLogoAndMenu() {
     document.write('            <div>'); // hanging div START
     document.write('                <div class="dropdown-heading">Other implementations</div>');
     document.write('                <div class="dropdown-links">');
-    document.write('                   <a href="' + prefix +'count/tinylog.html">tinylog</a>');
     document.write('                   <a href="' + prefix +'count/jboss.html">JBoss logging</a>');
+    document.write('                   <a href="' + prefix +'count/log4j2_slf4j_binding.html">log4j 2.x binding</a>');
+    document.write('                   <a href="' + prefix +'count/tinylog.html">tinylog</a>');
     document.write('                </div>');
     document.write('            </div>'); // hanging div END
 

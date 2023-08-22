@@ -179,6 +179,12 @@ div#sponsor {
 div.pub {
     margin: 0px;
     padding: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: solid 1px #ffd0a0;
+    border-left: solid 1px #ffd0a0;
+    border-right: solid 1px #ffd0a0;
 }
 p.sponsoredBy {
     padding: 2px;
@@ -199,7 +205,7 @@ img.spotify {
 img.stf {
     max-height: calc(var(--main-logo-height) * 1.4  );
 }
-img.exoscale { 
+img.exoscale {
     max-height: calc(var(--main-logo-height) * 0.8);
 }
 #content {

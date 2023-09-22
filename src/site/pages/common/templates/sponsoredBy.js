@@ -16,6 +16,11 @@ document.write('    <a href="' + prefix +'count/spotify.html" style="">');
 document.write('        <img class="spotify"  alt="Spotify R&amp;D" src="' + prefix + 'images/logos/spotify-rnd-black.png"/>');
 document.write('    </a>');
 
+document.write('    <a href="' + prefix +'count/amex.html" style="">');
+document.write('        <img class="amex"  alt="American express" src="' + prefix + 'images/logos/amex-logo.png"/>');
+document.write('    </a>');
+ 
+
 document.write('</div>');
 
 // close div.sponsor

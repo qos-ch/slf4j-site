@@ -202,9 +202,12 @@ div.spotify {
 img.spotify {
     max-height: calc(var(--main-logo-height));
 }
+img.amex { 
+    max-height: calc(var(--main-logo-height) * 1.5);
+}
 img.stf {
     max-height: calc(var(--main-logo-height) * 1.4  );
-}
+} 
 img.exoscale {
     max-height: calc(var(--main-logo-height) * 0.8);
 }

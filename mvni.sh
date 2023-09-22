@@ -8,15 +8,16 @@ function scpLogback() {
     #i=0;
     for file in ${ARGS} 
     do
-        echo "scp ${file} yvo.qos.ch:/var/www/logback.qos.ch/htdocs/${file}";
-        scp ${file} yvo.qos.ch:/var/www/www.slf4j.org/htdocs/${file};
+        echo "scp ${file} yvo.qos.ch:/var/www/www.slf4j.org/htdocs/${file}";
+        scp ${file} ge.qos.ch:/var/www/www.slf4j.org/htdocs/${file};
         #i=$((i + 1));
     done
     popd
 }
 
 function doRsync() {
-    ssh root@exo1.qos.ch "rsync -r -p -z -l --exclude=log/ --delete rsync://yvo.qos.ch/www/www.slf4j.org /var/www"
+    echo 'ssh root@exo1.qos.ch "rsync -r -p -z -l --exclude=log/ --delete rsync://ge.qos.ch/www/www.slf4j.org /var/www"'
+    ssh root@exo1.qos.ch "rsync -r -p -z -l --exclude=log/ --delete rsync://ge.qos.ch/www/www.slf4j.org /var/www"
 }
 
 

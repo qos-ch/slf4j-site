@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -45,6 +45,9 @@
     
     <li><a href="#compatibility">Are SLF4J versions backward
     compatible?</a></li>
+
+    <li><a href="#internalMessages">Is there a way to control the
+    internal messages emitted by SLF4J?</a></li>
 
     <li><a href="#IllegalAccessError">I am getting
     <code>IllegalAccessError</code> exceptions when using SLF4J. Why
@@ -197,7 +200,7 @@
   <h2>Generalities</h2>
   
 
-    <h3 class="doAnchor" id="what_is">What is SLF4J?</h3>
+    <h3 class="doAnchor" name="what_is">What is SLF4J?</h3>
     
       <p>SLF4J is a simple facade for logging systems allowing the
       end-user to plug in the desired logging system at deployment
@@ -206,7 +209,7 @@
     
 
 
-    <h3 class="doAnchor separator" id="when">When should SLF4J be used?</h3>
+    <h3 class="doAnchor separator" name="when">When should SLF4J be used?</h3>
     
       <p>In short, libraries and other embedded components should
       consider SLF4J for their logging needs because libraries cannot
@@ -250,7 +253,7 @@
       
 
 
-    <h3 class="doAnchor separator" id="yet_another_facade">Is SLF4J yet
+    <h3 class="doAnchor separator" name="yet_another_facade">Is SLF4J yet
     another logging facade?</h3>
     
     
@@ -264,7 +267,7 @@
       
       
     
-    <h3 class="doAnchor separator" id="why_new_project">If SLF4J fixes
+    <h3 class="doAnchor separator" name="why_new_project">If SLF4J fixes
     Jakarta Commons Logging (JCL), then why wasn't the fix made in JCL
     instead of creating a new project?
     </h3>
@@ -290,13 +293,13 @@
       need be.
       </p>
 
-      <p>In 2021, the question is moot since JCL has been defunct for
-      at least a decade.
+      <p>These days, the question is moot since JCL has been defunct
+      for at least a decade.
       </p>
       
     
     
-    <h3 class="doAnchor separator" id="need_to_recompile">When using SLF4J, do
+    <h3 class="doAnchor separator" name="need_to_recompile">When using SLF4J, do
     I have to recompile my application to switch to a different
     logging system?
     </h3>
@@ -320,7 +323,7 @@
       
     
 
-    <h3 class="doAnchor separator" id="requirements">What are SLF4J's
+    <h3 class="doAnchor separator" name="requirements">What are SLF4J's
     requirements?
     </h3>
     
@@ -368,14 +371,10 @@
     
 
     <!-- ==================================================== -->
-    <h3 class="doAnchor separator" id="changesInVersion200">
+    <h3 class="doAnchor separator" name="changesInVersion200">
       What has changed in SLF4J version 2.0.0?
     </h3>
 
-    
-
-      <p>
-      
       <p>SLF4J 2.0.0 incorporates an optional <a
       href="manual.html#fluent">fluent api</a>. Otherwise, there are
       no client facing API changes in 2.0.x. For most users, upgrading
@@ -460,7 +459,7 @@
     <!-- ==================================================== -->
     <!-- entry has order dependees -->
 
-    <h3 class="doAnchor separator" id="compatibility">Are SLF4J versions
+    <h3 class="doAnchor separator" name="compatibility">Are SLF4J versions
     backward compatible?
     </h3>
  
@@ -494,16 +493,39 @@
       your code will require slf4j-api version 2.0 or later.</p>
       
       
-    
-
     <!-- ==================================================== -->
 
-    <h3 class="doAnchor separator" id="IllegalAccessError">I am getting
+    <h3 class="doAnchor separator" name="internalMessages">Is there a
+    way to control the internal messages emitted by SLF4J?
+    </h3>
+
+    <p>As of version 2.0.10, SLF4J uses the <code>Reporter</code>
+    class to output its internal messages. The Reporter mechanism is
+    totally unrelated to the logging provider in use. Thus, it cannot
+    be controlled by the SLF4J provider's settings,
+    i.e. logback/log4j/jul settings have no effect on Reporter.</p>
+
+    <p>By default, Reporter sends its output to Stderr. However, by
+    "slf4j.internal.report.stream" property to "System.out" "stdout"
+    or "sysout", output can be redirected to stdout. Any other value
+    will direct output to the default, i.e. stderr.
+    </p>
+
+    <p>It is also possible to set the "slf4j.internal.verbosity"
+    system property to one of "INFO", "WARN" or "ERROR" to control the
+    verbosity of SLF4J internal messages. Mesages of level INFO are
+    prefixed with the string "SLF4J(I). Similartly, level WARN is
+    prefixed by SLF4J(W) and ERROR by SLF4J(E). ERROR messages cannot
+    be supressed.</p>
+    
+    <!-- ==================================================== -->
+
+    <h3 class="doAnchor separator" name="IllegalAccessError">I am getting
     <code>IllegalAccessError</code> exceptions when using SLF4J. Why
     is that?
     </h3>
 
-    
+      
 
       <p>Here are the exception details.</p>
 
@@ -546,7 +568,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       
     <!-- ==================================================== -->
           
-    <h3 class="doAnchor separator" id="missingLogMethodCall">When using the fluent API, how can
+    <h3 class="doAnchor separator" name="missingLogMethodCall">When using the fluent API, how can
     I make my IDE alert me when I forget to call the log() method?
     </h3>
 
@@ -574,7 +596,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
     
     <!-- ==================================================== -->
 
-    <h3 class="doAnchor separator" id="license">Why is SLF4J licensed under
+    <h3 class="doAnchor separator" name="license">Why is SLF4J licensed under
     X11 type license instead of the Apache Software License?
     </h3>
     
@@ -592,7 +614,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
     
 
     <!-- ==================================================== -->
-    <h3 class="doAnchor separator" id="where_is_binding">Where can I get a
+    <h3 class="doAnchor separator" name="where_is_binding">Where can I get a
     particular SLF4J provider/binding?
     </h3>
     
@@ -620,7 +642,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       
     
     
-    <h3 class="doAnchor separator" id="configure_logging">Should my library
+    <h3 class="doAnchor separator" name="configure_logging">Should my library
     attempt to configure logging?
     </h3>
     
@@ -641,7 +663,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
     
     <!-- ======================================================= -->
 
-    <h3 class="doAnchor separator" id="optional_dependency">In order to reduce
+    <h3 class="doAnchor separator" name="optional_dependency">In order to reduce
     the number of dependencies of our software we would like to make
     SLF4J an optional dependency. Is that a good idea?      
     </h3>
@@ -731,11 +753,11 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       code paradoxically more vulnerable to change.
       </p>
     
-
+      
 
    <!-- ======================================================= -->
 
-    <h3 class="doAnchor separator" id="maven2">What about Maven transitive
+    <h3 class="doAnchor separator" name="maven2">What about Maven transitive
     dependencies?
     </h3>
     
@@ -782,7 +804,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
     
     
     <!-- ====================================================== -->
-    <h3 class="doAnchor separator" id="excludingJCL">How do I exclude
+    <h3 class="doAnchor separator" name="excludingJCL">How do I exclude
     commons-logging as a Maven dependency?
     </h3>
     
@@ -830,7 +852,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
       replacement for commons-logging, the first assertion becomes
       true.
       </p>
-
+      
       <p>Unfortunately, while declaring commons-logging in the
       provided scope gets the job done, your IDE, e.g. Eclipse, will
       still place <em>commons-logging.jar</em> on your project's class
@@ -904,7 +926,7 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
 -->
     
     
-    <h3 class="doAnchor separator" id="jmpsModuleNames">What are the JPMS
+    <h3 class="doAnchor separator" name="jmpsModuleNames">What are the JPMS
     module names of the various SLF4J artifacts?
     </h3>
     
@@ -950,17 +972,42 @@ org.slf4j.impl.StaticLoggerBinder.SINGLETON from class org.slf4j.LoggerFactory
           <td>org.slf4j.jdk.platform.logging</td>                   
         </tr>
 
-      </table>
-    
-    
-  </dl>
-  
-  
+      </table>        
+
+
+    <h3 class="doAnchor separator" name="bindingProviderDifference">
+        What is the difference
+        between an SLF4J binding and an SLF4J provider?
+    </h3>
+      
+
+    <p>An SLF4J binding and a provider designate the same
+    functionality, namely the act of tying the SLF4J API with its
+    implementation at runtime.
+    </p>
+
+    <p>In SLF4J 1.7.x and earlier this was done by invoking methods of
+    <code>StaticLoggerBinder</code> class as found on the class path
+    during <code>LoggerFactory</code> initialization. An artifact
+    containing a <code>StaticLoggerBinder</code> class is called a
+    "binding".</p>
+ 
+
+    <p>In SLF4J 2.0.x and later, during its initalization,
+    <code>LoggerFactory</code> looks up
+    <code>SLF4JServiceProvider</code> instances using the Java
+    platfom's <a
+    href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html">ServiceLoader</a>
+    mechanism. An artifact containing an implementation of the
+    <code>SLF4JServiceProvider</code> interface is called a
+    "provider".</p>
+
+
+
   <h2>About the SLF4J API</h2>
   
-  <dl>
-    
-    <h3 class="doAnchor separator" id="string_or_object">Why don't the
+  
+    <h3 class="doAnchor separator" name="string_or_object">Why don't the
     printing methods in the Logger interface accept message of type
     Object, but only messages of type String?
     </h3>
@@ -1017,7 +1064,7 @@ debug(String msg, Throwable t);</pre>
     
     <!-- ====================================================== -->
 
-    <h3 class="doAnchor separator" id="exception_message">Can I log an
+    <h3 class="doAnchor separator" name="exception_message">Can I log an
     exception without an accompanying message?
     </h3>
 
@@ -1075,7 +1122,7 @@ debug(String msg, Throwable t);</pre>
     <!-- ====================================================== -->
     
     
-    <h3 class="doAnchor separator" id="logging_performance">What is the
+    <h3 class="doAnchor separator" name="logging_performance">What is the
     fastest way of (not) logging?
     </h3>
 
@@ -1222,7 +1269,7 @@ logger.debug("The new entry is {}.", entry);</pre>
     
     <!-- ================================================= -->
     
-    <h3 class="doAnchor separator" id="string_contents">How can I log the
+    <h3 class="doAnchor separator" name="string_contents">How can I log the
     string contents of a single (possibly complex) object?</h3>
     
     
@@ -1252,7 +1299,7 @@ logger.debug("The new entry is {}.", entry);</pre>
     <!-- ================================================= -->
     
     
-    <h3 class="doAnchor separator" id="fatal">Why doesn't the
+    <h3 class="doAnchor separator" name="fatal">Why doesn't the
     <code>org.slf4j.Logger</code> interface have methods for the FATAL
     level?
     </h3>
@@ -1314,7 +1361,7 @@ class Bar {
     
     
     <!-- ======================================================= -->
-    <h3 class="doAnchor separator" id="trace">Why was the TRACE level
+    <h3 class="doAnchor separator" name="trace">Why was the TRACE level
     introduced only in SLF4J version 1.4.0?</h3>
     
     
@@ -1360,7 +1407,7 @@ class Bar {
     <!-- ================================================= -->
     
     
-    <h3 class="doAnchor separator" id="marker">What are markers and
+    <h3 class="doAnchor separator" name="marker">What are markers and
     what are they goood for?
     </h3>
 
@@ -1408,7 +1455,7 @@ class Bar {
     
 
     <!-- ================================================= -->
-    <h3 class="doAnchor separator" id="i18n">Does the SLF4J logging API
+    <h3 class="doAnchor separator" name="i18n">Does the SLF4J logging API
     support I18N (internationalization)?
     </h3>
     
@@ -1424,7 +1471,7 @@ class Bar {
 
     <!-- ================================================= -->
 
-    <h3 class="doAnchor separator" id="noLoggerFactory">Is it possible to
+    <h3 class="doAnchor separator" name="noLoggerFactory">Is it possible to
     retrieve loggers without going through the static methods in
     <code>LoggerFactory</code>?
     </h3>
@@ -1457,7 +1504,7 @@ class Bar {
     
     <!-- ================================================= -->
 
-    <h3 class="doAnchor separator" id="paramException">In the presence of an
+    <h3 class="doAnchor separator" name="paramException">In the presence of an
     exception/throwable, is it possible to parameterize a logging
     statement?</h3>
 
@@ -1505,7 +1552,7 @@ try {
 
     <!-- ============================================================= -->
 
-    <h3 class="doAnchor separator" id="slf4j_compatible">How do I make my
+    <h3 class="doAnchor separator" name="slf4j_compatible">How do I make my
     logging framework SLF4J compatible?
     </h3>
     
@@ -1569,7 +1616,7 @@ try {
 
     <!-- ============================================================= -->
 
-    <h3 class="doAnchor separator" id="marker_interface">How can my logging
+    <h3 class="doAnchor separator" name="marker_interface">How can my logging
     system add support for the <code>Marker</code> interface?
     </h3>
     
@@ -1604,7 +1651,7 @@ try {
     
     <!-- ============================================================= -->
 
-    <h3 class="doAnchor separator" id="version_checks">How does SLF4J's
+    <h3 class="doAnchor separator" name="version_checks">How does SLF4J's
     version check mechanism work?
     </h3>
         
@@ -1632,7 +1679,7 @@ try {
   
   
   <!-- ============================================================= -->
-    <h3 class="doAnchor separator" id="declared_static">Should Logger members
+    <h3 class="doAnchor separator" name="declared_static">Should Logger members
     of a class be declared as static?
     </h3>
     
@@ -1797,7 +1844,7 @@ try {
   
   <!-- ============================================================= -->
   <dl>
-    <h3 class="doAnchor separator" id="declaration_pattern">Is there a
+    <h3 class="doAnchor separator" name="declaration_pattern">Is there a
     recommended idiom for declaring a logger in a class?
     </h3>
     

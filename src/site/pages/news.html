@@ -72,8 +72,102 @@
 
 
    <hr noshade="noshade" size="1"/>
+ 
 
-   <h3 class="doAnchor" name="2.0.8">2023-09-03 - Release of SLF4J 2.0.9</h3>
+   <h3 class="doAnchor" name="2.0.11">2024-01-08 - Release of
+   SLF4J 2.0.11</h3>
+
+   <p>&bull; This release reinstates the `renderLevel()` method in
+   <code>SimpleLogger</code> which was removed by mistake. A few
+   methods had their access modifiers changed from 'package' to
+   'protected'. These changes were requested by Guillaume Nodet who
+   also provided the relevant patches.</p>
+ 
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.11 from the source code repository
+   (GitHub). Release built using Java "21" 2023-10-17 LTS build
+   21.0.1.+12-LTS-29 under Linux Debian 11.6.
+   </p>
+   
+   <hr noshade="noshade" size="1"/>
+ 
+
+   <h3 class="doAnchor" name="2.1.0-alpha1">2024-01-02 - Release of
+   SLF4J 2.1.0-alpha1 (EXPERIMENTAL)</h3>
+
+   <p>&bull; This release reverts to Java 8 as a base requirement at
+   runtime. Given the diffusion and popularity of SLF4J as a logging
+   API, the extra work involved in supporting Java 8 is worth the
+   effort.</p>
+     
+ 
+  <hr noshade="noshade" size="1"/>
+
+
+   <h3 class="doAnchor" name="2.1.0-alpha0">2023-12-28 - Release of
+   SLF4J 2.1.0-alpha0 (EXPERIMENTAL)</h3>
+
+   <p>&bull; Added <a
+   href="https://www.slf4j.org/apidocs-2.1.0/org.slf4j/org/slf4j/MDCAmbit.html"><code>MDCAmbit</code></a>
+   class to assists in the creation and removal (aka closing) of MDC
+   entries. For commenting see <a
+   href="https://github.com/qos-ch/slf4j/discussions/372">discussion
+   372</a>. The changes are such that existing logging providers do not need to be modified.
+   </p>
+
+
+   <p>&bull; Several new methods such as <a href="https://www.slf4j.org/apidocs-2.1.0/org.slf4j/org/slf4j/spi/LoggingEventBuilder.html#arg(java.lang.Object)">arg()</a> and variants and <a href="https://www.slf4j.org/apidocs-2.1.0/org.slf4j/org/slf4j/spi/LoggingEventBuilder.html#kv(java.lang.String,java.lang.Object)">kv()</a> and variants in the fluent API. See the <a
+   href="https://www.slf4j.org/apidocs-2.1.0/org.slf4j/org/slf4j/spi/LoggingEventBuilder.html">LoggingEventBuilder</a>
+   javadocs for details. For commenting see <a
+   href="https://github.com/qos-ch/slf4j/discussions/376">discussion
+   376</a>. The changes are such that existing logging providers do not need to be modified.
+   </p>
+
+   <p>&bull; Bumped required Java version to 11. For commenting see <a
+   href="https://github.com/qos-ch/slf4j/discussions/379">discussion
+   379</a>.</p>
+
+
+
+   
+   <hr noshade="noshade" size="1"/>
+
+
+   <h3 class="doAnchor" name="2.0.10">2023-12-28 - Release of SLF4J 2.0.10</h3>
+
+   <p>&bull; SLF4J now uses the newly introduced <code>Reporter</code> class to report
+   messages about its internal state. The behaviour of Reporter can be
+   altered using the "slf4j.internal.report.stream" and
+   "slf4j.internal.verbosity" system properties. See <a
+   href="faq.html#internalMessages">internal messages</a> FAQ entry
+   for further details. This feature was requested in <a
+   href="https://github.com/qos-ch/slf4j/issues/361">issue 361</a> by
+   Garret Wilson.  </p>
+
+   <p>&bull; The slf4j-api module now exports version 1.7 of
+   the <code>org.slf4j.helper</code> package in its <em>MANIFEST.MF</em>
+   file. This was requested
+   in <a href="https://github.com/qos-ch/slf4j/pull/358">PR 358</a> by
+   Konrad Windszus.
+   </p>
+   
+   <p>&bull; Removed unreachable code in the <code>versionSanityCheck</code>
+   method in <code>LoggerFactory</code> class. This problem was
+   reported in <a
+   href="https://github.com/qos-ch/slf4j/issues/371">issue 371</a> by
+   R&oacute;bert Papp.
+   </p>
+
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.10 from the source code repository
+   (GitHub). Release built using Java "21" 2023-10-17 LTS build
+   21.0.1.+12-LTS-29 under Linux Debian 11.6.
+   </p>
+
+    
+   <hr noshade="noshade" size="1"/>
+
+   <h3 class="doAnchor" name="2.0.9">2023-09-03 - Release of SLF4J 2.0.9</h3>
 
    <p>&bull; It is now possible to specify the provider class
    explicitly via the "slf4j.provider" system property. This bypasses

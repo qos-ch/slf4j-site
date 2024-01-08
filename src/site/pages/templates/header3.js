@@ -14,8 +14,8 @@ function insertLogoAndMenu() {
     document.write('                    <a href="'+ prefix +'license.html"><i class="fa-regular fa-copyright"></i> License</a>');
     document.write('                    <a href="'+ prefix +'news.html"><i class="fa-regular fa-bullhorn"></i> News</a>'); // &#127908;
     document.write('                    <a href="'+ prefix +'log4shell.html"><i class="fa-regular fa-skull-crossbones"></i> log4shell</a>');
-    document.write('                    <a href="https://search.maven.org/search?q=g:org.slf4j%20AND%20v:2.0.%3F">');
-    document.write('                       <i class="fa-regular fa-magnifying-glass"></i> Search for SLF4J 2.0.x');
+    document.write('                    <a href="https://central.sonatype.com/search?namespace=org.slf4j">');
+    document.write('                       <i class="fa-regular fa-magnifying-glass"></i> Search for SLF4J');
     document.write('                     </a>');
     document.write('                </div>');
     document.write('            </div>'); // hanging div END
@@ -107,12 +107,13 @@ document.write('      </div>');
 document.write('</div>');
 // close #header-grid-icons-item
 document.write('</div>');
-
+ 
 // div close #header-grid-icons-item
 document.write('  <div id="header-grid-line-item" class="headerline"></div>');
 
 document.write('<div id="ad" class="top-message">');
-document.write('    <p>Need an issue fixed as soon as possible? Consider <a href="'+prefix+'count/champion.html"><i class="fa-regular fa-trophy"></i> championing a release</a>.</p>');
+document.write('    <p>Your feedback is requested on <a href="https://github.com/qos-ch/slf4j/discussions/377">changes under consideration</a> for SLF4J version 2.1.0.');
+//document.write('    <p>Need an issue fixed as soon as possible? Consider <a href="'+prefix+'count/champion.html"><i class="fa-regular fa-trophy"></i> championing a release</a>.</p>');
 document.write('</div>');
 
 // document.write('<div id="ad">');
@@ -124,4 +125,3 @@ document.write('</div>');
 
 // close #header
 document.write('</div>');
-

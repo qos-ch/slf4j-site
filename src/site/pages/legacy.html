@@ -22,7 +22,7 @@
     API other than SLF4J. You may also assume that these components
     will not switch to SLF4J in the immediate future. To deal with
     such circumstances, SLF4J ships with several bridging modules
-    which redirect calls made to log4j, JCL and java.util.logging APIs
+    which redirect calls made to log4j 1.x, JCL and java.util.logging APIs
     to behave as if they were made to the SLF4J API instead. The
     figure below illustrates the idea.
     </p>
@@ -86,8 +86,7 @@
     of the application which can continue to use JCL.
     </p>
     
-    <h3 class="doAnchor"
-    name="jclRecursion"><em>jcl-over-slf4j.jar</em> should not be
+    <h3 class="doAnchor" name="jclRecursion"><em>jcl-over-slf4j.jar</em> should not be
     confused with <em>slf4j-jcl.jar</em></h3>
     
     
@@ -119,17 +118,20 @@
     
     <h2 class="doAnchor" name="log4j-over-slf4j">log4j-over-slf4j</h2>
     
-    <p>SLF4J ship with a module called <em>log4j-over-slf4j</em>.  It
-    allows log4j users to migrate existing applications to SLF4J without
-    changing <em>a single line of code</em> but simply by replacing the
+    <p>SLF4J ships with a module called <em>log4j-over-slf4j</em>.  It
+    allows log4j 1.x users (but not log4j 2.x) to
+    migrate <b>existing</b> applications/libraries to SLF4J without
+    changing <em>a single line of code</em> but simply by replacing
+    the
     <em>log4j.jar</em> file with <em>log4j-over-slf4j.jar</em>, as
     described below.
-    </p>
+    </p> 
     
     <h4 class="doAnchor" name="losHow">How does it work?</h4>
     
-    <p>The log4j-over-slf4j module contains replacements of most widely
-    used log4j classes, namely <code>org.apache.log4j.Category</code>,
+    <p>The log4j-over-slf4j module contains replacements of most
+    widely used log4j 1.x classes,
+    namely <code>org.apache.log4j.Category</code>,
     <code>org.apache.log4j.Logger</code>,
     <code>org.apache.log4j.Priority</code>,
     <code>org.apache.log4j.Level</code>,
@@ -145,15 +147,16 @@
     </p>
     
     <p>In most situations, replacing a jar file is all it takes in
-    order to migrate from log4j to SLF4J.
+    order to migrate from log4j 1.x to SLF4J.
     </p>
 
-    <p>Note that as a result of this migration, log4j configuration
-    files will no longer be picked up. If you need to migrate your
-    log4j.properties file to logback, the <a
-    href="http://logback.qos.ch/translator/">log4j translator</a> might
-    be of help. For configuring logback, please refer to <a
-    href="http://logback.qos.ch/manual/index.html">its manual</a>.
+    <p>Note that as a result of this migration, log4j 1.x
+    configuration files will no longer be picked up. If you need to
+    migrate your log4j.properties file to logback,
+    the <a href="http://logback.qos.ch/translator/">log4j
+    translator</a> might be of help. For configuring logback, please
+    refer to <a href="http://logback.qos.ch/manual/index.html">its
+    manual</a>.
     </p>
     
     <h4 class="doAnchor" name="losFail">When does it not work?</h4>
@@ -183,7 +186,7 @@
     logback as your underlying logging system, and given that logback is
     both much faster and more memory-efficient than log4j, the gains
     made by using logback should compensate for the overhead of using
-    log4j-over-slf4j instead of log4j directly.
+    log4j-over-slf4j instead of log4j 1.x directly.
     </p>
 
     <!--
@@ -202,7 +205,8 @@
     -->
     
     <h4 class="doAnchor" name="log4jRecursion2">log4j-over-slf4j.jar
-    and slf4j-reload4j.jar cannot be present simultaneously
+    and slf4j-reload4j.jar nor slf4j-log4j.jar cannot be present
+    simultaneously
     </h4>
     
     <p>The presence of <em>slf4j-reload4j.jar</em>, that is the
@@ -211,7 +215,7 @@
     1.x. The presence of <em>log4j-over-slf4j.jar</em> will in turn
     delegate all reload4j API calls to their SLF4J equivalents. If
     both are present simultaneously, SLF4J calls will be delegated to
-    reload4j (which contains the log4j 1.x API), and log4j calls
+    reload4j (i.e. a security patched the log4j 1.x), and log4j 1.x calls
     redirected to SLF4j, resulting in
     an <a href="codes.html#log4jDelegationLoop">endless loop</a>.
     </p>

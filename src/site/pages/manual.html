@@ -27,14 +27,14 @@
     mandatory dependency, namely
     <em>slf4j-api-${latest.stable.version}.jar</em>.</p>
 
-    <h3 class="doAnchor" id="where_coordinates">Where are the Maven coordinates?</h3>
+    <h3 class="doAnchor" name="where_coordinates">Where are the Maven coordinates?</h3>
 
     <p>At this time if you are only interested in obtaining the
     coordinates for using SLF4J API with a logging backend, you can <a
     href="#projectDep">jump to the relevant section</a>.</p>
 
 
-    <h3 class="doAnchor" id="hello_world">Hello World</h3>
+    <h3 class="doAnchor" name="hello_world">Hello World</h3>
 
     <p>As customary in programming tradition, here is an example
     illustrating the simplest way to output "Hello world" using SLF4J.
@@ -90,7 +90,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 
      <pre class="output">0 [main] INFO HelloWorld - Hello World</pre>
       
-     <h3 class="doAnchor" id="typical_usage">Typical usage
+     <h3 class="doAnchor" name="typical_usage">Typical usage
      pattern</h3>
  
      <p>The sample code below illustrates the typical usage pattern
@@ -124,7 +124,7 @@ SLF4J: See https://www.slf4j.org/codes.html#StaticLoggerBinder for further detai
 21: } </code></pre>
       
 
-      <h3 class="doAnchor" id="fluent">Fluent Logging API</h3>
+      <h3 class="doAnchor" name="fluent">Fluent Logging API</h3>
 
       <p><span class="label">since 2.0.0</span> SLF4J API version
       2.0.0 requires Java 8 and introduces a backward-compatible
@@ -218,7 +218,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       customizable behaviour.</p>
 
       
-      <h3 class="doAnchor" id="swapping">Linking with a logging
+      <h3 class="doAnchor" name="swapping">Linking with a logging
       framework at deployment time</h3>
 
       <p>As mentioned previously, SLF4J is intended as a facade for
@@ -357,7 +357,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       system property. This bypasses the service loader mechanism for
       finding providers and may shorten SLF4J initialization.</p>
 
-      <h3 class="doAnchor" id="libraries">Libraries</h3>
+      <h3 class="doAnchor" name="libraries">Libraries</h3>
 
       <p>Authors of widely-distributed components and libraries may
       code against the SLF4J interface in order to avoid imposing a
@@ -403,7 +403,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       href="faq.html#optional_dependency">dependency reduction</a> and
       <a href="faq.html#optional_dependency">testing</a>.</p>
 
-      <h3 class="doAnchor" id="projectDep">Declaring project
+      <h3 class="doAnchor" name="projectDep">Declaring project
       dependencies for logging</h3>
 
       <p>Given Maven's transitive dependency rules, for "regular"
@@ -572,7 +572,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
 
   <!-- =========================================================== -->
    
-      <h3 class="doAnchor" id="compatibility">Binary
+      <h3 class="doAnchor" name="compatibility">Binary
       compatibility</h3>
 
       <p>An SLF4J provider/binding designates an artifact such as
@@ -618,7 +618,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       will emit a warning about the suspected mismatch.
       </p>-->
 
-      <h3 class="doAnchor" id="consolidate">Consolidate logging via
+      <h3 class="doAnchor" name="consolidate">Consolidate logging via
       SLF4J</h3>
 
       <p>Often times, a given project will depend on various
@@ -632,7 +632,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       APIs</b></a>.
       </p>
 
-      <h3 class="doAnchor" id="jep264">Support for JDK Platform Logging (JEP 264)
+      <h3 class="doAnchor" name="jep264">Support for JDK Platform Logging (JEP 264)
       SLF4J</h3>
 
       <p><span class="label notice">Since 2.0.0-alpha5</span> The
@@ -648,7 +648,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
 
 
       
-      <h3 class="doAnchor" id="mdc">Mapped Diagnostic Context (MDC) support</h3>
+      <h3 class="doAnchor" name="mdc">Mapped Diagnostic Context (MDC) support</h3>
 
       <p>"Mapped Diagnostic Context" is essentially a map maintained
       by the logging framework where the application code provides
@@ -678,7 +678,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
 
     
       
-      <h3 class="doAnchor" id="summary">Executive summary</h3>
+      <h3 class="doAnchor" name="summary">Executive summary</h3>
 
       <div clas="bodyTable">
       <table  class="bodyTable striped" cellspacing="4" cellpadding="4">
@@ -770,7 +770,7 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
         </tr>
   </table></div>
 
-    <h3 class="doAnchor" id="salient_changes">Salient historical changes</h3>
+    <h3 class="doAnchor" name="salient_changes">Salient historical changes</h3>
     
     <p><span class="label">since 1.6.0</span> If no binding is found on the
     class path, then SLF4J will default to a no-operation

@@ -70,7 +70,7 @@ function decorateDoAnchor(anchor) {
    for(var i = 0; i < elems.length; i++) {
      var e = elems[i];
      var tmpHTML = e.innerHTML;
-     var idAttr = $(e).attr('id')
+     var idAttr = $(e).attr('name')
      if(idAttr == null) {
        idAttr = camelCase($.trim(tmpHTML))
      }

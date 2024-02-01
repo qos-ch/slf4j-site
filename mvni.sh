@@ -1,5 +1,5 @@
 
-function scpLogback() {
+function scpSLF4J() {
 
     echo ${ARGS}
     SOURCE=/home/ceki/slf4j-site/target/site
@@ -40,7 +40,7 @@ pushd ~/slf4j-site
 
 echo "======================" 
 ${MVN_COMMAND} install
-scpLogback;
+scpSLF4J;
 doRsync;
 
 popd

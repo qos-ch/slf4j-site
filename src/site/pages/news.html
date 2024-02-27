@@ -68,9 +68,34 @@
           </a>  by reproducible-central.
        </p>
       </div>
-    </div>
+    </div> 
 
+   <hr noshade="noshade" size="1"/>
+ 
 
+   <h3 class="doAnchor" name="2.0.12">2024-02-06 - Release of
+   SLF4J 2.0.12</h3>
+   
+   <p>&bull; Various providers, e.g. slf4j-simple, slf4j-nop and
+   slf4j-jdk14 modules, now export their packages and allow reflection
+   by the <code>org.slf4j</code> module in their respective
+   <code>module-info.java</code> files. This allows for loading via
+   reflection when a provider is specified via "slf4j.provider" in
+   system properties in Jigsaw modular applications.  This issue was
+   raised by Robert Scholte in <a
+   href="https://github.com/qos-ch/slf4j/issues/392">issue/393</a>.</p>
+
+   <p>&bull; Reverted removal of <code>Util.report</code> methods
+   which were removed by mistake in slf4j version 2.0.10 and breaking
+   compatibility with logback-classic.</p>
+   
+   <p>&bull; The binary of this version can be reproduced by checking
+   out the tag v_2.0.12 from the source code repository
+   (GitHub). Release built using Java "21" 2023-10-17 LTS build
+   21.0.1.+12-LTS-29 under Linux Debian 11.6.
+   </p>
+   
+   
    <hr noshade="noshade" size="1"/>
  
 
@@ -126,8 +151,6 @@
    <p>&bull; Bumped required Java version to 11. For commenting see <a
    href="https://github.com/qos-ch/slf4j/discussions/379">discussion
    379</a>.</p>
-
-
 
    
    <hr noshade="noshade" size="1"/>

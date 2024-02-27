@@ -25,18 +25,21 @@
     were found.
     </h3>
 
-    <p>This <b>warning</b>, i.e. not an error, message is reported
-    when no SLF4J providers could be found on the class path.  Placing
-    one (and only one) of the many available providers such
-    as <em>slf4j-nop.jar</em>
+    <p>This message is a <b>warning</b> and not an error. It is
+    reported when no SLF4J providers could be found on the class
+    path. SLF4J requires a logging provider because it is a logging
+    API and not an logging implementation. Placing one (and only one)
+    of the many available providers such as <em>slf4j-nop.jar</em>
     <em>slf4j-simple.jar</em>, <em>slf4j-reload4j.jar</em>,
     <em>slf4j-jdk14.jar</em> or <em>logback-classic.jar</em> on the
-    class path should solve the problem.  
+    class path will solve the problem.
     </p>
 
     <p>In the absence of a provider, SLF4J will default to a
     no-operation (NOP) logger provider.
     </p>
+
+    <p></p>
 
     <p>Please note that slf4j-api version 2.0.x and later use
     the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html">ServiceLoader</a>
@@ -69,9 +72,9 @@
     the static binder mechanism which is no longer honored by
     slf4j-api version 2.0.x.</span></p>
     
-    <p>In case SLF4J finds no providers targeting SLF4J 2.0.x but finds
-    instead bindings targeting SLF4J 1.7 or earlier, it will list the
-    bindings it finds but otherwise will <b>ignore</b> them.
+    <p>In case SLF4J 2.x finds no providers targeting SLF4J 2.x but
+    finds instead bindings targeting SLF4J 1.7 or earlier, it will
+    list the bindings it finds but otherwise will <b>ignore</b> them.
     </p>
 
     <p>This can be solved by placing an SLF4J provider on your

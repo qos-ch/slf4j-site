@@ -24,7 +24,7 @@ function insertLogoAndMenu() {
     document.write('                <div class="dropdown-links">');
     document.write('                    <a href="'+ prefix +'mailing-lists.html"><i class="fa-regular fa-envelope"></i> Mailing Lists</a>');  //&#9993;
     document.write('                    <a href="'+ prefix +'bug-reporting.html"><i class="fa-regular fa-bug"></i> Bug Reporting</a>'); //&#129440; &#128027;
-
+ 
     document.write('                    <a href="' + prefix + 'count/github.html">'); // &#11153;
     document.write('                           <i class="fa-regular fa-code-branch"></i> Source Repository');
     //document.write('                        <img style="vertical-align: middle;" class="github-logo" src="' + prefix + 'images/GitHub-Mark-32px.png" alt="Source code" /> Source Repository</a>');
@@ -32,7 +32,7 @@ function insertLogoAndMenu() {
     document.write('                    <a href="' + prefix + 'count/tidelift.html">');
     document.write('                           <i class="fa-regular fa-t"></i> Tidelift');
     document.write('                     </a>');
-
+ 
     //document.write('                   <a href="http://www.qos.ch/shop/products/professionalSupport"><i class="fa-regular fa-rectangle-pro"></i> Support offerings</a>');
     document.write('                </div>');
     document.write('            </div>'); // hanging div END
@@ -41,7 +41,8 @@ function insertLogoAndMenu() {
     document.write('                <div class="dropdown-links">');
     document.write('                    <a href="' + prefix +'count/logback.html">  Logback</a>');
     document.write('                    <a href="' + prefix +'count/logevents.html">logevents</a>');
-    document.write('                    <a href="' + prefix +'count/penna.html">penna</a>');    
+    document.write('                    <a href="' + prefix +'count/penna.html">penna</a>');
+    document.write('                    <a href="' + prefix +'count/rainbowgum.html">rainbowgum</a>');    
     document.write('                </div>');
     document.write('             </div>'); // hanging div END
     document.write('            <div>'); // hanging div START

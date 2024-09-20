@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,10 @@
     <li><a href="#requirements">What are SLF4J's requirements?</a></li>
 
     <li><a href="#changesInVersion200">What has changed in SLF4J version 2.0.0?</a></li>
-    
+
+    <li><a href="#explicitProvider">Is it possible to specifiy the
+    SLF4J provider explicitly?</a></li>
+
     <li><a href="#compatibility">Are SLF4J versions backward
     compatible?</a></li>
 
@@ -446,15 +449,90 @@
         
       </table>
 
+    
+      <!-- ==================================================== -->
+    
+    
+      <h3 class="doAnchor separator" name="explicitProvider">
+        Is it possible to specifiy the SLF4J provider explicitly?
+      </h3>
+              
 
       <p><span class="label">since 2.0.9</span> You can specify the
       provider class explicitly via the "slf4j.provider" system
       property. This bypasses the service loader mechanism for finding
       providers and may shorten SLF4J initialization.</p>
 
-      
-    
+      <p>For example, to specify the slf4j-simple provider, write:
+      </p>
+      <pre>java -Dslf4j.provider=org.slf4j.simple.SimpleServiceProvider ..</pre>
 
+      <p>Here is a list of some known SLF4J providers and their provider classes:</p>
+      
+      <table class="bodyTable striped" cellspacing="4" cellpadding="4">
+        <tr>
+          <th>artifact</th>
+          <th>SLF4J provider class</th>
+        </tr>
+
+        <tr>
+          <td>slf4j-nop.jar</td> 
+          <td>org.slf4j.nop.NOPServiceProvider</td>                   
+        </tr>
+        
+        <tr>
+          <td>slf4j-simple.jar</td> 
+          <td>org.slf4j.simple.SimpleServiceProvider</td>                   
+        </tr>
+
+        <tr>
+          <td>slf4j-reload4j.jar</td> 
+          <td>org.slf4j.reload4j.Reload4jServiceProvider</td>                   
+        </tr>
+               
+        <tr>
+          <td>slf4j-jdk14.jar</td> 
+          <td>org.slf4j.jul.JULServiceProvider</td>                   
+        </tr> 
+        
+        <tr>
+          <td><a href="https://logback.qos.ch">logback-classic.jar</a></td> 
+          <td>ch.qos.logback.classic.spi.LogbackServiceProvider</td>                   
+        </tr>
+
+        
+        <tr>
+          <td><a href="https://github.com/jhannes/logevents">logevents.jar</a></td>
+          <td>org.logevents.core.SLF4JServiceProviderImpl</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://github.com/hkupty/penna">penna-core.jar</a></td>
+          <td>penna.core.slf4j.PennaServiceProvider</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://jstach.io/doc/rainbowgum/current/apidocs/">rainbowgum-slf4j</a></td>
+          <td>io.jstach.rainbowgum.slf4j.RainbowGumSLF4JServiceProvider</td>
+        </tr>
+        
+        
+        <tr>
+          <td><a href="https://logging.apache.org/log4j/2.x/index.html">log4j-slf4j2-impl.jar</a></td>
+          <td>org.apache.logging.slf4j.SLF4JServiceProvider</td>
+        </tr>
+
+        <tr>
+          <td><a href="https://tinylog.org/v2/sl">slf4j-tinylog.jar</a></td> 
+          <td>org.tinylog.slf4j.TinylogSlf4jServiceProvider</td>                   
+        </tr>
+
+
+
+        
+        
+      </table>
+      
     
     <!-- ==================================================== -->
     <!-- entry has order dependees -->
@@ -510,13 +588,16 @@
     or "sysout", output can be redirected to stdout. Any other value
     will direct output to the default, i.e. stderr.
     </p>
-
+ 
     <p>It is also possible to set the "slf4j.internal.verbosity"
-    system property to one of "INFO", "WARN" or "ERROR" to control the
-    verbosity of SLF4J internal messages. Mesages of level INFO are
-    prefixed with the string "SLF4J(I). Similartly, level WARN is
-    prefixed by SLF4J(W) and ERROR by SLF4J(E). ERROR messages cannot
-    be supressed.</p>
+    system property to one of "DEBUG", "INFO", "WARN" or "ERROR" to
+    control the verbosity of SLF4J internal messages. The default
+    verbosity level is INFO. Mesages of level DEBUG are prefixed with
+    the string "SLF4J(D) Similartly, INFO is prefixed by SLF4J(I),
+    WARN is prefixed by SLF4J(W) and ERROR by SLF4J(E). ERROR messages
+    cannot be supressed.</p>
+
+    <p>The DEBUG level was introduced in version 2.0.16.</p>
     
     <!-- ==================================================== -->
 

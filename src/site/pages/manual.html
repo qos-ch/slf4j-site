@@ -1,6 +1,6 @@
 <!DOCTYPE html>  
 <html lang="en">
-<head>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SLF4J Manual</title>
@@ -352,9 +352,11 @@ logger.atDebug().setMessage("Temperature changed.").<b>addKeyValue("oldT", oldT)
       </p>
 
       <p><span class="label">since 2.0.9</span> You can specify the
-      provider class explicitly via the "slf4j.provider"
-      system property. This bypasses the service loader mechanism for
-      finding providers and may shorten SLF4J initialization.</p>
+      provider class explicitly via the "slf4j.provider" system
+      property. This bypasses the service loader mechanism for finding
+      providers and may shorten SLF4J initialization. For a list of
+      providers class names, see the relevant <a 
+      href="faq.html#explicitProvider">FAQ entry</a>.</p>
 
       <h3 class="doAnchor" name="libraries">Libraries</h3>
 

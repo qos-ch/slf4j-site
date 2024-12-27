@@ -1,6 +1,6 @@
 /*
   Many thanks to Ian Zamojc izamojc(at)zamtools.com for making
-  suggestions to improve the site look and feel.
+  suggestions to improve the site look and feel. g
 */
 
 
@@ -12,7 +12,7 @@
     --min-menu-width: 12rem;
     --max-menu-width: 14rem;
 
-    --main-logo-height: 1.5rem;
+MWX    --main-logo-height: 1.5rem;
 }
 
 body {
@@ -198,18 +198,6 @@ p.sponsoredBy {
 div.spotify {
     margin: 3px;
     background-color: #FFEEDD;
-}
-img.spotify {
-    max-height: calc(var(--main-logo-height));
-}
-img.amex { 
-    max-height: calc(var(--main-logo-height) * 1.5);
-}
-img.stf {
-    max-height: calc(var(--main-logo-height) * 1.4  );
-} 
-img.exoscale {
-    max-height: calc(var(--main-logo-height) * 0.8);
 }
 #content {
     /*grid-area: contentArea;*/

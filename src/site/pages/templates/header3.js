@@ -7,9 +7,10 @@ function insertLogoAndMenu() {
     document.write('        <div class="dropdown-menu information-grid">');
     document.write('            <div>'); // hanging div start
     document.write('                <div class="dropdown-heading">Logback project</div>');
-    document.write('                <div class="dropdown-links">');
+    document.write('                <div class="dropdown-links">'); 
     document.write('                    <a href="'+ prefix +'index.html"><i class="fa-regular fa-house"></i>  SLF4J Home page</a>'); // &#127968;
     document.write('                    <a href="'+ prefix +'docs.html"><i class="fa-regular fa-book"></i> Documentation</a>'); // &#128214; &#128195;
+    document.write('                    <a href="'+ prefix +'sponsors.html"><i class="fa-regular fa-hand-holding-heart"></i> Sponsors</a>');  //&#9993 
     document.write('                    <a href="'+ prefix +'download.html"><i class="fa-regular fa-download"></i> Download</a>'); // &#128229;
     document.write('                    <a href="'+ prefix +'license.html"><i class="fa-regular fa-copyright"></i> License</a>');
     document.write('                    <a href="'+ prefix +'news.html"><i class="fa-regular fa-bullhorn"></i> News</a>'); // &#127908;
@@ -22,6 +23,7 @@ function insertLogoAndMenu() {
     document.write('            <div>');  // hanging div start
     document.write('                <div class="dropdown-heading">Support</div>');
     document.write('                <div class="dropdown-links">');
+   
     document.write('                    <a href="'+ prefix +'mailing-lists.html"><i class="fa-regular fa-envelope"></i> Mailing Lists</a>');  //&#9993;
     document.write('                    <a href="'+ prefix +'bug-reporting.html"><i class="fa-regular fa-bug"></i> Bug Reporting</a>'); //&#129440; &#128027;
  

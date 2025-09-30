@@ -12,8 +12,8 @@
     --min-menu-width: 12rem;
     --max-menu-width: 14rem;
 
-MWX    --main-logo-height: 1.5rem;
-}
+    --main-logo-height: 1.5rem;
+} 
 
 body {
     background-color: var(--bgcolor);

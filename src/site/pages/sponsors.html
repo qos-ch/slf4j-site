@@ -16,8 +16,6 @@
 
 <div id="content">
 
-    <script type="text/javascript" src="common/templates/sponsoredBy.js"></script>
-
     <style>
       .current-sponsors, .past-sponsors {
           display: flex;
@@ -29,8 +27,9 @@
 
       .sponsor-item {
          max-width: 15rem;
-         padding-right: 2rem;
+         padding-right: 1rem;
       }
+
       
       img.amex { 
           max-width: 10rem;
@@ -43,19 +42,22 @@
       }
 
       img.stf, img.exoscale, img.spotify {
-          max-width: 14rem;
+          max-width: 14rem; 
       } 
-      
-    </style>
-
+      img.zkb { 
+          max-width: 15rem;
+          padding-right: 1rem;
+      }  
+    </style> 
+ 
     <h2>Sponsoring</h2>
 
     <p>We invite our users to support our efforts so we can maintain
     our momentum. We are committed to continuing our work on the SLF4J
-    and prokects regardless of the number of donations we
+    and logback projects regardless of the number of donations we
     receive. However, with your support, we could dedicate more time
     on these projects. Needless to say, we are deeply grateful to our
-    current and past supporters and sponsors for their contributions.
+    current and past sponsors for their contributions.
     </p>
 
     <p>Here is a list of our current and past sponsors:</p>
@@ -63,13 +65,7 @@
     <h2>Current Gold Sponsors</h2>
 
     <div class="current-sponsors"> 
-
-      <div class="sponsor-item">
-        <a href="count/stf.html">
-          <img class="stf"  alt="Soverign Fund" src="images/logos/stf_logo.webp"/>
-        </a>
-      </div>
-      
+     
       
       <div class="sponsor-item">
         <a href="count/amex.html"> 
@@ -89,11 +85,27 @@
 
 
     <div class="current-sponsors">
+
+      <div class="sponsor-item">
+        <a href="count/zkb.html">
+          <img class="zkb" alt="ZKB" src="images/logos/zkb.png"/>
+        </a>           
+      </div>
+
+      
       <div class="sponsor-item">
         <a href="count/exoscale.html">
           <img class="exoscale" alt="Exoscale" src="images/logos/exoscale.png"/>
         </a>           
       </div>
+
+      <div class="sponsor-item">  
+        <a href="https://sentry.io/">
+          <img class="sentry"  alt="Sentry" src="images/logos/sentry-logo.png"/>
+        </a>
+      </div>
+      
+      
     </div>
 
 
@@ -101,6 +113,13 @@
 
     <div class="past-sponsors">
 
+      <div class="sponsor-item">
+        <a href="count/stf.html">
+          <img class="stf"  alt="Soverign Fund" src="images/logos/stf_logo.webp"/>
+        </a>
+      </div>
+
+      
       <div class="sponsor-item">
         <a href="count/spotify.html">
           <img class="spotify"  alt="Spotify R&amp;D" src="images/logos/spotify-rnd-black.png"/>
@@ -120,11 +139,6 @@
         </a>
       </div>
 
-      <div class="sponsor-item">  
-        <a href="https://sentry.io/">
-          <img class="indeed"  alt="Sentry" src="images/logos/sentry-logo.png"/>
-        </a>
-      </div>
 
     </div>
 

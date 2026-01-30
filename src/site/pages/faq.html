@@ -538,37 +538,54 @@
     <h3 class="doAnchor separator" name="compatibility">Are SLF4J versions
     backward compatible?
     </h3>
- 
+
+      <p>From the client's perspective, the SLF4J API — specifically
+      the <code>org.slf4j</code> package — is fully backward
+      compatible across all versions. This means you can upgrade from
+      SLF4J 1.0 (or any earlier version) to any later version without
+      breaking your existing code.  Code compiled against
+      <em>slf4j-api-versionN.jar</em> will run correctly with
+      <em>slf4j-api-versionM.jar</em>, regardless of whether version M
+      is newer or older than version N. <strong>To date, binary
+      compatibility of the SLF4J client-facing API (slf4j-api) has
+      never been broken.</strong></p>
     
-      <p>From the clients perspective, the SLF4J API, more
-      specifically the <code>org.slf4j</code> package, is backward
-      compatible for all versions. This means than you can upgrade
-      from SLF4J version 1.0 to any later version without
-      problems. Code compiled with <em>slf4j-api-versionN.jar</em>
-      will work with <em>slf4j-api-versionM.jar</em> for any versionN
-      and any versionM. <b>To date, binary compatibility in slf4j-api
-      has never been broken.</b></p>
+      <p>However, while the SLF4J API itself is extremely stable,
+      SLF4J <strong>provider</strong> implementations (previously
+      called bindings), such as <code>slf4j-simple</code>,
+      <code>log4j-slf4j2</code>, <code>slf4j-reload4j</code>, etc.,
+      are tied to a specific major.minor version of the SLF4J API.</p>
+     
+      <p>Mixing different versions of SLF4J artifacts arbitrarily can
+      cause problems and is strongly discouraged.</p>
 
-      <p>However, while the SLF4J API is very stable from the client's
-      perspective, SLF4J providers, e.g. slf4j-simple.jar or
-      slf4j-reload4j.jar, may require a specific version of slf4j-api.
-      Mixing different versions of slf4j artifacts can be problematic
-      and is strongly discouraged. For instance, if you are using
-      slf4j-api-2.0.0.jar, then you should also use
-      slf4j-simple-2.0.0.jar, using slf4j-simple-1.7.32.jar will not
-      work.
-      </p>        
+      <p>More precisely, for a given <code>slf4j-api-x.y.z.jar</code>
+      (where <code>x</code> is the major version, <code>y</code> the
+      minor version, and <code>z</code> the patch version), any SLF4J
+      provider you use <strong>must</strong> match the same major and
+      minor version (<code>x.y</code>). The patch version
+      (<code>z</code>) of the provider does not need to match
+      exactly.</p>
 
-      <p>At initialization time, if SLF4J suspects that there may be a
-      version mismatch problem, it emits a <b>warning</b> about the
-      said mismatch.
-      </p>
+      <p>Example: If you are using <code>slf4j-api-2.0.13.jar</code>,
+      you must use a 2.0.x provider such as
+      <code>slf4j-simple-2.0.13.jar</code> or
+      <code>slf4j-simple-2.0.9.jar</code>. Using an older provider
+      such as <code>slf4j-simple-1.7.36.jar</code> with SLF4J API
+      2.0.x <strong>will not work</strong>.</p>
 
-      <p><span class="label">Fluent API requires version 2.0</span> If
-      your code accesses the fluent API introduced in slf4j 2.0, then
-      your code will require slf4j-api version 2.0 or later.</p>
-      
-      
+      <p>At startup, if SLF4J detects a likely version mismatch
+      between the API and one or more providers, it will emit a clear
+      <strong>warning</strong> indicating the problem.</p>
+
+      <p><span class="label">Fluent API requires SLF4J 2.0 or
+      later</span> The fluent logging API (e.g.,
+      <code>logger.atInfo().setMessage("...").log()</code>) was
+      introduced in SLF4J 2.0. If your code uses the fluent API, you
+      must compile and run against <code>slf4j-api-2.0.0.jar</code> or
+      later.</p>
+
+       
     <!-- ==================================================== -->
 
     <h3 class="doAnchor separator" name="internalMessages">Is there a
@@ -1609,12 +1626,13 @@ try {
      interpret <code>NumberFormatException</code> instance as a
      throwable instead of an unused <code>Object</code> parameter. In
      SLF4J versions prior to 1.6.0, the
-     <code>NumberFormatException</code> instance was simply ignored.
+     <code>NumberFormatException</code> instance was simply ignored. 
      </p>
 
      <p>If the exception is not the last argument, it will be treated
-     as a plain object and its stack trace will NOT be printed.
-     However, such situations should not occur in practice.
+     as a plain object and its stack trace will NOT be printed. This
+     behavior presumably aligns with the user's intentions in such
+     cases.
      </p>
 
      <p>As mentioned earlier, it is possible to pass one or more 

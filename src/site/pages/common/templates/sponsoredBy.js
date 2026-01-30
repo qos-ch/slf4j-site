@@ -1,4 +1,18 @@
 
+document.write('<div id="sponsor">');
+
+document.write('<p class="sponsoredBy">&nbsp;Sponsored by:</p>');
+
+document.write('<div class="pub">');
+document.write('    <a href="https://sentry.io/">');
+document.write('        <img class="sentry"  alt="Sentry" src="' + prefix + 'images/logos/sentry-logo.png"/>');
+document.write('    </a>');
+document.write('</div>');
+
+// // close div.sponsor 
+document.write('</div>');
+
+ 
 // document.write('<div id="sponsor">');
 // 
 // document.write('<p class="sponsoredBy">&nbsp;Supported by:</p>');

@@ -199,6 +199,11 @@ div.spotify {
     margin: 3px;
     background-color: #FFEEDD;
 }
+
+img.sentry {
+    max-height: calc(var(--main-logo-height));
+}
+
 #content {
     /*grid-area: contentArea;*/
 }

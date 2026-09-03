@@ -71,6 +71,79 @@
 
     <hr noshade="noshade" size="1"/>
 
+    <h3 class="doAnchor" name="2.0.19">2026-09-03 - Release of SLF4J 2.0.19</h3>
+
+     <p>&bull; When the fluent API was used with
+    <code>XLogger</code>/<code>LoggerWrapper</code> in the
+    <em>slf4j-ext</em> module, caller location was incorrectly
+    reported. To correct this, <code>LoggerWrapper</code> now
+    delegates <code>makeLoggingEventBuilder()</code> to the wrapped
+    logger so that the application caller can be correctly
+    extracted. This issue was reported
+    in <a href="https://github.com/qos-ch/slf4j/issues/464">issues/464</a>.
+    </p>
+
+    <p>&bull; In <code>slf4j-api/DefaultLoggingEventBuilder</code>, a
+    failing <code>toString()</code> invocation on a key-value value,
+    including <code>StackOverflowError</code>, no longer aborts
+    logging. The builder now substitutes
+    <code>[FAILED toString()]</code>, matching the existing behaviour
+    of <code>MessageFormatter</code> for message arguments. This issue
+    was reported in <a
+    href="https://github.com/qos-ch/slf4j/issues/448">issues/448</a>.
+    </p>
+
+    <p>&bull; The <code>isLoggable()</code> method in
+    <code>SLF4JPlatformLogger</code> now maps
+    <code>System.Logger.Level.ALL</code> and <code>Level.OFF</code>
+    the same way as <code>log()</code>, that is ALL as TRACE and OFF
+    as ERROR, instead of treating both as always loggable. This is a
+    follow-up to the changes introduced in
+    2.0.17. See <a href="https://github.com/qos-ch/slf4j/issues/430">issues/430</a>.
+    </p>
+
+    <p>&bull; Published JAR files now package each module's own
+    <em>LICENSE.txt</em> under <em>META-INF/</em>. Previously the
+    parent POM copied the repository-root MIT license into every
+    module, so Apache-2.0 modules such as <em>jcl-over-slf4j</em> and
+    <em>log4j-over-slf4j</em> shipped the wrong license text. This
+    issue was reported in <a
+    href="https://github.com/qos-ch/slf4j/issues/465">issues/465</a>.
+    </p>
+
+    <p>&bull; A bit-wise identical binary of this version can be
+    reproduced by building from source code at commit
+    2b3f94bae0cd19eec3d4a2e4e3b61b6a6db0faa3 associated with the tag
+    v_2.0.19. Release built using Java "21" 2023-10-17 LTS build
+    21.0.1.+12-LTS-29 under Linux Debian 11.6.
+    </p>
+    
+    <hr noshade="noshade" size="1"/>
+
+    <h3 class="doAnchor" name="2.0.17">2026-05-12 - Release of SLF4J 2.0.18</h3>
+
+    <p>&bull; In the <code>logViaLocationAwareLoggerAPI()</code>
+    method of <code>slf4j-api/DefaultLoggingEventBuilder</code> the
+    first marker from the markerList is now passed to
+    <code>locationAwareLogger.log()</code> instead of null.
+    </p> 
+    
+    <p>&bull; The <code>renderLevel()</code> method in
+    <code>slf4j-simple/SimpleLogger</code> now uses
+    CONFIG_PARAMS.warnLevelString for WARN instead of hardcoded
+    "WARN". This issue was reported in <a
+    href="https://github.com/qos-ch/slf4j/issues/471">issues/471</a>.
+    </p>
+    
+    <p>&bull; A bit-wise identical binary of this version can be
+    reproduced by building from source code at commit
+    58b66c2c7e840f525c07db4509534ea53ef95b82 associated with the tag
+    v_2.0.18. Release built using Java "21" 2023-10-17 LTS build
+    21.0.1.+12-LTS-29 under Linux Debian 11.6.
+    </p>    
+    
+    <hr noshade="noshade" size="1"/>
+
     <h3 class="doAnchor" name="2.0.17">2025-02-25 - Release of SLF4J 2.0.17</h3>
   
     <p>&bull; As reported in <a

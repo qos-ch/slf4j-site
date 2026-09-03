@@ -204,6 +204,11 @@ img.sentry {
     max-height: calc(var(--main-logo-height));
 }
 
+img.sentry-big {
+    max-height: calc(3*var(--main-logo-height));
+}
+ 
+
 #content {
     /*grid-area: contentArea;*/
 }
@@ -514,10 +519,25 @@ code, .code {
 }
 
 
-.variable, .attr {
+.variable {
     font-family: Courier, monospace;
     font-style: italic;
+} 
+
+.attr {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;        
+    background-color: #FFF;
+    color: #015692;
+    border-top: 1px dotted gray;
+    border-bottom: 1px dotted gray;
+} 
+
+.elem {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;    
+    background-color: #F0F0F0;
+    color: #b75501;
 }
+
 
 
 .option, .prop {
